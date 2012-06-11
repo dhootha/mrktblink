@@ -5,10 +5,10 @@ class MapController < ApplicationController
   end
 
   def find_data
-    market = 'Dow'
+    market_name = 'Dow'
     #debugger
     begin
-      FetchData.fetch_data_from_api(market)
+      FetchData.fetch_data_from_api(market_name)
     rescue
     end
   end
