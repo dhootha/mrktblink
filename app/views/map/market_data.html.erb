@@ -1,0 +1,21 @@
+<% APP_CONFIG_MARKETS.each do |market| %>
+  <% unless $redis.get("data_#{market[0]}").blank? %>
+    <div class="market_data" id="market_data_<%= market[0] %>">
+      <h1><%= market[0] %></h1>
+      <%#debugger%>
+  	  
+      <%= text_area_tag "market_data_value_#{market[0]}",$redis.get("data_#{market[0]}"), :class => "market_data_value", :id => "data_#{market[0].gsub('*','_').gsub(' ','_').gsub('&','_')}"%>      
+    </div>
+  <% end %>
+<% end %>
+
+<script type="text/javascript">
+  setInterval(function() {
+    <% $redis.keys('data_*').each do |data_key| %>
+      <% data_key_id = data_key.gsub('*','_').gsub(' ','_').gsub('&','_') %>      
+      redis_current_market_data = "<%= $redis.get(data_key).split() %>"      
+      $('#'+'<%= data_key_id %>').val(redis_current_market_data);      
+    <% end %>
+    //alert("updated");    
+  },10000);
+</script>
