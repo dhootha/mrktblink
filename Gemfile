@@ -9,7 +9,11 @@ gem 'sqlite3'
 # gem 'pg'
 gem 'mysql2'
 gem 'rails-backbone'
-
+gem 'ruby-debug-base19', "0.11.26"
+gem 'ruby-debug19', :require => 'ruby-debug'
+gem 'redis'
+gem 'whenever', :require => false
+gem 'resque'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

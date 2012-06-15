@@ -1,15 +1,21 @@
 class MapController < ApplicationController
+  load "#{Rails.root}/app/workers/get_market_data.rb"
 
-  def index
+  def index    
     render :layout => "map"
   end
 
   def find_data
-    market_name = 'Dow'
-    #debugger
+    market_name = 'Dow'    
     begin
       FetchData.fetch_data_from_api(market_name)
+      $redis.get('data')
     rescue
     end
+  end  
+
+  def market_data
+    render :layout => "application"
   end
+
 end
