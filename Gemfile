@@ -31,8 +31,8 @@ gem 'hashie'
 group :test, :development do 
   gem "rspec-rails"
   gem "capybara"
-  gem 'ruby-debug-base19', "0.11.26"
-  gem 'ruby-debug19', :require => 'ruby-debug'
+  #gem 'ruby-debug-base19', "0.11.26"
+  #gem 'ruby-debug19', :require => 'ruby-debug'
 end
 
 # To use ActiveModel has_secure_password
