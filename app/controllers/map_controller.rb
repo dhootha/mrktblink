@@ -15,6 +15,7 @@ class MapController < ApplicationController
   end  
 
   def market_data
+    Resque.enqueue(GetMarketData,"Dow")
     render :layout => "application"
   end
 
