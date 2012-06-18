@@ -12,3 +12,22 @@
  *= require vendor
  *= require_tree .
 */
+
+.market_data
+{ 
+	border: 1px solid;
+    float: left;
+    margin-top: 50px;
+    margin-left: 6px;	 
+    width: 100%;
+}
+
+.market_data_value
+{
+  border: 1px solid #999;
+  width: 98%;
+  margin: 5px 0;
+  padding: 3px;
+  height: 300px;
+  margin-left: 6px;	 
+}

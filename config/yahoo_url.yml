@@ -1,0 +1,135 @@
+Dow:
+  country: "USA"
+  url: "http://chartapi.finance.yahoo.com/instrument/1.0/%5EDJI/chartdata;type=quote;range=1d/json/"
+
+NASDAQ:
+  country: "USA"
+  url: "http://chartapi.finance.yahoo.com/instrument/1.0/%5EIXIC/chartdata;type=quote;range=1d/json/"
+
+S&P:
+  country: "USA"
+  url: "http://chartapi.finance.yahoo.com/instrument/1.0/%5EGSPC/chartdata;type=quote;range=1d/json/"
+
+MerVal:
+  country: "Argentina"
+  url: "http://chartapi.finance.yahoo.com/instrument/1.0/%5EMERV/chartdata;type=quote;range=1d/json/"
+
+Bovespa:
+  country: "Brazil"
+  url: "http://chartapi.finance.yahoo.com/instrument/1.0/%5EBVSP/chartdata;type=quote;range=1d/json/"
+
+IPC:
+  country: "Mexico"
+  url: "http://chartapi.finance.yahoo.com/instrument/1.0/%5EMXX/chartdata;type=quote;range=1d/json/"
+
+IPSA:
+  country: "Chile"
+  url: "http://chartapi.finance.yahoo.com/instrument/1.0/%5EIPSA/chartdata;type=quote;range=1d/json/"
+
+IGBVL*:
+  country: "Peru"
+  url: "http://chartapi.finance.yahoo.com/instrument/1.0/%5EDWPED/chartdata;type=quote;range=1d/json/"
+
+DJLLGUF*:
+  country: "Colombia"
+  url: "http://chartapi.finance.yahoo.com/instrument/1.0/%5EDJLLGUF/chartdata;type=quote;range=1d/json/"  
+
+TSX:
+  country: "Canada"
+  url: "http://chartapi.finance.yahoo.com/instrument/1.0/%5EGSPTSE/chartdata;type=quote;range=1d/json/"
+
+ATX:
+  country: "Austria"
+  url: "http://chartapi.finance.yahoo.com/instrument/1.0/%5EATX/chartdata;type=quote;range=1d/json/"
+
+EURONEXT BEL-20:
+  country: "Belgium"
+  url: "http://chartapi.finance.yahoo.com/instrument/1.0/%5EBFX/chartdata;type=quote;range=1d/json/"
+
+CAC 40:
+  country: "France"
+  url: "http://chartapi.finance.yahoo.com/instrument/1.0/%5EFCHI/chartdata;type=quote;range=1d/json/"
+
+DAX:
+  country: "Germany"
+  url: "http://chartapi.finance.yahoo.com/instrument/1.0/%5EGDAXI/chartdata;type=quote;range=1d/json/"
+
+AEX:
+  country: "Netherlands"
+  url: "http://chartapi.finance.yahoo.com/instrument/1.0/%5EAEX/chartdata;type=quote;range=1d/json/"
+
+OSLO EXCH ALL SHARE:
+  country: "Norway"
+  url: "http://chartapi.finance.yahoo.com/instrument/1.0/%5EOSEAX/chartdata;type=quote;range=1d/json/"
+
+OMX Stockholm_PI:
+  country: "Sweden"
+  url: "http://chartapi.finance.yahoo.com/instrument/1.0/%5EOMXSPI/chartdata;type=quote;range=1d/json/"
+
+SMI:
+  country: "Switzerland"
+  url: "http://chartapi.finance.yahoo.com/instrument/1.0/%5ESSMI/chartdata;type=quote;range=1d/json/"
+
+FTSE 100:
+  country: "England"
+  url: "http://chartapi.finance.yahoo.com/instrument/1.0/%5EFTSE/chartdata;type=quote;range=1d/json/"
+
+PX IND:
+  country: "Czeck Repubic"
+  url: "http://chartapi.finance.yahoo.com/instrument/1.0/FPXAA.PR/chartdata;type=quote;range=1d/json/"
+
+MICEX IND:
+  country: "Russia"
+  url: "http://chartapi.finance.yahoo.com/instrument/1.0/MICEXINDEXCF.ME/chartdata;type=quote;range=1d/json/"
+
+ATHEN INDEX COMPOS:
+  country: "Greece"
+  url: "http://chartapi.finance.yahoo.com/instrument/1.0/GD.AT/chartdata;type=quote;range=1d/json/"
+
+ISEQ:
+  country: "Ireland"
+  url: "http://chartapi.finance.yahoo.com/instrument/1.0/%5EISEQ/chartdata;type=quote;range=1d/json/"
+
+IBEX:
+  country: "Spain"
+  url: "http://chartapi.finance.yahoo.com/instrument/1.0/%5EIBEX/chartdata;type=quote;range=1d/json/"
+
+PSI 20:
+  country: "Portugal"
+  url: "http://chartapi.finance.yahoo.com/instrument/1.0/%5EPSI20/chartdata;type=quote;range=1d/json/"
+
+TEL AVIV TA-100:
+  country: "Isreal"
+  url: "http://chartapi.finance.yahoo.com/instrument/1.0/%5ETA100/chartdata;type=quote;range=1d/json/"
+
+Dow Jones South Africa:
+  country: "South Africa"
+  url: "http://chartapi.finance.yahoo.com/instrument/1.0/%5EDWZAT/chartdata;type=quote;range=1d/json/"
+
+SSE:
+  country: "China"
+  url: "http://chartapi.finance.yahoo.com/instrument/1.0/000001.SS/chartdata;type=quote;range=1d/json/"
+
+Hang Seng:
+  country: "China"
+  url: "http://chartapi.finance.yahoo.com/instrument/1.0/%5EHSI/chartdata;type=quote;range=1d/json/"
+
+FTSE Bursa Malaysia:
+  country: "Malaysia"
+  url: "http://chartapi.finance.yahoo.com/instrument/1.0/%5EKLSE/chartdata;type=quote;range=1d/json/"
+
+NIKKEI 225:
+  country: "Japan"
+  url: "http://chartapi.finance.yahoo.com/instrument/1.0/%5EN225/chartdata;type=quote;range=1d/json/"
+
+TSEC weighted index:
+  country: "Taiwan"
+  url: "http://chartapi.finance.yahoo.com/instrument/1.0/%5ETWII/chartdata;type=quote;range=1d/json/"
+
+KOSPI Composite Index:
+  country: "Korea"
+  url: "http://chartapi.finance.yahoo.com/instrument/1.0/%5EKS11/chartdata;type=quote;range=1d/json/"
+
+ALL ORDINARIES:
+  country: "Australia"
+  url: "http://chartapi.finance.yahoo.com/instrument/1.0/%5EAORD/chartdata;type=quote;range=1d/json/"
