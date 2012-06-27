@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Leaflet Quick Start Guide Example</title>
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="http://code.leafletjs.com/leaflet-0.3.1/leaflet.css" />
+    <!--[if lte IE 8]><link rel="stylesheet" href="../dist/leaflet.ie.css" /><![endif]-->
+</head>
+<body>
+    <div id="map" style="height: 940px"></div>
+
+    <script src="http://code.leafletjs.com/leaflet-0.3.1/leaflet.js"></script>
+    <script>
+        var map = new L.Map('map');        
+
+        var cloudmadeUrl = 'http://{s}.tile.cloudmade.com/BC9A493B41014CAABB98F0471D759707/997/256/{z}/{x}/{y}.png',
+            cloudmadeAttribution = 'Map data &copy; 2011 OpenStreetMap contributors, Imagery &copy; 2011 CloudMade',
+            cloudmade = new L.TileLayer(cloudmadeUrl, {maxZoom: 18, attribution: cloudmadeAttribution});
+
+        map.setView(new L.LatLng(51.505, -0.09), 2).addLayer(cloudmade);
+
+
+        var markerLocation = new L.LatLng(51.5, -0.09),
+            marker = new L.Marker(markerLocation);
+
+        map.addLayer(marker);
+        marker.bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
+        
+        var countries, marker1, marker10, marker11, marker12, marker13, marker14, marker15, marker16, marker17, marker18, marker19, marker2, marker20, marker21, marker22, marker23, marker24, marker25, marker26, marker27, marker28, marker29, marker3, marker30, marker31, marker32, marker4, marker5, marker6, marker7, marker8, marker9;
+
+        countries = {  
+        usa: {
+        lat: 39.0,
+        lon: -98.5
+        },
+        argentina: {
+        lat: -38.4,
+        lon: -63.6
+        },
+        brazil: {
+        lat: -14.2,
+        lon: -51.9
+        },
+        mexico: {
+        lat: 23.6,
+        lon: -102.6
+        },
+        chile: {
+        lat: -35.6,
+        lon: -71.5
+        },
+        peru: {
+        lat: -9.19,
+        lon: -75
+        },
+        columbia: {
+        lat: 4.6,
+        lon: -74.3
+        },
+        canada: {
+        lat: 56.1,
+        lon: -106.3
+        },
+        austria: {
+        lat: 47.5,
+        lon: 14.6
+        },
+        belgium: {
+        lat: 50.5,
+        lon: 4.5
+        }
+        };
+
+        marker1 = new L.Marker(new L.LatLng(countries['usa']['lat'], countries['usa']['lon']));
+        marker2 = new L.Marker(new L.LatLng(countries['argentina']['lat'], countries['argentina']['lon']));
+        marker3 = new L.Marker(new L.LatLng(countries['brazil']['lat'], countries['brazil']['lon']));
+        marker4 = new L.Marker(new L.LatLng(countries['mexico']['lat'], countries['mexico']['lon']));
+        marker5 = new L.Marker(new L.LatLng(countries['chile']['lat'], countries['chile']['lon']));
+        marker6 = new L.Marker(new L.LatLng(countries['peru']['lat'], countries['peru']['lon']));
+        marker7 = new L.Marker(new L.LatLng(countries['columbia']['lat'], countries['columbia']['lon']));
+        marker8 = new L.Marker(new L.LatLng(countries['canada']['lat'], countries['canada']['lon']));
+        marker9 = new L.Marker(new L.LatLng(countries['austria']['lat'], countries['austria']['lon']));
+        marker10 = new L.Marker(new L.LatLng(countries['belgium']['lat'], countries['belgium']['lon']))
+
+        map.addLayer(marker1);
+        map.addLayer(marker2);
+        map.addLayer(marker3);
+        map.addLayer(marker4);
+        map.addLayer(marker5);
+        map.addLayer(marker6);
+        map.addLayer(marker7);
+        map.addLayer(marker8);
+        map.addLayer(marker9);
+        map.addLayer(marker10);
+
+        marker1.bindPopup(<%= $redis.get('data_Dow').html_safe() %>).openPopup();
+        marker2.bindPopup(<%= $redis.get('data_MerVal').html_safe() %>).openPopup();
+        marker3.bindPopup(<%= $redis.get('data_Bovespa').html_safe() %>).openPopup();
+        marker4.bindPopup(<%= $redis.get('data_IPC').html_safe() %>).openPopup();
+        marker5.bindPopup(<%= $redis.get('data_IPSA').html_safe() %>).openPopup();
+        marker6.bindPopup(<%= $redis.get('data_IGBVL*').html_safe() %>).openPopup();
+        marker7.bindPopup(<%= $redis.get('data_DJLLGUF*').html_safe() %>).openPopup();
+        marker8.bindPopup(<%= $redis.get('data_TSX').html_safe() %>).openPopup();
+        marker9.bindPopup(<%= $redis.get('data_ATX').html_safe() %>).openPopup();
+        marker10.bindPopup(<%= $redis.get('data_EURONEXT BEL-20').html_safe() %>).openPopup();       
+
+        map.on('click', onMapClick);
+
+        var popup = new L.Popup();
+
+        function onMapClick(e) {
+            var latlngStr = '(' + e.latlng.lat.toFixed(3) + ', ' + e.latlng.lng.toFixed(3) + ')';
+
+            popup.setLatLng(e.latlng);
+            popup.setContent("You clicked the map at " + latlngStr);
+            map.openPopup(popup);
+        }
+    </script>
+</body>
+</html>
+​

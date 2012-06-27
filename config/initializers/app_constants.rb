@@ -1,0 +1,1 @@
+APP_CONFIG_MARKETS = YAML::load(File.open("#{Rails.root}/config/yahoo_url.yml"))
