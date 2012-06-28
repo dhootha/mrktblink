@@ -20,7 +20,7 @@ class MapController < ApplicationController
   end
 
   def new_map
-    render :layout => "application"
+    render :layout => "new_map"
   end
 
 end
