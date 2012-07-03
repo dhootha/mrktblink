@@ -12,6 +12,8 @@ gem 'rails-backbone'
 gem 'redis'
 gem 'whenever', :require => false
 gem 'resque'
+gem "mongo_mapper"
+gem 'bson_ext'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -31,8 +33,8 @@ gem 'hashie'
 group :test, :development do 
   gem "rspec-rails"
   gem "capybara"
-  #gem 'ruby-debug-base19', "0.11.26"
-  #gem 'ruby-debug19', :require => 'ruby-debug'
+#  gem 'ruby-debug-base19', "0.11.26"
+#  gem 'ruby-debug19', :require => 'ruby-debug'
 end
 
 # To use ActiveModel has_secure_password

@@ -6,13 +6,13 @@ class MapController < ApplicationController
   end
 
   def find_data
-    market_name = 'Dow'    
+    market_name = 'Dow'
     begin
       FetchData.fetch_data_from_api(market_name)
       $redis.get('data')
     rescue
     end
-  end  
+  end
 
   def market_data
     Resque.enqueue(GetMarketData,"Dow")
