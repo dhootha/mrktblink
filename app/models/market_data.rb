@@ -1,4 +1,4 @@
-class MarketRecord
+class MarketData
   include MongoMapper::Document
   key :market_name, String
   key :country, String
