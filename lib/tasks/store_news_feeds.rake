@@ -1,8 +1,7 @@
 task :store_news_feeds => :environment do
   countries = []
   APP_CONFIG_MARKETS.each do |market|
-    countries << market[1]["country"]
-    puts market[1]["country"]
+    countries << market[1]["country"]   
   end
   countries.each do |country_name|
   	response = FetchNews.fetch_news_from_api(country_name)
@@ -12,6 +11,6 @@ task :store_news_feeds => :environment do
   	else
   	  NewsFeedData.create(:country_name => country_name, :news_feed_data => response)
   	end
-    puts response
+    puts "done"
   end  
 end
