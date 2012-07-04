@@ -10,7 +10,6 @@ task :store_news_feeds => :environment do
   	  news_feed.update_attributes(:news_feed_data => response)
   	else
   	  NewsFeedData.create(:country_name => country_name, :news_feed_data => response)
-  	end
-    puts "done"
+  	end    
   end  
 end
