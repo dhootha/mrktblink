@@ -1,5 +1,6 @@
 class MapController < ApplicationController
   load "#{Rails.root}/app/workers/get_market_data.rb"
+  require 'rss'
 
   def index
     @countries = []
