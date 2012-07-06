@@ -1,3 +1,5 @@
+<%= RSS::Parser.parse(NewsFeedData.first.news_feed_data, false, true) %>
+
 <div id="all_markets_data">
   <% APP_CONFIG_MARKETS.each do |market| %>
     <% unless $redis.get("data_#{market[0]}").blank? %>

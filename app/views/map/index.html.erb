@@ -1,0 +1,19 @@
+<script type="text/javascript">
+  var news_feeds = []
+  <% @countries.each do |country| %>
+    <% news_feed = NewsFeedData.find_by_country_name(country) %>
+    <%# news_feed = NewsFeedData.all[7] %>
+    <% if news_feed.present? %>
+      <% feed = RSS::Parser.parse(news_feed.news_feed_data) %>
+      <% news_feeds = [] %>      
+      <% unless feed.blank? %>
+        <% feed.items.each do |item| %>
+          <% news_feeds << item.title %>
+        <% end %>
+      <% end %>
+      news_feeds['<%= country %>'] = "<%= news_feeds.present? ? news_feeds:'not exist' %>"      
+    <% end %>
+  <% end %>
+</script>
+
+<%= javascript_include_tag "maps_vendor", "http://maps.stamen.com/js/tile.stamen.js", "map" %>

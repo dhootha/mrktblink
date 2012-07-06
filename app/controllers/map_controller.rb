@@ -1,7 +1,11 @@
 class MapController < ApplicationController
   load "#{Rails.root}/app/workers/get_market_data.rb"
 
-  def index    
+  def index
+    @countries = []
+    APP_CONFIG_MARKETS.each do |market|
+      @countries << market[1]["country"]
+    end
     render :layout => "map"
   end
 
