@@ -156,6 +156,12 @@ $ ->
   marker31 = new L.Marker(new L.LatLng(countries['korea']['lat'], countries['korea']['lon']))
   marker32 = new L.Marker(new L.LatLng(countries['australia']['lat'], countries['australia']['lon']))
 
+  domelem = document.createElement("a")
+  domelem.href = "#point_555_444"
+  domelem.innerHTML = "Click me"
+  domelem.onclick = ->
+    alert @href
+
   map.addLayer(marker1)
   map.addLayer(marker2)
   map.addLayer(marker3)
@@ -219,6 +225,235 @@ $ ->
   marker30.bindPopup(news_feeds['Taiwan']).openPopup()
   marker31.bindPopup(news_feeds['Korea']).openPopup()
   marker32.bindPopup(news_feeds['Australia']).openPopup()
+  
+  ######## Updating news feeds content on click of country ##############
+
+  marker2.on "click", (e) ->
+    $.ajax
+      url: "/map/update_news_feeds_content?country_name=USA"
+      dataType: "json"
+      success: (data) ->
+        $('#news_feeds_content').html(data.content_to_replace)
+
+  marker3.on "click", (e) ->
+    $.ajax
+      url: "/map/update_news_feeds_content?country_name=Argentina"
+      dataType: "json"
+      success: (data) ->
+        $('#news_feeds_content').html(data.content_to_replace)
+
+  marker4.on "click", (e) ->
+    $.ajax
+      url: "/map/update_news_feeds_content?country_name=Brazil"
+      dataType: "json"
+      success: (data) ->
+        $('#news_feeds_content').html(data.content_to_replace)
+
+  marker5.on "click", (e) ->
+    $.ajax
+      url: "/map/update_news_feeds_content?country_name=Mexico"
+      dataType: "json"
+      success: (data) ->
+        $('#news_feeds_content').html(data.content_to_replace)
+
+  marker6.on "click", (e) ->
+    $.ajax
+      url: "/map/update_news_feeds_content?country_name=Chile"
+      dataType: "json"
+      success: (data) ->
+        $('#news_feeds_content').html(data.content_to_replace)
+
+  marker7.on "click", (e) ->
+    $.ajax
+      url: "/map/update_news_feeds_content?country_name=Peru"
+      dataType: "json"
+      success: (data) ->
+        $('#news_feeds_content').html(data.content_to_replace)
+
+  marker8.on "click", (e) ->
+    $.ajax
+      url: "/map/update_news_feeds_content?country_name=Colombia"
+      dataType: "json"
+      success: (data) ->
+        $('#news_feeds_content').html(data.content_to_replace)
+
+  
+  marker9.on "click", (e) ->
+    $.ajax
+      url: "/map/update_news_feeds_content?country_name=Canada"
+      dataType: "json"
+      success: (data) ->
+        $('#news_feeds_content').html(data.content_to_replace)
+
+  marker10.on "click", (e) ->
+    $.ajax
+      url: "/map/update_news_feeds_content?country_name=Austria"
+      dataType: "json"
+      success: (data) ->
+        $('#news_feeds_content').html(data.content_to_replace)
+
+  marker11.on "click", (e) ->
+    $.ajax
+      url: "/map/update_news_feeds_content?country_name=Belgium"
+      dataType: "json"
+      success: (data) ->
+        $('#news_feeds_content').html(data.content_to_replace)
+
+  marker12.on "click", (e) ->
+    $.ajax
+      url: "/map/update_news_feeds_content?country_name=France"
+      dataType: "json"
+      success: (data) ->
+        $('#news_feeds_content').html(data.content_to_replace)
+
+  marker13.on "click", (e) ->
+    $.ajax
+      url: "/map/update_news_feeds_content?country_name=Germany"
+      dataType: "json"
+      success: (data) ->
+        $('#news_feeds_content').html(data.content_to_replace)
+
+  marker14.on "click", (e) ->
+    $.ajax
+      url: "/map/update_news_feeds_content?country_name=Netherlands"
+      dataType: "json"
+      success: (data) ->
+        $('#news_feeds_content').html(data.content_to_replace)
+
+  marker15.on "click", (e) ->
+    $.ajax
+      url: "/map/update_news_feeds_content?country_name=Norway"
+      dataType: "json"
+      success: (data) ->
+        $('#news_feeds_content').html(data.content_to_replace)
+
+  marker16.on "click", (e) ->
+    $.ajax
+      url: "/map/update_news_feeds_content?country_name=Sweden"
+      dataType: "json"
+      success: (data) ->
+        $('#news_feeds_content').html(data.content_to_replace)
+
+  marker17.on "click", (e) ->
+    $.ajax
+      url: "/map/update_news_feeds_content?country_name=Switzerland"
+      dataType: "json"
+      success: (data) ->
+        $('#news_feeds_content').html(data.content_to_replace)
+
+  marker19.on "click", (e) ->
+    $.ajax
+      url: "/map/update_news_feeds_content?country_name=Czeck Repubic"
+      dataType: "json"
+      success: (data) ->
+        $('#news_feeds_content').html(data.content_to_replace)
+
+  marker20.on "click", (e) ->
+    $.ajax
+      url: "/map/update_news_feeds_content?country_name=Russia"
+      dataType: "json"
+      success: (data) ->
+        $('#news_feeds_content').html(data.content_to_replace)
+
+  marker21.on "click", (e) ->
+    $.ajax
+      url: "/map/update_news_feeds_content?country_name=Greece"
+      dataType: "json"
+      success: (data) ->
+        $('#news_feeds_content').html(data.content_to_replace)
+
+  marker22.on "click", (e) ->
+    $.ajax
+      url: "/map/update_news_feeds_content?country_name=Ireland"
+      dataType: "json"
+      success: (data) ->
+        $('#news_feeds_content').html(data.content_to_replace)
+
+  marker23.on "click", (e) ->
+    $.ajax
+      url: "/map/update_news_feeds_content?country_name=Spain"
+      dataType: "json"
+      success: (data) ->
+        $('#news_feeds_content').html(data.content_to_replace)
+
+  marker23.on "click", (e) ->
+    $.ajax
+      url: "/map/update_news_feeds_content?country_name=Spain"
+      dataType: "json"
+      success: (data) ->
+        $('#news_feeds_content').html(data.content_to_replace)
+
+  marker24.on "click", (e) ->
+    $.ajax
+      url: "/map/update_news_feeds_content?country_name=Portugal"
+      dataType: "json"
+      success: (data) ->
+        $('#news_feeds_content').html(data.content_to_replace)
+
+
+  marker25.on "click", (e) ->
+    $.ajax
+      url: "/map/update_news_feeds_content?country_name=Israel"
+      dataType: "json"
+      success: (data) ->
+        $('#news_feeds_content').html(data.content_to_replace)
+
+        
+  marker26.on "click", (e) ->
+    $.ajax
+      url: "/map/update_news_feeds_content?country_name=South Africa"
+      dataType: "json"
+      success: (data) ->
+        $('#news_feeds_content').html(data.content_to_replace)
+
+
+  marker27.on "click", (e) ->
+    $.ajax
+      url: "/map/update_news_feeds_content?country_name=China"
+      dataType: "json"
+      success: (data) ->
+        $('#news_feeds_content').html(data.content_to_replace)
+
+  marker28.on "click", (e) ->
+    $.ajax
+      url: "/map/update_news_feeds_content?country_name=Malaysia"
+      dataType: "json"
+      success: (data) ->
+        $('#news_feeds_content').html(data.content_to_replace)
+
+  marker29.on "click", (e) ->
+    $.ajax
+      url: "/map/update_news_feeds_content?country_name=Japan"
+      dataType: "json"
+      success: (data) ->
+        $('#news_feeds_content').html(data.content_to_replace)
+
+  marker30.on "click", (e) ->
+    $.ajax
+      url: "/map/update_news_feeds_content?country_name=Taiwan"
+      dataType: "json"
+      success: (data) ->
+        $('#news_feeds_content').html(data.content_to_replace)
+
+  marker31.on "click", (e) ->
+    $.ajax
+      url: "/map/update_news_feeds_content?country_name=Korea"
+      dataType: "json"
+      success: (data) ->
+        $('#news_feeds_content').html(data.content_to_replace)
+
+  marker32.on "click", (e) ->
+    $.ajax
+      url: "/map/update_news_feeds_content?country_name=Australia"
+      dataType: "json"
+      success: (data) ->
+        $('#news_feeds_content').html(data.content_to_replace)
+                                            
+################################################################       
+
+
+
+
 
 
   # circleLocation = new L.LatLng(51.508, -0.11)

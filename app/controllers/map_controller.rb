@@ -2,7 +2,7 @@ class MapController < ApplicationController
   load "#{Rails.root}/app/workers/get_market_data.rb"
   require 'rss'
 
-  def index
+  def index    
     @countries = []
     APP_CONFIG_MARKETS.each do |market|
       @countries << market[1]["country"]
@@ -27,6 +27,11 @@ class MapController < ApplicationController
 
   def new_map
     render :layout => "new_map"
+  end
+
+  def update_news_feeds_content
+    json = {:success => true, :content_to_replace => render_to_string(:partial => 'news_feeds_content', :locals => {:country => params[:country_name]})}
+    render :json => json
   end
 
 end
