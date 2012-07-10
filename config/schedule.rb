@@ -16,7 +16,7 @@ set :output, "/home/testmachine/Desktop/map_app/map_app_3july/map_app/log/cron_l
 #   rake "some:great:rake:task"
 # end
 #
- every 1.minutes do
+ every 15.minutes do
    rake "store_data_to_redis", :environment => :development
  end
 

@@ -9,9 +9,8 @@
 </head>
 <body>
   <%= render :partial => 'layouts/map_header' %>
-  <!--<div id="map-background">-->
-    <%= yield %>
-  <!--</div>-->
+  <div id="map-background" style="height:400px;"></div>
+  <%= yield %>
   <%= render :partial => 'layouts/map_footer' %>
 </body>
 </html>

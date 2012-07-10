@@ -4,7 +4,9 @@
   <% unless feed.blank? %>
     <% feed.items.each do |item| %>
       <div class='news_feed_title'>
-        <%= item.title.slice(0..35) %>
+      	<%# debugger %>
+      	<%= link_to item.title.slice(0..30), item.link, :target => '_blank'  %>
+        <%#= item.title.slice(0..35) %>
       </div>
     <% end %>
   <% end %>

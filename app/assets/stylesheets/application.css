@@ -41,6 +41,10 @@
   margin: 0 0px 5px 0;
   padding: 10px;
 }
+.news_feed_title a
+{
+  color: white !important;
+}
 #news_feeds_content
 {
   height: 200px;
