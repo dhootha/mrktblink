@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# for filename in *.xml
+# do
+#   echo $filename;
+#   w_o_ext=`basename $filename`;
+#   echo $w_o_ext;
+#   mv $filename $w_o_ext.poly.xml;
+# done
+
+# for filename in *.poly
+# do
+#   echo $filename;
+#   # w_o_ext=`basename $filename .xml`;
+#   # echo $w_o_ext;
+#   # $xml_ext='basename $filename';
+#   # echo $xml_ext;
+#   perl polyconvert.pl $filename >$filename.xml; 
+# done
+
+for filename in *.xml
+do
+  echo $filename;
+  # perl polyconvert.pl $filename >$filename.xml; 
+  xml2json -t xml2json -f $filename $filename.json;
+done

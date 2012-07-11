@@ -3,14 +3,14 @@
 <head>
   <title>Mrktblink</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application", "maps_vendor", "http://maps.stamen.com/js/tile.stamen.js" %>
+  <%#= javascript_include_tag "application", "maps_vendor", "http://maps.stamen.com/js/tile.stamen.js" %>
+  <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
   <%= render :partial => 'layouts/map_header' %>
-  <div id="map-background">
-    <%= yield %>
-  </div>
+  <div id="map-background" style="height:400px;"></div>
+  <%= yield %>
   <%= render :partial => 'layouts/map_footer' %>
 </body>
 </html>

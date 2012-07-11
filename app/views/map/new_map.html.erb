@@ -1,0 +1,6 @@
+<div id="map" style="height: 800px"></div>
+<script type="text/javascript">
+  australia_market_data = <%= $redis.get('data_ALL ORDINARIES').html_safe() %>
+</script>
+
+<%= javascript_include_tag "new_map" %>

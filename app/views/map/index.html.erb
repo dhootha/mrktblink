@@ -1,0 +1,9 @@
+<script type="text/javascript">
+  var market_data = []
+  <% @countries.each do |country| %>    
+    <% market_data = MarketData.find_by_country(country).market_data %>    
+    market_data['<%= country %>'] = "<%= market_data.present? ? market_data:'not exist' %>"    
+  <% end %>
+</script>
+<%= javascript_include_tag "maps_vendor", "http://maps.stamen.com/js/tile.stamen.js", "map" %>
+<%= render :partial => 'news_feeds_content', :locals => {:country => 'Australia'} %>

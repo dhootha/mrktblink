@@ -1,0 +1,50 @@
+<osm generator='osm2poly.pl' version='0.5'>
+  <node id='-1' lat='47.994380' lon='-123.663000' />
+  <node id='-2' lat='48.840520' lon='-122.547500' />
+  <node id='-3' lat='48.840520' lon='-95.176370' />
+  <node id='-4' lat='47.941030' lon='-93.184300' />
+  <node id='-5' lat='47.780640' lon='-87.606490' />
+  <node id='-6' lat='45.259110' lon='-82.905190' />
+  <node id='-7' lat='41.257230' lon='-83.383290' />
+  <node id='-8' lat='42.620430' lon='-78.482790' />
+  <node id='-9' lat='44.808630' lon='-73.980700' />
+  <node id='-10' lat='44.836890' lon='-71.351170' />
+  <node id='-11' lat='42.825310' lon='-65.653840' />
+  <node id='-12' lat='42.796080' lon='-48.601680' />
+  <node id='-13' lat='58.300770' lon='-49.518040' />
+  <node id='-14' lat='77.203820' lon='-75.256790' />
+  <node id='-15' lat='82.309220' lon='-60.518770' />
+  <node id='-16' lat='83.229790' lon='-64.040260' />
+  <node id='-17' lat='83.268430' lon='-126.212900' />
+  <node id='-18' lat='69.698420' lon='-141.273000' />
+  <node id='-19' lat='60.075760' lon='-141.273000' />
+  <node id='-20' lat='58.696310' lon='-137.527900' />
+  <node id='-21' lat='50.869370' lon='-132.228900' />
+  <way id='-1'>
+    <tag k='polygon_id' v='1' />
+    <tag k='polygon_file' v='polygon' />
+    <tag k='note' v='created by poly2osm.pl from a polygon file. not for uploading!' />
+    <nd ref='-1' />
+    <nd ref='-2' />
+    <nd ref='-3' />
+    <nd ref='-4' />
+    <nd ref='-5' />
+    <nd ref='-6' />
+    <nd ref='-7' />
+    <nd ref='-8' />
+    <nd ref='-9' />
+    <nd ref='-10' />
+    <nd ref='-11' />
+    <nd ref='-12' />
+    <nd ref='-13' />
+    <nd ref='-14' />
+    <nd ref='-15' />
+    <nd ref='-16' />
+    <nd ref='-17' />
+    <nd ref='-18' />
+    <nd ref='-19' />
+    <nd ref='-20' />
+    <nd ref='-21' />
+    <nd ref='-1' />
+  </way>
+</osm>

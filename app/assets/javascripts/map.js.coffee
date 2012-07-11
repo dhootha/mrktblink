@@ -156,6 +156,12 @@ $ ->
   marker31 = new L.Marker(new L.LatLng(countries['korea']['lat'], countries['korea']['lon']))
   marker32 = new L.Marker(new L.LatLng(countries['australia']['lat'], countries['australia']['lon']))
 
+  domelem = document.createElement("a")
+  domelem.href = "#point_555_444"
+  domelem.innerHTML = "Click me"
+  domelem.onclick = ->
+    alert @href
+
   map.addLayer(marker1)
   map.addLayer(marker2)
   map.addLayer(marker3)
@@ -189,160 +195,266 @@ $ ->
   map.addLayer(marker31)
   map.addLayer(marker32)
 
-  marker1.bindPopup('"Timestamp" : {"min" :1338534000,"max" :1338564000 } , "labels" : [1338534000,1338537600,1338541200,1338544800,1338548400,1338552000,1338555600,1338559200,1338562800 ] ,"ranges" : {"close" : {"min" :426.9600,"max" :439.6000 },"high" : {"min" :427.0500,"max" :439.9700 },"low" : {"min" :426.8500,"max" :439.2600 },"open" : {"min" :426.9900,"max" :439.4300 },"volume" : {"min" :0,"max" :0 } }').openPopup()
-  marker2.bindPopup('"Timestamp" : {"min" :1338534000,"max" :1338564000 } , "labels" : [1338534000,1338537600,1338541200,1338544800,1338548400,1338552000,1338555600,1338559200,1338562800 ] ,"ranges" : {"close" : {"min" :426.9600,"max" :439.6000 },"high" : {"min" :427.0500,"max" :439.9700 },"low" : {"min" :426.8500,"max" :439.2600 },"open" : {"min" :426.9900,"max" :439.4300 },"volume" : {"min" :0,"max" :0 } }').openPopup()
-  marker3.bindPopup('"Timestamp" : {"min" :1338559200,"max" :1338580800 }
-   ,
-    "labels" : [1338559200,1338562800,1338566400,1338570000,1338573600,1338577200,1338580800 ]
-     ,
-      "ranges" : {"close" : {"min" :2202.6201,"max" :2251.4700 },"high" : {"min" :2202.6201,"max" :2251.4700 },"low" : {"min" :2202.6201,"max" :2251.4700 },"open" : {"min" :2202.6201,"max" :2251.4700 },"volume" : {"min" :0,"max" :0 } }
-       ,').openPopup()
-  marker4.bindPopup('"Timestamp" : {"min" :1338559200,"max" :1338584400 }
-   ,
-    "labels" : [1338559200,1338562800,1338566400,1338570000,1338573600,1338577200,1338580800,1338584400 ]
-     ,
-      "ranges" : {"close" : {"min" :53383.2500,"max" :54034.2188 },"high" : {"min" :53383.2500,"max" :54034.2188 },"low" : {"min" :53383.2500,"max" :54034.2188 },"open" : {"min" :53383.2500,"max" :54034.2188 },"volume" : {"min" :0,"max" :0 } }
-       ,').openPopup()
-  marker5.bindPopup('"Timestamp" : {"min" :1338557400,"max" :1338580800 }
-   ,
-    "labels" : [1338559200,1338562800,1338566400,1338570000,1338573600,1338577200,1338580800 ]
-     ,
-      "ranges" : {"close" : {"min" :37140.5781,"max" :37596.3594 },"high" : {"min" :37170.2695,"max" :37708.8398 },"low" : {"min" :37139.1914,"max" :37585.6719 },"open" : {"min" :37142.5586,"max" :37708.8398 },"volume" : {"min" :24600,"max" :18391100 } }').openPopup()
-  marker6.bindPopup('"Timestamp" : {"min" :1338550200,"max" :1338575400 }
-   ,
-    "labels" : [1338552000,1338555600,1338559200,1338562800,1338566400,1338570000,1338573600 ]
-     ,
-      "ranges" : {"close" : {"min" :4275.4233,"max" :4318.1602 },"high" : {"min" :4275.4233,"max" :4318.1602 },"low" : {"min" :4273.1665,"max" :4318.1602 },"open" : {"min" :4273.1665,"max" :4318.1602 },"volume" : {"min" :0,"max" :0 } }').openPopup()
-  marker7.bindPopup('"Timestamp" : {"min" :1338557400,"max" :1338580800 }
-   ,
-    "labels" : [1338559200,1338562800,1338566400,1338570000,1338573600,1338577200,1338580800 ]
-     ,
-      "ranges" : {"close" : {"min" :4814.2598,"max" :4814.2598 },"high" : {"min" :4814.2598,"max" :4814.2598 },"low" : {"min" :4814.2598,"max" :4814.2598 },"open" : {"min" :4814.2598,"max" :4814.2598 },"volume" : {"min" :0,"max" :26784900 } }').openPopup()
-  marker8.bindPopup('"Timestamp" : {"min" :1338557400,"max" :1338580800 }
-   ,
-    "labels" : [1338559200,1338562800,1338566400,1338570000,1338573600,1338577200,1338580800 ]
-     ,
-      "ranges" : {"close" : {"min" :1326.9500,"max" :1326.9500 },"high" : {"min" :1326.9500,"max" :1326.9500 },"low" : {"min" :1326.9500,"max" :1326.9500 },"open" : {"min" :1326.9500,"max" :1326.9500 },"volume" : {"min" :0,"max" :0 } }').openPopup()
-  marker9.bindPopup('"Timestamp" : {"min" :1338557400,"max" :1338580800 }
-   ,
-    "labels" : [1338559200,1338562800,1338566400,1338570000,1338573600,1338577200,1338580800 ]
-     ,
-      "ranges" : {"close" : {"min" :11345.1602,"max" :11411.5996 },"high" : {"min" :11345.1602,"max" :11411.5996 },"low" : {"min" :11345.1602,"max" :11411.5996 },"open" : {"min" :11345.1602,"max" :11411.5996 },"volume" : {"min" :0,"max" :0 } }').openPopup()
-  marker10.bindPopup('"Timestamp" : {"min" :1338535800,"max" :1338564600 }
-   ,
-    "labels" : [1338537600,1338541200,1338544800,1338548400,1338552000,1338555600,1338559200,1338562800 ]
-     ,
-      "ranges" : {"close" : {"min" :1859.6300,"max" :1892.1801 },"high" : {"min" :1859.6300,"max" :1892.1801 },"low" : {"min" :1859.0800,"max" :1891.4100 },"open" : {"min" :1859.6000,"max" :1891.8101 },"volume" : {"min" :0,"max" :200 } }').openPopup()
-  marker11.bindPopup('"Timestamp" : {"min" :1338534000,"max" :1338565200 }
-   ,
-    "labels" : [1338534000,1338537600,1338541200,1338544800,1338548400,1338552000,1338555600,1338559200,1338562800 ]
-     ,
-      "ranges" : {"close" : {"min" :2076.8999,"max" :2086.2000 },"high" : {"min" :2076.8999,"max" :2086.2000 },"low" : {"min" :2076.8999,"max" :2086.2000 },"open" : {"min" :2076.8999,"max" :2086.2000 },"volume" : {"min" :0,"max" :0 } }').openPopup()
-  marker12.bindPopup('"Timestamp" : {"min" :1338534000,"max" :1338564600 }
-   ,
-    "labels" : [1338534000,1338537600,1338541200,1338544800,1338548400,1338552000,1338555600,1338559200,1338562800 ]
-     ,
-      "ranges" : {"close" : {"min" :2922.5601,"max" :3026.6499 },"high" : {"min" :2922.5601,"max" :3026.6499 },"low" : {"min" :2922.2600,"max" :3026.6499 },"open" : {"min" :2922.2600,"max" :3026.6499 },"volume" : {"min" :0,"max" :0 } }').openPopup()
-  marker13.bindPopup('"Timestamp" : {"min" :1338534000,"max" :1338564600 }
-   ,
-    "labels" : [1338534000,1338537600,1338541200,1338544800,1338548400,1338552000,1338555600,1338559200,1338562800 ]
-     ,
-      "ranges" : {"close" : {"min" :6012.4399,"max" :6258.1401 },"high" : {"min" :6014.4702,"max" :6259.7598 },"low" : {"min" :6008.9600,"max" :6257.4102 },"open" : {"min" :6013.0400,"max" :6259.7598 },"volume" : {"min" :0,"max" :0 } }').openPopup()
-  marker14.bindPopup(' "Timestamp" : {"min" :1337065200,"max" :1337096100 }
-   ,
-    "labels" : [1337065200,1337068800,1337072400,1337076000,1337079600,1337083200,1337086800,1337090400,1337094000 ]
-     ,
-      "ranges" : {"close" : {"min" :298.1000,"max" :301.0500 },"high" : {"min" :298.2500,"max" :301.2500 },"low" : {"min" :297.9500,"max" :301.0000 },"open" : {"min" :298.0500,"max" :301.2500 },"volume" : {"min" :0,"max" :2800 } }').openPopup()
-  marker15.bindPopup('"Timestamp" : {"min" :1338534000,"max" :1338564000 }
-   ,
-    "labels" : [1338534000,1338537600,1338541200,1338544800,1338548400,1338552000,1338555600,1338559200,1338562800 ]
-     ,
-      "ranges" : {"close" : {"min" :426.9600,"max" :439.6000 },"high" : {"min" :427.0500,"max" :439.9700 },"low" : {"min" :426.8500,"max" :439.2600 },"open" : {"min" :426.9900,"max" :439.4300 },"volume" : {"min" :0,"max" :0 } }').openPopup()
-  marker16.bindPopup(' "Timestamp" : {"min" :1338557400,"max" :1338580800 }
-   ,
-      "labels" : [1338559200,1338562800,1338566400,1338570000,1338573600,1338577200,1338580800 ]
-       ,
-          "ranges" : {"close" : {"min" :297.8754,"max" :308.2366 },"high" : {"min" :297.8754,"max" :308.2366 },"low" : {"min" :297.8754,"max" :308.2351 },"open" : {"min" :297.8754,"max" :308.2351 },"volume" : {"min" :0,"max" :0 } }').openPopup()
-  marker17.bindPopup(' "Timestamp" : {"min" :1338535800,"max" :1338564600 }
-   ,
-      "labels" : [1338537600,1338541200,1338544800,1338548400,1338552000,1338555600,1338559200,1338562800 ]
-       ,
-          "ranges" : {"close" : {"min" :5754.0200,"max" :5852.0298 },"high" : {"min" :5754.0200,"max" :5853.2100 },"low" : {"min" :5754.0200,"max" :5851.6699 },"open" : {"min" :5754.0200,"max" :5852.6401 },"volume" : {"min" :0,"max" :0 } }').openPopup()
-  marker18.bindPopup(' "Timestamp" : {"min" :1338534000,"max" :1338564600 }
-   ,
-      "labels" : [1338534000,1338537600,1338541200,1338544800,1338548400,1338552000,1338555600,1338559200,1338562800 ]
-       ,
-          "ranges" : {"close" : {"min" :5230.9600,"max" :5354.0200 },"high" : {"min" :5231.9800,"max" :5354.4502 },"low" : {"min" :5229.8101,"max" :5353.6401 },"open" : {"min" :5231.0400,"max" :5353.9702 },"volume" : {"min" :0,"max" :0 } }').openPopup()
-  marker19.bindPopup(' "Timestamp" : {"min" :1338535800,"max" :1338559200 }
-   ,
-      "labels" : [1338537600,1338541200,1338544800,1338548400,1338552000,1338555600,1338559200 ]
-       ,
-          "ranges" : {"close" : {"min" :859.4000,"max" :865.0000 },"high" : {"min" :859.5000,"max" :865.0000 },"low" : {"min" :859.4000,"max" :865.0000 },"open" : {"min" :859.5000,"max" :865.0000 },"volume" : {"min" :0,"max" :0 } }').openPopup()
-  marker20.bindPopup('"Timestamp" : {"min" :1338530400,"max" :1338562800 }
-   ,
-      "labels" : [1338530400,1338534000,1338537600,1338541200,1338544800,1338548400,1338552000,1338555600,1338559200,1338562800 ]
-       ,
-          "ranges" : {"close" : {"min" :1278.7600,"max" :1320.3400 },"high" : {"min" :1279.1000,"max" :1320.4800 },"low" : {"min" :1278.5800,"max" :1319.6100 },"open" : {"min" :1278.8101,"max" :1320.0800 },"volume" : {"min" :0,"max" :0 } }').openPopup()
-  marker21.bindPopup(' "Timestamp" : {"min" :1338532200,"max" :1338559380 }
-   ,
-      "labels" : [1338534000,1338537600,1338541200,1338544800,1338548400,1338552000,1338555600,1338559200 ]
-       ,
-          "ranges" : {"close" : {"min" :498.2200,"max" :525.9300 },"high" : {"min" :498.2200,"max" :525.9300 },"low" : {"min" :497.7400,"max" :525.9300 },"open" : {"min" :497.7400,"max" :525.9300 },"volume" : {"min" :0,"max" :0 } }').openPopup()
-  marker22.bindPopup(' "Timestamp" : {"min" :1338534000,"max" :1338564600 }
-   ,
-      "labels" : [1338534000,1338537600,1338541200,1338544800,1338548400,1338552000,1338555600,1338559200,1338562800 ]
-       ,
-          "ranges" : {"close" : {"min" :3000.8101,"max" :3093.8701 },"high" : {"min" :3000.8101,"max" :3093.8701 },"low" : {"min" :3000.8101,"max" :3093.8701 },"open" : {"min" :3000.8101,"max" :3093.8701 },"volume" : {"min" :0,"max" :0 } }').openPopup()
-  marker23.bindPopup(' "Timestamp" : {"min" :1338534000,"max" :1338564600 }
-   ,
-      "labels" : [1338534000,1338537600,1338541200,1338544800,1338548400,1338552000,1338555600,1338559200,1338562800 ]
-       ,
-          "ranges" : {"close" : {"min" :5996.5000,"max" :6149.8999 },"high" : {"min" :5996.8999,"max" :6152.6001 },"low" : {"min" :5995.0000,"max" :6147.1001 },"open" : {"min" :5995.0000,"max" :6150.7002 },"volume" : {"min" :63200,"max" :12126900 } }').openPopup()
-  marker24.bindPopup(' "Timestamp" : {"min" :1338534000,"max" :1338564600 }
-   ,
-      "labels" : [1338534000,1338537600,1338541200,1338544800,1338548400,1338552000,1338555600,1338559200,1338562800 ]
-       ,
-          "ranges" : {"close" : {"min" :4423.2300,"max" :4515.9702 },"high" : {"min" :4423.2300,"max" :4515.9702 },"low" : {"min" :4423.1802,"max" :4515.8101 },"open" : {"min" :4423.1802,"max" :4515.8101 },"volume" : {"min" :0,"max" :0 } }').openPopup()
-  marker25.bindPopup(' "Timestamp" : {"min" :1338446700,"max" :1338471900 }
-   ,
-      "labels" : [1338449400,1338453000,1338456600,1338460200,1338463800,1338467400,1338471000 ]
-       ,
-          "ranges" : {"close" : {"min" :967.8300,"max" :981.2800 },"high" : {"min" :968.0100,"max" :981.2800 },"low" : {"min" :967.8300,"max" :981.2800 },"open" : {"min" :967.9800,"max" :981.2800 },"volume" : {"min" :0,"max" :0 } }').openPopup()
-  marker26.bindPopup(' "Timestamp" : {"min" :1338557400,"max" :1338580800 }
-   ,
-      "labels" : [1338559200,1338562800,1338566400,1338570000,1338573600,1338577200,1338580800 ]
-       ,
-          "ranges" : {"close" : {"min" :20551.7598,"max" :20551.7598 },"high" : {"min" :20551.7598,"max" :20551.7598 },"low" : {"min" :20551.7598,"max" :20551.7598 },"open" : {"min" :20551.7598,"max" :20551.7598 },"volume" : {"min" :0,"max" :219363200 } }').openPopup()
-  marker27.bindPopup(' "Timestamp" : {"min" :1338514200,"max" :1338534000 }
-   ,
-      "labels" : [1338516000,1338519600,1338523200,1338526800,1338530400,1338534000 ]
-       ,
-          "ranges" : {"close" : {"min" :2365.9006,"max" :2387.7070 },"high" : {"min" :2366.3481,"max" :2387.9995 },"low" : {"min" :2365.4417,"max" :2386.9534 },"open" : {"min" :2365.4417,"max" :2387.5156 },"volume" : {"min" :0,"max" :1171200 } }').openPopup()
-  marker28.bindPopup(' "Timestamp" : {"min" :1338514200,"max" :1338537600 }
-   ,
-      "labels" : [1338516000,1338519600,1338523200,1338526800,1338530400,1338534000,1338537600 ]
-       ,
-          "ranges" : {"close" : {"min" :18487.6602,"max" :18724.1797 },"high" : {"min" :18500.4102,"max" :18726.4395 },"low" : {"min" :18487.6602,"max" :18723.7793 },"open" : {"min" :18487.6602,"max" :18724.1797 },"volume" : {"min" :0,"max" :0 } }').openPopup()
-  marker29.bindPopup(' "Timestamp" : {"min" :1338512400,"max" :1338541200 }
-   ,
-      "labels" : [1338512400,1338516000,1338519600,1338523200,1338526800,1338530400,1338534000,1338537600,1338541200 ]
-       ,
-          "ranges" : {"close" : {"min" :1571.0500,"max" :1576.6700 },"high" : {"min" :1572.1400,"max" :1576.6700 },"low" : {"min" :1571.0500,"max" :1576.6700 },"open" : {"min" :1571.2300,"max" :1576.6700 },"volume" : {"min" :0,"max" :0 } }').openPopup()
-  marker30.bindPopup(' "Timestamp" : {"min" :1338508800,"max" :1338531300 }
-   ,
-      "labels" : [1338508800,1338512400,1338516000,1338519600,1338523200,1338526800,1338530400 ]
-       ,
-          "ranges" : {"close" : {"min" :8422.6504,"max" :8487.4404 },"high" : {"min" :8422.9102,"max" :8542.7305 },"low" : {"min" :8422.5000,"max" :8486.7305 },"open" : {"min" :8422.5000,"max" :8542.7305 },"volume" : {"min" :0,"max" :0 } }').openPopup()
-  marker31.bindPopup(' "Timestamp" : {"min" :1338512400,"max" :1338528600 }
-   ,
-      "labels" : [1338512400,1338516000,1338519600,1338523200,1338526800 ]
-       ,
-          "ranges" : {"close" : {"min" :7111.3701,"max" :7218.5698 },"high" : {"min" :7112.2202,"max" :7218.7500 },"low" : {"min" :7111.3701,"max" :7217.4600 },"open" : {"min" :7111.9600,"max" :7218.5298 },"volume" : {"min" :0,"max" :0 } }').openPopup()
-  marker32.bindPopup(' "Timestamp" : {"min" :1338508800,"max" :1338530400 }
-   ,
-      "labels" : [1338508800,1338512400,1338516000,1338519600,1338523200,1338526800,1338530400 ]
-       ,
-          "ranges" : {"close" : {"min" :1822.1801,"max" :1843.4700 },"high" : {"min" :1822.7400,"max" :1843.4700 },"low" : {"min" :1821.9800,"max" :1843.4700 },"open" : {"min" :1822.4700,"max" :1843.4700 },"volume" : {"min" :0,"max" :28800 } }').openPopup()
+  marker2.bindPopup(market_data['USA']).openPopup()
+  marker3.bindPopup(market_data['Argentina']).openPopup()
+  marker4.bindPopup(market_data['Brazil']).openPopup()
+  marker5.bindPopup(market_data['Mexico']).openPopup()
+  marker6.bindPopup(market_data['Chile']).openPopup()
+  marker7.bindPopup(market_data['Peru']).openPopup()
+  marker8.bindPopup(market_data['Colombia']).openPopup()
+  marker9.bindPopup(market_data['Canada']).openPopup()
+  marker10.bindPopup(market_data['Austria']).openPopup()
+  marker11.bindPopup(market_data['Belgium']).openPopup()
+  marker12.bindPopup(market_data['France']).openPopup()
+  marker13.bindPopup(market_data['Germany']).openPopup()
+  marker14.bindPopup(market_data['Netherlands']).openPopup()
+  marker15.bindPopup(market_data['Norway']).openPopup()
+  marker16.bindPopup(market_data['Sweden']).openPopup()
+  marker17.bindPopup(market_data['Switzerland']).openPopup()
+  marker19.bindPopup(market_data['Czeck Repubic']).openPopup()
+  marker20.bindPopup(market_data['Russia']).openPopup()
+  marker21.bindPopup(market_data['Greece']).openPopup()
+  marker22.bindPopup(market_data['Ireland']).openPopup()
+  marker23.bindPopup(market_data['Spain']).openPopup()
+  marker24.bindPopup(market_data['Portugal']).openPopup()
+  marker25.bindPopup(market_data['Isreal']).openPopup()
+  marker26.bindPopup(market_data['South Africa']).openPopup()
+  marker27.bindPopup(market_data['China']).openPopup()
+  marker28.bindPopup(market_data['Malaysia']).openPopup()
+  marker29.bindPopup(market_data['Japan']).openPopup()
+  marker30.bindPopup(market_data['Taiwan']).openPopup()
+  marker31.bindPopup(market_data['Korea']).openPopup()
+  marker32.bindPopup(market_data['Australia']).openPopup()
+  
+  ######## Updating news feeds content on click of country ##############
+
+  marker2.on "click", (e) ->
+    $.ajax
+      url: "/map/update_news_feeds_content?country_name=USA"
+      dataType: "json"
+      success: (data) ->
+        $('#news_feeds_content').html(data.content_to_replace)
+
+  marker3.on "click", (e) ->
+    $.ajax
+      url: "/map/update_news_feeds_content?country_name=Argentina"
+      dataType: "json"
+      success: (data) ->
+        $('#news_feeds_content').html(data.content_to_replace)
+
+  marker4.on "click", (e) ->
+    $.ajax
+      url: "/map/update_news_feeds_content?country_name=Brazil"
+      dataType: "json"
+      success: (data) ->
+        $('#news_feeds_content').html(data.content_to_replace)
+
+  marker5.on "click", (e) ->
+    $.ajax
+      url: "/map/update_news_feeds_content?country_name=Mexico"
+      dataType: "json"
+      success: (data) ->
+        $('#news_feeds_content').html(data.content_to_replace)
+
+  marker6.on "click", (e) ->
+    $.ajax
+      url: "/map/update_news_feeds_content?country_name=Chile"
+      dataType: "json"
+      success: (data) ->
+        $('#news_feeds_content').html(data.content_to_replace)
+
+  marker7.on "click", (e) ->
+    $.ajax
+      url: "/map/update_news_feeds_content?country_name=Peru"
+      dataType: "json"
+      success: (data) ->
+        $('#news_feeds_content').html(data.content_to_replace)
+
+  marker8.on "click", (e) ->
+    $.ajax
+      url: "/map/update_news_feeds_content?country_name=Colombia"
+      dataType: "json"
+      success: (data) ->
+        $('#news_feeds_content').html(data.content_to_replace)
+
+  
+  marker9.on "click", (e) ->
+    $.ajax
+      url: "/map/update_news_feeds_content?country_name=Canada"
+      dataType: "json"
+      success: (data) ->
+        $('#news_feeds_content').html(data.content_to_replace)
+
+  marker10.on "click", (e) ->
+    $.ajax
+      url: "/map/update_news_feeds_content?country_name=Austria"
+      dataType: "json"
+      success: (data) ->
+        $('#news_feeds_content').html(data.content_to_replace)
+
+  marker11.on "click", (e) ->
+    $.ajax
+      url: "/map/update_news_feeds_content?country_name=Belgium"
+      dataType: "json"
+      success: (data) ->
+        $('#news_feeds_content').html(data.content_to_replace)
+
+  marker12.on "click", (e) ->
+    $.ajax
+      url: "/map/update_news_feeds_content?country_name=France"
+      dataType: "json"
+      success: (data) ->
+        $('#news_feeds_content').html(data.content_to_replace)
+
+  marker13.on "click", (e) ->
+    $.ajax
+      url: "/map/update_news_feeds_content?country_name=Germany"
+      dataType: "json"
+      success: (data) ->
+        $('#news_feeds_content').html(data.content_to_replace)
+
+  marker14.on "click", (e) ->
+    $.ajax
+      url: "/map/update_news_feeds_content?country_name=Netherlands"
+      dataType: "json"
+      success: (data) ->
+        $('#news_feeds_content').html(data.content_to_replace)
+
+  marker15.on "click", (e) ->
+    $.ajax
+      url: "/map/update_news_feeds_content?country_name=Norway"
+      dataType: "json"
+      success: (data) ->
+        $('#news_feeds_content').html(data.content_to_replace)
+
+  marker16.on "click", (e) ->
+    $.ajax
+      url: "/map/update_news_feeds_content?country_name=Sweden"
+      dataType: "json"
+      success: (data) ->
+        $('#news_feeds_content').html(data.content_to_replace)
+
+  marker17.on "click", (e) ->
+    $.ajax
+      url: "/map/update_news_feeds_content?country_name=Switzerland"
+      dataType: "json"
+      success: (data) ->
+        $('#news_feeds_content').html(data.content_to_replace)
+
+  marker19.on "click", (e) ->
+    $.ajax
+      url: "/map/update_news_feeds_content?country_name=Czeck Repubic"
+      dataType: "json"
+      success: (data) ->
+        $('#news_feeds_content').html(data.content_to_replace)
+
+  marker20.on "click", (e) ->
+    $.ajax
+      url: "/map/update_news_feeds_content?country_name=Russia"
+      dataType: "json"
+      success: (data) ->
+        $('#news_feeds_content').html(data.content_to_replace)
+
+  marker21.on "click", (e) ->
+    $.ajax
+      url: "/map/update_news_feeds_content?country_name=Greece"
+      dataType: "json"
+      success: (data) ->
+        $('#news_feeds_content').html(data.content_to_replace)
+
+  marker22.on "click", (e) ->
+    $.ajax
+      url: "/map/update_news_feeds_content?country_name=Ireland"
+      dataType: "json"
+      success: (data) ->
+        $('#news_feeds_content').html(data.content_to_replace)
+
+  marker23.on "click", (e) ->
+    $.ajax
+      url: "/map/update_news_feeds_content?country_name=Spain"
+      dataType: "json"
+      success: (data) ->
+        $('#news_feeds_content').html(data.content_to_replace)
+
+  marker23.on "click", (e) ->
+    $.ajax
+      url: "/map/update_news_feeds_content?country_name=Spain"
+      dataType: "json"
+      success: (data) ->
+        $('#news_feeds_content').html(data.content_to_replace)
+
+  marker24.on "click", (e) ->
+    $.ajax
+      url: "/map/update_news_feeds_content?country_name=Portugal"
+      dataType: "json"
+      success: (data) ->
+        $('#news_feeds_content').html(data.content_to_replace)
+
+
+  marker25.on "click", (e) ->
+    $.ajax
+      url: "/map/update_news_feeds_content?country_name=Israel"
+      dataType: "json"
+      success: (data) ->
+        $('#news_feeds_content').html(data.content_to_replace)
+
+        
+  marker26.on "click", (e) ->
+    $.ajax
+      url: "/map/update_news_feeds_content?country_name=South Africa"
+      dataType: "json"
+      success: (data) ->
+        $('#news_feeds_content').html(data.content_to_replace)
+
+
+  marker27.on "click", (e) ->
+    $.ajax
+      url: "/map/update_news_feeds_content?country_name=China"
+      dataType: "json"
+      success: (data) ->
+        $('#news_feeds_content').html(data.content_to_replace)
+
+  marker28.on "click", (e) ->
+    $.ajax
+      url: "/map/update_news_feeds_content?country_name=Malaysia"
+      dataType: "json"
+      success: (data) ->
+        $('#news_feeds_content').html(data.content_to_replace)
+
+  marker29.on "click", (e) ->
+    $.ajax
+      url: "/map/update_news_feeds_content?country_name=Japan"
+      dataType: "json"
+      success: (data) ->
+        $('#news_feeds_content').html(data.content_to_replace)
+
+  marker30.on "click", (e) ->
+    $.ajax
+      url: "/map/update_news_feeds_content?country_name=Taiwan"
+      dataType: "json"
+      success: (data) ->
+        $('#news_feeds_content').html(data.content_to_replace)
+
+  marker31.on "click", (e) ->
+    $.ajax
+      url: "/map/update_news_feeds_content?country_name=Korea"
+      dataType: "json"
+      success: (data) ->
+        $('#news_feeds_content').html(data.content_to_replace)
+
+  marker32.on "click", (e) ->
+    $.ajax
+      url: "/map/update_news_feeds_content?country_name=Australia"
+      dataType: "json"
+      success: (data) ->
+        $('#news_feeds_content').html(data.content_to_replace)
+                                            
+################################################################       
+
+
+
+
+
 
   # circleLocation = new L.LatLng(51.508, -0.11)
   # circle = new L.Circle(circleLocation, 500, circleOptions)
