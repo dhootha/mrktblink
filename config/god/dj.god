@@ -5,7 +5,7 @@ RAILS_ROOT = "/var/www/map_app/map_app"
     w.name = "dj-#{num}"
     w.group = 'dj'
     w.interval = 30.seconds    
-    w.start = "rake -f #{RAILS_ROOT}/Rakefile RAILS_ENV=development resque:work QUEUE='market'" 
+    w.start = "rake -f #{RAILS_ROOT}/Rakefile RAILS_ENV=production resque:work QUEUE='market'" 
     # retart if memory gets too high
     w.transition(:up, :restart) do |on|
       on.condition(:memory_usage) do |c|
