@@ -10,7 +10,7 @@ $ ->
   cloudmadeUrl = 'http://{s}.tile.cloudmade.com/8ee2a50541944fb9bcedded5165f09d9/31643/256/{z}/{x}/{y}.png'
   attribution = 'Map data &copy; 2011 OpenStreetMap contributors, Imagery &copy; 2011 CloudMade'
   cloudmade = new L.TileLayer(cloudmadeUrl, {maxZoom: 18, attribution: attribution})
-  map.setView(new L.LatLng(25, 10), 3).addLayer(cloudmade)
+  map.setView(new L.LatLng(39.0, -98.5), 2).addLayer(cloudmade)
 
   $('#equities-btn').click => 
     eq_map = 'http://{s}.tile.cloudmade.com/8ee2a50541944fb9bcedded5165f09d9/2/256/{z}/{x}/{y}.png'
@@ -122,6 +122,9 @@ $ ->
     australia:
       lat: -25.3
       lon: 133.8
+    india:
+      lat: 20.0  
+      lon: 77.0
 
   marker1 = new L.Marker(new L.LatLng(countries['london']['lat'], countries['london']['lon']))
   marker2 = new L.Marker(new L.LatLng(countries['usa']['lat'], countries['usa']['lon']))
@@ -155,6 +158,7 @@ $ ->
   marker30 = new L.Marker(new L.LatLng(countries['taiwan']['lat'], countries['taiwan']['lon']))
   marker31 = new L.Marker(new L.LatLng(countries['korea']['lat'], countries['korea']['lon']))
   marker32 = new L.Marker(new L.LatLng(countries['australia']['lat'], countries['australia']['lon']))
+  marker33 = new L.Marker(new L.LatLng(countries['india']['lat'], countries['india']['lon']))
 
   domelem = document.createElement("a")
   domelem.href = "#point_555_444"
@@ -194,6 +198,7 @@ $ ->
   map.addLayer(marker30)
   map.addLayer(marker31)
   map.addLayer(marker32)
+  map.addLayer(marker33)
   
   
   ######## Updating news feeds content on click of country ##############
@@ -471,6 +476,15 @@ $ ->
       success: (data) ->
         marker32.bindPopup(data.market_data).openPopup()
         $('#news_feeds_content').html(data.content_to_replace)
+
+  marker33.on "click", (e) ->
+    marker33.unbindPopup()
+    $.ajax
+      url: "/map/update_news_feeds_content?country_name=India"
+      dataType: "json"
+      success: (data) ->
+        marker33.bindPopup(data.market_data).openPopup()
+        $('#news_feeds_content').html(data.content_to_replace)      
                                             
 ################################################################       
 
