@@ -1,0 +1,95 @@
+USA:  
+  feed_url: "https://news.google.com/news/feeds?pz=1&cf=all&ned=us&hl=en&csid=a6ca6bfc1a37c70d&output=rss"
+
+Argentina:
+  feed_url: "https://news.google.com/news/feeds?pz=1&cf=all&ned=us&hl=en&csid=a768d86714e3dc2f&output=rss"
+
+Brazil:
+  feed_url: "https://news.google.com/news/feeds?pz=1&cf=all&ned=us&hl=en&csid=e8a02573fc36c827&output=rss"
+
+Mexico:
+  feed_url: "https://news.google.com/news/feeds?pz=1&cf=all&ned=us&hl=en&csid=a768d86714e3dc2f&output=rss"
+
+Chile:
+  feed_url: "https://news.google.com/news/feeds?pz=1&cf=all&ned=us&hl=en&csid=a768d86714e3dc2f&output=rss"
+
+Peru:
+  feed_url: "https://news.google.com/news/feeds?pz=1&cf=all&ned=us&hl=en&csid=a768d86714e3dc2f&output=rss"
+
+Colombia:
+  feed_url: "https://news.google.com/news/feeds?pz=1&cf=all&ned=us&hl=en&csid=a768d86714e3dc2f&output=rss"
+
+Canada:
+  feed_url: "https://news.google.com/news/feeds?pz=1&cf=all&ned=us&hl=en&csid=ec168233ba760ce6&output=rss"
+
+Austria:
+  feed_url: "https://news.google.com/news/feeds?pz=1&cf=all&ned=us&hl=en&csid=c22abb49dbbe6f98&output=rss"
+
+Belgium:
+  feed_url: "https://news.google.com/news/feeds?pz=1&cf=all&ned=us&hl=en&csid=c22abb49dbbe6f98&output=rss"
+
+France:
+  feed_url: "https://news.google.com/news/feeds?pz=1&cf=all&ned=us&hl=en&csid=c22abb49dbbe6f98&output=rss"
+
+Germany:
+  feed_url: "https://news.google.com/news/feeds?pz=1&cf=all&ned=us&hl=en&csid=c22abb49dbbe6f98&output=rss"
+
+Netherlands:
+  feed_url: "https://news.google.com/news/feeds?pz=1&cf=all&ned=us&hl=en&csid=c22abb49dbbe6f98&output=rss"
+
+Norway:
+  feed_url: "https://news.google.com/news/feeds?pz=1&cf=all&ned=us&hl=en&csid=c22abb49dbbe6f98&output=rss"
+
+Sweden:
+  feed_url: "https://news.google.com/news/feeds?pz=1&cf=all&ned=us&hl=en&csid=c22abb49dbbe6f98&output=rss"
+
+Switzerland:
+  feed_url: "https://news.google.com/news/feeds?pz=1&cf=all&ned=us&hl=en&csid=c22abb49dbbe6f98&output=rss"
+
+England:
+  feed_url: "https://news.google.com/news/feeds?pz=1&cf=all&ned=us&hl=en&csid=e84f825417de0f71&output=rss"
+
+Czech Repubic:
+  feed_url: "https://news.google.com/news/feeds?pz=1&cf=all&ned=us&hl=en&csid=c22abb49dbbe6f98&output=rss"
+
+Russia:
+  feed_url: "https://news.google.com/news/feeds?pz=1&cf=all&ned=us&hl=en&csid=be90134a4c162922&output=rss"
+
+Greece:
+  feed_url: "https://news.google.com/news/feeds?pz=1&cf=all&ned=us&hl=en&csid=c22abb49dbbe6f98&output=rss"
+
+Ireland:
+  feed_url: "https://news.google.com/news/feeds?pz=1&cf=all&ned=us&hl=en&csid=c22abb49dbbe6f98&output=rss"
+
+Spain:
+  feed_url: "https://news.google.com/news/feeds?pz=1&cf=all&ned=us&hl=en&csid=c22abb49dbbe6f98&output=rss"
+
+Portugal:
+  feed_url: "https://news.google.com/news/feeds?pz=1&cf=all&ned=us&hl=en&csid=c22abb49dbbe6f98&output=rss"
+
+Isreal:
+  feed_url: "https://news.google.com/news/feeds?pz=1&cf=all&ned=us&hl=en&csid=e88cf7e2e015f426&output=rss"
+
+South Africa:
+  feed_url: "https://news.google.com/news/feeds?pz=1&cf=all&ned=us&hl=en&csid=31fa04f57a4aa5b8&output=rss"
+
+China:
+  feed_url: "https://news.google.com/news/feeds?pz=1&cf=all&ned=us&hl=en&csid=13d3b8226a4c94ba&output=rss"
+
+Malaysia:
+  feed_url: "https://news.google.com/news/feeds?pz=1&cf=all&ned=us&hl=en&csid=9869285a1dece63e&output=rss"
+
+Japan:
+  feed_url: "https://news.google.com/news/feeds?pz=1&cf=all&ned=us&hl=en&csid=5821078f8121a903&output=rss"
+
+Taiwan:
+  feed_url: "https://news.google.com/news/feeds?pz=1&cf=all&ned=us&hl=en&csid=9869285a1dece63e&output=rss"
+
+Korea:
+  feed_url: "https://news.google.com/news/feeds?pz=1&cf=all&ned=us&hl=en&csid=9869285a1dece63e&output=rss"
+
+Australia:
+  feed_url: "https://news.google.com/news/feeds?pz=1&cf=all&ned=us&hl=en&csep=false&sort=users&q=australia+markets,+australian+economy+&output=rss"
+
+India:
+  feed_url: "https://news.google.com/news/feeds?pz=1&cf=all&ned=us&hl=en&csid=7eca3033d5a12286&output=rss"

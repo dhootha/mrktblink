@@ -1,0 +1,15 @@
+<% news_feed = NewsFeedData.find_by_country_name(country) %>
+<% if news_feed.present? %>
+  <% feed = RSS::Parser.parse(news_feed.news_feed_data) %>
+  <% unless feed.blank? %>
+    <% feed.items.each do |item| %>
+      <div class='news_feed_title'>
+        <%= link_to item.title.slice(0..30), item.link, :target => '_blank'  %>        
+      </div>
+    <% end %>
+  <% end %>
+<% else %>
+  <div class='news_feed_title'>      	
+    <%= "News feeds do not exist" %>
+  </div>  
+<% end %>
