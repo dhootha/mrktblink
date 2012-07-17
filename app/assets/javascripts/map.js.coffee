@@ -210,7 +210,7 @@ $ ->
       dataType: "json"
       success: (data) ->
         marker2.bindPopup(data.market_data).openPopup()
-        $('#news_feeds_content').html(data.content_to_replace)
+        $('#container').html(data.content_to_replace)
 
   marker3.on "click", (e) ->
     marker3.unbindPopup()
@@ -219,7 +219,7 @@ $ ->
       dataType: "json"
       success: (data) ->
         marker3.bindPopup(data.market_data).openPopup()
-        $('#news_feeds_content').html(data.content_to_replace)
+        $('#container').html(data.content_to_replace)
 
   marker4.on "click", (e) ->
     marker4.unbindPopup()
@@ -228,7 +228,7 @@ $ ->
       dataType: "json"
       success: (data) ->
         marker4.bindPopup(data.market_data).openPopup()  
-        $('#news_feeds_content').html(data.content_to_replace)
+        $('#container').html(data.content_to_replace)
 
   marker5.on "click", (e) ->
     marker5.unbindPopup()
@@ -237,7 +237,7 @@ $ ->
       dataType: "json"
       success: (data) ->
         marker5.bindPopup(data.market_data).openPopup()
-        $('#news_feeds_content').html(data.content_to_replace)
+        $('#container').html(data.content_to_replace)
 
   marker6.on "click", (e) ->
     marker6.unbindPopup()
@@ -246,7 +246,7 @@ $ ->
       dataType: "json"
       success: (data) ->
         marker6.bindPopup(data.market_data).openPopup()
-        $('#news_feeds_content').html(data.content_to_replace)
+        $('#container').html(data.content_to_replace)
 
   marker7.on "click", (e) ->
     marker7.unbindPopup()
@@ -255,7 +255,7 @@ $ ->
       dataType: "json"
       success: (data) ->
         marker7.bindPopup(data.market_data).openPopup()
-        $('#news_feeds_content').html(data.content_to_replace)
+        $('#container').html(data.content_to_replace)
 
   marker8.on "click", (e) ->
     marker8.unbindPopup()
@@ -264,7 +264,7 @@ $ ->
       dataType: "json"
       success: (data) ->
         marker8.bindPopup(data.market_data).openPopup()
-        $('#news_feeds_content').html(data.content_to_replace)
+        $('#container').html(data.content_to_replace)
 
   
   marker9.on "click", (e) ->
@@ -274,7 +274,7 @@ $ ->
       dataType: "json"
       success: (data) ->
         marker9.bindPopup(data.market_data).openPopup()
-        $('#news_feeds_content').html(data.content_to_replace)
+        $('#container').html(data.content_to_replace)
 
   marker10.on "click", (e) ->
     marker10.unbindPopup()
@@ -283,7 +283,7 @@ $ ->
       dataType: "json"
       success: (data) ->
         marker10.bindPopup(data.market_data).openPopup()
-        $('#news_feeds_content').html(data.content_to_replace)
+        $('#container').html(data.content_to_replace)
 
   marker11.on "click", (e) ->
     marker11.unbindPopup()
@@ -292,7 +292,7 @@ $ ->
       dataType: "json"
       success: (data) ->
         marker11.bindPopup(data.market_data).openPopup()
-        $('#news_feeds_content').html(data.content_to_replace)
+        $('#container').html(data.content_to_replace)
 
   marker12.on "click", (e) ->
     marker12.unbindPopup()
@@ -301,7 +301,7 @@ $ ->
       dataType: "json"
       success: (data) ->
         marker12.bindPopup(data.market_data).openPopup()
-        $('#news_feeds_content').html(data.content_to_replace)
+        $('#container').html(data.content_to_replace)
 
   marker13.on "click", (e) ->
     marker13.unbindPopup()
@@ -310,7 +310,7 @@ $ ->
       dataType: "json"
       success: (data) ->
         marker13.bindPopup(data.market_data).openPopup()
-        $('#news_feeds_content').html(data.content_to_replace)
+        $('#container').html(data.content_to_replace)
 
   marker14.on "click", (e) ->
     marker14.unbindPopup()
@@ -319,7 +319,7 @@ $ ->
       dataType: "json"
       success: (data) ->
         marker14.bindPopup(data.market_data).openPopup()
-        $('#news_feeds_content').html(data.content_to_replace)
+        $('#container').html(data.content_to_replace)
 
   marker15.on "click", (e) ->
     marker15.unbindPopup()
@@ -328,7 +328,7 @@ $ ->
       dataType: "json"
       success: (data) ->
         marker15.bindPopup(data.market_data).openPopup()
-        $('#news_feeds_content').html(data.content_to_replace)
+        $('#container').html(data.content_to_replace)
 
   marker16.on "click", (e) ->
     marker16.unbindPopup()
@@ -337,7 +337,7 @@ $ ->
       dataType: "json"
       success: (data) ->
         marker16.bindPopup(data.market_data).openPopup()
-        $('#news_feeds_content').html(data.content_to_replace)
+        $('#container').html(data.content_to_replace)
 
   marker17.on "click", (e) ->
     marker17.unbindPopup()
@@ -346,7 +346,7 @@ $ ->
       dataType: "json"
       success: (data) ->
         marker17.bindPopup(data.market_data).openPopup()
-        $('#news_feeds_content').html(data.content_to_replace)
+        $('#container').html(data.content_to_replace)
 
   marker19.on "click", (e) ->
     marker19.unbindPopup()
@@ -355,7 +355,7 @@ $ ->
       dataType: "json"
       success: (data) ->
         marker19.bindPopup(data.market_data).openPopup()
-        $('#news_feeds_content').html(data.content_to_replace)
+        $('#container').html(data.content_to_replace)
 
   marker20.on "click", (e) ->
     marker20.unbindPopup()
@@ -364,7 +364,7 @@ $ ->
       dataType: "json"
       success: (data) ->
         marker20.bindPopup(data.market_data).openPopup()
-        $('#news_feeds_content').html(data.content_to_replace)
+        $('#container').html(data.content_to_replace)
 
   marker21.on "click", (e) ->
     marker21.unbindPopup()
@@ -373,7 +373,7 @@ $ ->
       dataType: "json"
       success: (data) ->
         marker21.bindPopup(data.market_data).openPopup()
-        $('#news_feeds_content').html(data.content_to_replace)
+        $('#container').html(data.content_to_replace)
 
   marker22.on "click", (e) ->
     marker22.unbindPopup()
@@ -382,7 +382,7 @@ $ ->
       dataType: "json"
       success: (data) ->
         marker22.bindPopup(data.market_data).openPopup()
-        $('#news_feeds_content').html(data.content_to_replace)
+        $('#container').html(data.content_to_replace)
 
   marker23.on "click", (e) ->
     marker23.unbindPopup()
@@ -391,7 +391,7 @@ $ ->
       dataType: "json"
       success: (data) ->
         marker23.bindPopup(data.market_data).openPopup()
-        $('#news_feeds_content').html(data.content_to_replace)
+        $('#container').html(data.content_to_replace)
 
   marker24.on "click", (e) ->
     marker24.unbindPopup()
@@ -400,7 +400,7 @@ $ ->
       dataType: "json"
       success: (data) ->
         marker24.bindPopup(data.market_data).openPopup()
-        $('#news_feeds_content').html(data.content_to_replace)
+        $('#container').html(data.content_to_replace)
 
 
   marker25.on "click", (e) ->
@@ -410,7 +410,7 @@ $ ->
       dataType: "json"
       success: (data) ->
         marker25.bindPopup(data.market_data).openPopup()
-        $('#news_feeds_content').html(data.content_to_replace)
+        $('#container').html(data.content_to_replace)
 
         
   marker26.on "click", (e) ->
@@ -420,7 +420,7 @@ $ ->
       dataType: "json"
       success: (data) ->
         marker26.bindPopup(data.market_data).openPopup()
-        $('#news_feeds_content').html(data.content_to_replace)
+        $('#container').html(data.content_to_replace)
 
 
   marker27.on "click", (e) ->
@@ -430,7 +430,7 @@ $ ->
       dataType: "json"
       success: (data) ->
         marker27.bindPopup(data.market_data).openPopup()
-        $('#news_feeds_content').html(data.content_to_replace)
+        $('#container').html(data.content_to_replace)
 
   marker28.on "click", (e) ->
     marker28.unbindPopup()
@@ -439,7 +439,7 @@ $ ->
       dataType: "json"
       success: (data) ->
         marker28.bindPopup(data.market_data).openPopup()
-        $('#news_feeds_content').html(data.content_to_replace)
+        $('#container').html(data.content_to_replace)
 
   marker29.on "click", (e) ->
     marker29.unbindPopup()
@@ -448,7 +448,7 @@ $ ->
       dataType: "json"
       success: (data) ->
         marker29.bindPopup(data.market_data).openPopup()
-        $('#news_feeds_content').html(data.content_to_replace)
+        $('#container').html(data.content_to_replace)
 
   marker30.on "click", (e) ->
     marker30.unbindPopup()
@@ -457,7 +457,7 @@ $ ->
       dataType: "json"
       success: (data) ->
         marker30.bindPopup(data.market_data).openPopup()
-        $('#news_feeds_content').html(data.content_to_replace)
+        $('#container').html(data.content_to_replace)
 
   marker31.on "click", (e) ->
     marker31.unbindPopup()
@@ -466,7 +466,7 @@ $ ->
       dataType: "json"
       success: (data) ->
         marker31.bindPopup(data.market_data).openPopup()
-        $('#news_feeds_content').html(data.content_to_replace)
+        $('#container').html(data.content_to_replace)
 
   marker32.on "click", (e) ->
     marker32.unbindPopup()
@@ -475,7 +475,7 @@ $ ->
       dataType: "json"
       success: (data) ->
         marker32.bindPopup(data.market_data).openPopup()
-        $('#news_feeds_content').html(data.content_to_replace)
+        $('#container').html(data.content_to_replace)
 
   marker33.on "click", (e) ->
     marker33.unbindPopup()
@@ -484,7 +484,7 @@ $ ->
       dataType: "json"
       success: (data) ->
         marker33.bindPopup(data.market_data).openPopup()
-        $('#news_feeds_content').html(data.content_to_replace)      
+        $('#container').html(data.content_to_replace)      
                                             
 ################################################################       
 

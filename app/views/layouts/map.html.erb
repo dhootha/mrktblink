@@ -4,7 +4,8 @@
   <title>Mrktblink</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%#= javascript_include_tag "application", "maps_vendor", "http://maps.stamen.com/js/tile.stamen.js" %>
-  <%= javascript_include_tag "application" %>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+  <%= javascript_include_tag "application","jquery.masonry.min" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
