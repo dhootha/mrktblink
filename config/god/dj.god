@@ -1,4 +1,4 @@
-RAILS_ROOT = "/var/www/map_app/map_app"
+RAILS_ROOT = "/var/www/map_app/map_app/current"
  
 1.times do |num|
   God.watch do |w|
