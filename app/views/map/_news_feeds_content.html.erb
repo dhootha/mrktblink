@@ -5,19 +5,19 @@
     <% feed.items.each do |item| %>
       <% if feed.items.index(item) == 0 %>
         <div class='box col1'>
-          <%= link_to item.title.slice(0..80), item.link, :target => '_blank'  %>        
+          <%= link_to item.title.slice(0..100), item.link, :target => '_blank'  %>        
         </div>
       <% elsif feed.items.index(item) <= 5 %>
         <div class='box col2'>
-          <%= link_to item.title.slice(0..80), item.link, :target => '_blank'  %>        
+          <%= link_to item.title.slice(0..100), item.link, :target => '_blank'  %>        
         </div>
       <% elsif feed.items.index(item) <= 10 %>
         <div class='box col3'>
-          <%= link_to item.title.slice(0..80), item.link, :target => '_blank'  %>        
+          <%= link_to item.title.slice(0..100), item.link, :target => '_blank'  %>        
         </div>
       <% else %>
         <div class='box col4'>
-          <%= link_to item.title.slice(0..80), item.link, :target => '_blank'  %>        
+          <%= link_to item.title.slice(0..100), item.link, :target => '_blank'  %>        
         </div>
       <% end %>  
     <% end %>
