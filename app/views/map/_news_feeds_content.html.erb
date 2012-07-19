@@ -1,13 +1,29 @@
-<div id='news_feeds_content'>
-  <% news_feed = NewsFeedData.find_by_country_name(country) %>
+<% news_feed = NewsFeedData.find_by_country_name(country) %>
+<% if news_feed.present? %>
   <% feed = RSS::Parser.parse(news_feed.news_feed_data) %>
   <% unless feed.blank? %>
     <% feed.items.each do |item| %>
-      <div class='news_feed_title'>
-      	<%# debugger %>
-      	<%= link_to item.title.slice(0..30), item.link, :target => '_blank'  %>
-        <%#= item.title.slice(0..35) %>
-      </div>
+      <% if feed.items.index(item) == 0 %>
+        <div class='box col1'>
+          <%= link_to item.title.slice(0..80), item.link, :target => '_blank'  %>        
+        </div>
+      <% elsif feed.items.index(item) <= 5 %>
+        <div class='box col2'>
+          <%= link_to item.title.slice(0..80), item.link, :target => '_blank'  %>        
+        </div>
+      <% elsif feed.items.index(item) <= 10 %>
+        <div class='box col3'>
+          <%= link_to item.title.slice(0..80), item.link, :target => '_blank'  %>        
+        </div>
+      <% else %>
+        <div class='box col4'>
+          <%= link_to item.title.slice(0..80), item.link, :target => '_blank'  %>        
+        </div>
+      <% end %>  
     <% end %>
   <% end %>
-</div>
+<% else %>  
+  <div class='box'>
+    <%= "News feeds do not exist" %>
+  </div>  
+<% end %>

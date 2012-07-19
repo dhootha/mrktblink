@@ -133,3 +133,7 @@ KOSPI Composite Index:
 ALL ORDINARIES:
   country: "Australia"
   url: "http://chartapi.finance.yahoo.com/instrument/1.0/%5EAORD/chartdata;type=quote;range=1d/json/"
+
+BSE:
+  country: "India"
+  url: "http://chartapi.finance.yahoo.com/instrument/1.0/%5EBSESN/chartdata;type=quote;range=1d/json/"

@@ -29,8 +29,19 @@ class MapController < ApplicationController
     render :layout => "new_map"
   end
 
-  def update_news_feeds_content
-    json = {:success => true, :content_to_replace => render_to_string(:partial => 'news_feeds_content', :locals => {:country => params[:country_name]})}
+  def update_news_feeds_content    
+    markets = MarketData.where(country: params[:country_name])
+    market_data_value =[]
+    if markets.present?
+      markets.each do |market| 
+        market_data = market.market_data 
+        json_market_data = JSON.parse(market_data[30..-3].gsub('"previous_close" : ','"previous_close" : "')) 
+        market_data_value << {:market => market.market_name, :previous_close => json_market_data['meta']['previous_close'], :close => json_market_data['series'].last['close']}
+      end
+    else
+      market_data_value = 'does not exist'
+    end  
+    json = {:success => true, :market_data => market_data_value.to_s, :content_to_replace => render_to_string(:partial => 'news_feeds_content', :locals => {:country => params[:country_name]})}
     render :json => json
   end
 

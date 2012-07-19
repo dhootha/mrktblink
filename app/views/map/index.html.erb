@@ -1,9 +1,28 @@
 <script type="text/javascript">
   var market_data = []
-  <% @countries.each do |country| %>    
-    <% market_data = MarketData.find_by_country(country).market_data %>    
-    market_data['<%= country %>'] = "<%= market_data.present? ? market_data:'not exist' %>"    
+  <% @countries.each do |country| %>
+    <% begin %>
+      <% markets = MarketData.where(country: country) %>
+      <% market_data_value = [] %>
+      <% markets.each do |market| %>
+        <% market_data = market.market_data %>
+        <% json_market_data = JSON.parse(market_data[30..-3].gsub('"previous_close" : ','"previous_close" : "')) %>
+        <% market_data_value << {:market => market.market_name, :previous_close => json_market_data['meta']['previous_close'], :close => json_market_data['series'].last['close']} %>
+      <% end %>
+      market_data['<%= country %>'] = "<%= market_data_value.present? ? market_data_value:'not exist' %>"
+    <% rescue %>
+      market_data['<%= country %>'] = "<%= market_data_value.present? ? market_data_value:'not exist' %>"
+    <% end %>
   <% end %>
 </script>
 <%= javascript_include_tag "maps_vendor", "http://maps.stamen.com/js/tile.stamen.js", "map" %>
-<%= render :partial => 'news_feeds_content', :locals => {:country => 'Australia'} %>
+<div id='container'>
+  <%= render :partial => 'news_feeds_content', :locals => {:country => 'USA'} %>
+</div>
+<script type="text/javascript">
+  $('#container').masonry({
+    itemSelector: '.box',
+    columnWidth: 50,
+    isAnimated: true
+  });
+</script>
