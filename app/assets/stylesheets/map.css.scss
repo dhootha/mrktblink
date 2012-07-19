@@ -33,10 +33,13 @@
   padding:0;
   width:100%;
   height:100%;
-  background-color:#222;
+  background-color:#011019;
 }
 #map-header {
   height:40px;
+}
+#map-header .navbar {
+  background:none;
 }
 #map-filters {
   float:right; 
@@ -60,13 +63,10 @@
   padding:5px 10px;
   margin:0;
 }
-
-
 #map-background {
   width:100%;
-  height:90%;
-
-  background:#222;
+  height:500px;
+  background:#011019;
 }
 #map-background .leaflet-popup-tip {
   margin:-12px 0 0 6px;
