@@ -12,6 +12,6 @@ class GetMarketData
       puts "data does not exist"
       MarketData.create(:market_name => market[0],:country => APP_CONFIG_MARKETS[market[0]]["country"],:market_data => response)
     end
-    puts "hi resque"
+    #puts "hi resque"
   end
 end
