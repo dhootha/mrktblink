@@ -15,14 +15,14 @@
     <% end %>
   <% end %>
 </script>
-<%= javascript_include_tag "maps_vendor", "http://maps.stamen.com/js/tile.stamen.js", "map" %>
 <div id='container'>
   <%= render :partial => 'news_feeds_content', :locals => {:country => 'USA'} %>
 </div>
 <script type="text/javascript">
   $('#container').masonry({
     itemSelector: '.box',
-    columnWidth: 40,
+    columnWidth: 100,
+    isFitWidth: true,
     isAnimated: true
   });
 </script>
