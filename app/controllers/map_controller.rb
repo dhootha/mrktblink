@@ -11,8 +11,7 @@ class MapController < ApplicationController
   end
 
   def find_data
-    market_name = 'Dow'
-    debugger
+    market_name = 'Dow'    
     begin
       FetchData.fetch_data_from_api(market_name)
       $redis.get('data')
@@ -42,6 +41,36 @@ class MapController < ApplicationController
       market_data_value = 'does not exist'
     end  
     json = {:success => true, :market_data => market_data_value.to_s, :content_to_replace => render_to_string(:partial => 'news_feeds_content', :locals => {:country => params[:country_name]})}
+    render :json => json
+  end
+
+  def update_icon    
+    countries_details = []
+    countries = ['USA','India','China']
+    #APP_CONFIG_MARKETS.each do |market|
+    #  countries << market[1]["country"]
+    #end
+    countries.uniq.each do |country|
+      markets = MarketData.where(country: country)
+      begin
+      if markets.present?
+        markets.each do |market|
+          market_data = market.market_data
+          json_market_data = JSON.parse(market_data[30..-3].gsub('"previous_close" : ','"previous_close" : "'))          
+          close = json_market_data['series'].last['close'].to_f
+          previous_close = json_market_data['meta']['previous_close'].to_f
+          if close < previous_close
+            color = "Red"
+          else
+            color = "Green"
+          end
+          countries_details << {:country_name => country, :color => color}          
+        end
+      end
+      rescue        
+      end  
+    end    
+    json = {:success => true, :countries_details => countries_details}
     render :json => json
   end
 
