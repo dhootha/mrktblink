@@ -1,6 +1,6 @@
 development:
   adapter: mysql2
-  database: mrktblink_production
+  database: mrktblink_development
   username: root
   password: karmaK00l2112
   host: localhost
