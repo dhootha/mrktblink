@@ -88,7 +88,7 @@ body, html {
   border-radius: 2px;
   border:1px solid #092535;
   box-shadow:1px 2px 3px #000;
-  text-overflow:hidden;
+  overflow:hidden;
 }
 .box a {
   color:#eee;
@@ -101,7 +101,7 @@ body, html {
 #container a:hover {background: none; text-decoration: none; color:#d0452e; }
 .col1 { width: 280px; height: 180px; font-size: 30px; line-height:30px; }
 .col2 { width: 180px; height: 120px; font-size: 20px; line-height:20px;}
-.col3 { width: 80px; height: 90px; font-size: 16px; line-height:16px;}
+.col3 { width: 80px; height: 120px; font-size: 16px; line-height:16px;}
 .col4 { width: 80px; height: 70px; }
 #map-layout, #map-layout body {
   margin:0;
