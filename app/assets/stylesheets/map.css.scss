@@ -88,10 +88,11 @@ body, html {
   border-radius: 2px;
   border:1px solid #092535;
   box-shadow:1px 2px 3px #000;
+  text-overflow:hidden;
 }
 .box a {
   color:#eee;
-  text-shadow:0px 1px 1px #000;
+  text-shadow:0px 3px 1px #000;
 }
 .box h2 {
   font-size: 14px;
@@ -101,7 +102,7 @@ body, html {
 .col1 { width: 300px; height: 180px; font-size: 30px; line-height:30px; }
 .col2 { width: 200px; height: 120px; font-size: 20px; line-height:20px;}
 .col3 { width: 100px; height: 90px; font-size: 16px; line-height:16px;}
-.col4 { width: 50px; height: 70px; }
+.col4 { width: 100px; height: 70px; }
 #map-layout, #map-layout body {
   margin:0;
   padding:0;
