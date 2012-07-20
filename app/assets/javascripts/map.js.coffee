@@ -24,7 +24,6 @@ $ ->
     eq_map = 'http://{s}.tile.cloudmade.com/8ee2a50541944fb9bcedded5165f09d9/31643/256/{z}/{x}/{y}.png'
     map.addLayer( new L.TileLayer(eq_map, {maxZoom: 16, attribute: attribution}))
 
-
   countries =
     london:
       lat: 51.5
@@ -127,108 +126,150 @@ $ ->
       lon: 77.0
 
   CountryIcon = L.Icon.extend({
-    iconUrl: '/images/country_images/united_states_green.png',
-    iconSize: new L.Point(564, 435),
-    iconAnchor: new L.Point(22, 94),
+    iconUrl: '',
+    iconSize: ''
   })
 
-  MexicoIcon = L.Icon.extend({
-    iconUrl: '/images/country_images/mexico_red.png',
-    iconSize: new L.Point(169,110),
-  })
+  usaIcon = new CountryIcon('/images/country_images/united_states_green.png', {iconSize: new L.Point(583, 449)})
+  mexicoIcon = new CountryIcon('/images/country_images/mexico_red.png', {iconSize: new L.Point(169,110)})
+  indiaIcon = new CountryIcon('/images/country_images/india_green.png', {iconSize: new L.Point(123,172)})
+  argentinaIcon = new CountryIcon('/images/country_images/argentina_green.png', {iconSize: new L.Point(114, 253)})
+  brazilIcon = new CountryIcon('/images/country_images/brazil_green.png', {iconSize: new L.Point(226, 232)})
+  chileIcon = new CountryIcon('/images/country_images/chile_red.png', {iconSize: new L.Point(52, 280)})
+  australiaIcon = new CountryIcon('/images/country_images/australia_green.png', {iconSize: new L.Point(233, 182)})
+  belgiumIcon = new CountryIcon('/images/country_images/belgium_green.png', {iconSize: new L.Point(19, 24)})
+  canadaIcon = new CountryIcon('/images/country_images/canada_green.png', {iconSize: new L.Point(508, 377)})
+  chinaIcon = new CountryIcon('/images/country_images/china_red.png', {iconSize: new L.Point(355, 247)})
+  columbiaIcon = new CountryIcon('/images/country_images/columbia_red.png', {iconSize: new L.Point(66,89)})
+  englandIcon = new CountryIcon('/images/country_images/england_green.png', {iconSize: new L.Point(47,86)})
+  franceIcon = new CountryIcon('/images/country_images/france_green.png', {iconSize: new L.Point(73,75)})
+  germanyIcon = new CountryIcon('/images/country_images/germany_green.png', {iconSize: new L.Point(66,112)})
+  greeceIcon = new CountryIcon('/images/country_images/greece_green.png', {iconSize: new L.Point(40,44)})
+  # austriaIcon = new CountryIcon('/images/country_images/austria_green.png', {iconSize: new L.Point(40,44)})
+  irelandIcon = new CountryIcon('/images/country_images/ireland_green.png', {iconSize: new L.Point(25,39)})
+  isrealIcon = new CountryIcon('/images/country_images/isreal_green.png', {iconSize: new L.Point(18,22)})
+  italyIcon = new CountryIcon('/images/country_images/italy_green.png', {iconSize: new L.Point(70,71)})
+  japanIcon = new CountryIcon('/images/country_images/japan_green.png', {iconSize: new L.Point(97,181)})
+  malaysiaIcon = new CountryIcon('/images/country_images/malaysia_green.png', {iconSize: new L.Point(120,88)})
+  norwayIcon = new CountryIcon('/images/country_images/norway_green.png', {iconSize: new L.Point(152,183)})
+  peruIcon = new CountryIcon('/images/country_images/peru_green.png', {iconSize: new L.Point(74,107)})
+  portugalIcon = new CountryIcon('/images/country_images/portugal_green.png', {iconSize: new L.Point(18,37)})
+  russiaIcon = new CountryIcon('/images/country_images/russia_green.png', {iconSize: new L.Point(930,469)})
+  southAfricaIcon = new CountryIcon('/images/country_images/south_africa_green.png', {iconSize: new L.Point(88,82)})
+  koreaIcon = new CountryIcon('/images/country_images/south_korea_green.png', {iconSize: new L.Point(11,16)})
+  spainIcon = new CountryIcon('/images/country_images/spain_green.png', {iconSize: new L.Point(71,60)})
+  swedenIcon = new CountryIcon('/images/country_images/sweden_green.png', {iconSize: new L.Point(74,174)})
+  switzerlandIcon = new CountryIcon('/images/country_images/switzerland_green.png', {iconSize: new L.Point(23,17)})
 
-  IndiaIcon = L.Icon.extend({
-    iconUrl: '/images/country_images/india_green.png',
-    iconSize: new L.Point(123,172),
-  })
+  marker2 = new L.Marker(new L.LatLng(69.2, -167), {icon: usaIcon})
+  marker3 = new L.Marker(new L.LatLng(-28,-71), {icon:argentinaIcon})
+  marker4 = new L.Marker(new L.LatLng(-1.5,-72), {icon:brazilIcon})
+  marker5 = new L.Marker(new L.LatLng(26.8,-115.4), {icon: mexicoIcon})
+  marker6 = new L.Marker(new L.LatLng(-24.3,-73.6), {icon:chileIcon})
+  marker7 = new L.Marker(new L.LatLng(-6.6,-79.2), {icon:peruIcon})
+  marker8 = new L.Marker(new L.LatLng(6,-76.8), {icon:columbiaIcon})
+  marker9 = new L.Marker(new L.LatLng(72.5,-139), {icon:canadaIcon})
+  # marker10 = new L.Marker(new L.LatLng(47,14), {icon:austriaIcon})
+  marker11 = new L.Marker(new L.LatLng(50,5), {icon:belgiumIcon})
+  marker12 = new L.Marker(new L.LatLng(46.4,-2.2), {icon:franceIcon})
+  marker13 = new L.Marker(new L.LatLng(56,10), {icon:germanyIcon})
+  # marker14 = new L.Marker(new L.LatLng(52,5), {icon:netherlandsIcon})
+  marker15 = new L.Marker(new L.LatLng(69,7.3), {icon:norwayIcon})
+  marker16 = new L.Marker(new L.LatLng(66.7,13.9), {icon:swedenIcon})
+  marker17 = new L.Marker(new L.LatLng(46,8), {icon:switzerlandIcon})
+  marker18 = new L.Marker(new L.LatLng(52,-1), {icon:englandIcon})
+  # marker19 = new L.Marker(new L.LatLng(50,14), {icon:czeckRepublicIcon})
+  marker20 = new L.Marker(new L.LatLng(75.8,30), {icon:russiaIcon})
+  marker21 = new L.Marker(new L.LatLng(39,21), {icon:greeceIcon})
+  marker22 = new L.Marker(new L.LatLng(53,-8), {icon:irelandIcon})
+  marker23 = new L.Marker(new L.LatLng(40,4), {icon:spainIcon})
+  marker24 = new L.Marker(new L.LatLng(39,-8), {icon:portugalIcon})
+  marker25 = new L.Marker(new L.LatLng(31,35), {icon:isrealIcon})
+  marker26 = new L.Marker(new L.LatLng(-30,22), {icon:southAfricaIcon})
+  marker27 = new L.Marker(new L.LatLng(49,76), {icon:chinaIcon})
+  marker28 = new L.Marker(new L.LatLng(-1,97.5), {icon:malaysiaIcon})
+  marker29 = new L.Marker(new L.LatLng(49.5,132), {icon:japanIcon})
+  # marker30 = new L.Marker(new L.LatLng(23,121), {icon:taiwanIcon})
+  marker31 = new L.Marker(new L.LatLng(36,128), {icon:koreaIcon})
+  marker32 = new L.Marker(new L.LatLng(-18,115.8), {icon:australiaIcon})
+  marker33 = new L.Marker(new L.LatLng(29.3, 70.4), {icon: indiaIcon})
 
-  usaIcon = new CountryIcon()
-  mexicoIcon = new MexicoIcon()
-  indiaIcon = new IndiaIcon()
+  # marker1 = new L.Marker(new L.LatLng(countries['london']['lat'], countries['london']['lon']))
+  # marker2 = new L.Marker(new L.LatLng(countries['usa']['lat'], countries['usa']['lon']))
+  # marker3 = new L.Marker(new L.LatLng(countries['argentina']['lat'], countries['argentina']['lon']))
+  # marker4 = new L.Marker(new L.LatLng(countries['brazil']['lat'], countries['brazil']['lon']))
+  # marker5 = new L.Marker(new L.LatLng(countries['mexico']['lat'], countries['mexico']['lon']))
+  # marker6 = new L.Marker(new L.LatLng(countries['chile']['lat'], countries['chile']['lon']))
+  # marker7 = new L.Marker(new L.LatLng(countries['peru']['lat'], countries['peru']['lon']))
+  # marker8 = new L.Marker(new L.LatLng(countries['columbia']['lat'], countries['columbia']['lon']))
+  # marker9 = new L.Marker(new L.LatLng(countries['canada']['lat'], countries['canada']['lon']))
+  # marker10 = new L.Marker(new L.LatLng(countries['austria']['lat'], countries['austria']['lon']))
+  # marker11 = new L.Marker(new L.LatLng(countries['belgium']['lat'], countries['belgium']['lon']))
+  # marker12 = new L.Marker(new L.LatLng(countries['france']['lat'], countries['france']['lon']))
+  # marker13 = new L.Marker(new L.LatLng(countries['germany']['lat'], countries['germany']['lon']))
+  # marker14 = new L.Marker(new L.LatLng(countries['netherlands']['lat'], countries['netherlands']['lon']))
+  # marker15 = new L.Marker(new L.LatLng(countries['norway']['lat'], countries['norway']['lon']))
+  # marker16 = new L.Marker(new L.LatLng(countries['sweden']['lat'], countries['sweden']['lon']))
+  # marker17 = new L.Marker(new L.LatLng(countries['switzerland']['lat'], countries['switzerland']['lon']))
+  # marker18 = new L.Marker(new L.LatLng(countries['england']['lat'], countries['england']['lon']))
+  # marker19 = new L.Marker(new L.LatLng(countries['czeck_republic']['lat'], countries['czeck_republic']['lon']))
+  # marker20 = new L.Marker(new L.LatLng(countries['russia']['lat'], countries['russia']['lon']))
+  # marker21 = new L.Marker(new L.LatLng(countries['greece']['lat'], countries['greece']['lon']))
+  # marker22 = new L.Marker(new L.LatLng(countries['ireland']['lat'], countries['ireland']['lon']))
+  # marker23 = new L.Marker(new L.LatLng(countries['spain']['lat'], countries['spain']['lon']))
+  # marker24 = new L.Marker(new L.LatLng(countries['portugal']['lat'], countries['portugal']['lon']))
+  # marker25 = new L.Marker(new L.LatLng(countries['isreal']['lat'], countries['isreal']['lon']))
+  # marker26 = new L.Marker(new L.LatLng(countries['south_africa']['lat'], countries['south_africa']['lon']))
+  # marker27 = new L.Marker(new L.LatLng(countries['china']['lat'], countries['china']['lon']))
+  # marker28 = new L.Marker(new L.LatLng(countries['malaysia']['lat'], countries['malaysia']['lon']))
+  # marker29 = new L.Marker(new L.LatLng(countries['japan']['lat'], countries['japan']['lon']))
+  # marker30 = new L.Marker(new L.LatLng(countries['taiwan']['lat'], countries['taiwan']['lon']))
+  # marker31 = new L.Marker(new L.LatLng(countries['korea']['lat'], countries['korea']['lon']))
+  # marker32 = new L.Marker(new L.LatLng(countries['australia']['lat'], countries['australia']['lon']))
+  # marker33 = new L.Marker(new L.LatLng(countries['india']['lat'], countries['india']['lon']))
 
-  usa = new L.Marker(new L.LatLng(65, -163), {icon: usaIcon})
-  mexico = new L.Marker(new L.LatLng(26.8, -114.4), {icon: mexicoIcon})
-  india = new L.Marker(new L.LatLng(29.3, 70.4), {icon: indiaIcon})
-
-  map.addLayer(usa).addLayer(mexico).addLayer(india)
-
-  marker1 = new L.Marker(new L.LatLng(countries['london']['lat'], countries['london']['lon']))
-  marker2 = new L.Marker(new L.LatLng(countries['usa']['lat'], countries['usa']['lon']))
-  marker3 = new L.Marker(new L.LatLng(countries['argentina']['lat'], countries['argentina']['lon']))
-  marker4 = new L.Marker(new L.LatLng(countries['brazil']['lat'], countries['brazil']['lon']))
-  marker5 = new L.Marker(new L.LatLng(countries['mexico']['lat'], countries['mexico']['lon']))
-  marker6 = new L.Marker(new L.LatLng(countries['chile']['lat'], countries['chile']['lon']))
-  marker7 = new L.Marker(new L.LatLng(countries['peru']['lat'], countries['peru']['lon']))
-  marker8 = new L.Marker(new L.LatLng(countries['columbia']['lat'], countries['columbia']['lon']))
-  marker9 = new L.Marker(new L.LatLng(countries['canada']['lat'], countries['canada']['lon']))
-  marker10 = new L.Marker(new L.LatLng(countries['austria']['lat'], countries['austria']['lon']))
-  marker11 = new L.Marker(new L.LatLng(countries['belgium']['lat'], countries['belgium']['lon']))
-  marker12 = new L.Marker(new L.LatLng(countries['france']['lat'], countries['france']['lon']))
-  marker13 = new L.Marker(new L.LatLng(countries['germany']['lat'], countries['germany']['lon']))
-  marker14 = new L.Marker(new L.LatLng(countries['netherlands']['lat'], countries['netherlands']['lon']))
-  marker15 = new L.Marker(new L.LatLng(countries['norway']['lat'], countries['norway']['lon']))
-  marker16 = new L.Marker(new L.LatLng(countries['sweden']['lat'], countries['sweden']['lon']))
-  marker17 = new L.Marker(new L.LatLng(countries['switzerland']['lat'], countries['switzerland']['lon']))
-  marker18 = new L.Marker(new L.LatLng(countries['england']['lat'], countries['england']['lon']))
-  marker19 = new L.Marker(new L.LatLng(countries['czeck_republic']['lat'], countries['czeck_republic']['lon']))
-  marker20 = new L.Marker(new L.LatLng(countries['russia']['lat'], countries['russia']['lon']))
-  marker21 = new L.Marker(new L.LatLng(countries['greece']['lat'], countries['greece']['lon']))
-  marker22 = new L.Marker(new L.LatLng(countries['ireland']['lat'], countries['ireland']['lon']))
-  marker23 = new L.Marker(new L.LatLng(countries['spain']['lat'], countries['spain']['lon']))
-  marker24 = new L.Marker(new L.LatLng(countries['portugal']['lat'], countries['portugal']['lon']))
-  marker25 = new L.Marker(new L.LatLng(countries['isreal']['lat'], countries['isreal']['lon']))
-  marker26 = new L.Marker(new L.LatLng(countries['south_africa']['lat'], countries['south_africa']['lon']))
-  marker27 = new L.Marker(new L.LatLng(countries['china']['lat'], countries['china']['lon']))
-  marker28 = new L.Marker(new L.LatLng(countries['malaysia']['lat'], countries['malaysia']['lon']))
-  marker29 = new L.Marker(new L.LatLng(countries['japan']['lat'], countries['japan']['lon']))
-  marker30 = new L.Marker(new L.LatLng(countries['taiwan']['lat'], countries['taiwan']['lon']))
-  marker31 = new L.Marker(new L.LatLng(countries['korea']['lat'], countries['korea']['lon']))
-  marker32 = new L.Marker(new L.LatLng(countries['australia']['lat'], countries['australia']['lon']))
-  marker33 = new L.Marker(new L.LatLng(countries['india']['lat'], countries['india']['lon']))
-
-  # map.addLayer(marker1)
-  # map.addLayer(marker2)
-  # map.addLayer(marker3)
-  # map.addLayer(marker4)
-  # map.addLayer(marker5)
-  # map.addLayer(marker6)
-  # map.addLayer(marker7)
-  # map.addLayer(marker8)
-  # map.addLayer(marker9)
+  map.addLayer(marker2)
+  map.addLayer(marker3)
+  map.addLayer(marker4)
+  map.addLayer(marker5)
+  map.addLayer(marker6)
+  map.addLayer(marker7)
+  map.addLayer(marker8)
+  map.addLayer(marker9)
   # map.addLayer(marker10)
-  # map.addLayer(marker11)
-  # map.addLayer(marker12)
-  # map.addLayer(marker13)
+  map.addLayer(marker11)
+  map.addLayer(marker12)
+  map.addLayer(marker13)
   # map.addLayer(marker14)
-  # map.addLayer(marker15)
-  # map.addLayer(marker16)
-  # map.addLayer(marker17)
-  # map.addLayer(marker18)
+  map.addLayer(marker15)
+  map.addLayer(marker16)
+  map.addLayer(marker17)
+  map.addLayer(marker18)
   # map.addLayer(marker19)
-  # map.addLayer(marker20)
-  # map.addLayer(marker21)
-  # map.addLayer(marker22)
-  # map.addLayer(marker23)
-  # map.addLayer(marker24)
-  # map.addLayer(marker25)
-  # map.addLayer(marker26)
-  # map.addLayer(marker27)
-  # map.addLayer(marker28)
-  # map.addLayer(marker29)
+  map.addLayer(marker20)
+  map.addLayer(marker21)
+  map.addLayer(marker22)
+  map.addLayer(marker23)
+  map.addLayer(marker24)
+  map.addLayer(marker25)
+  map.addLayer(marker26)
+  map.addLayer(marker27)
+  map.addLayer(marker28)
+  map.addLayer(marker29)
   # map.addLayer(marker30)
-  # map.addLayer(marker31)
-  # map.addLayer(marker32)
-  # map.addLayer(marker33)
+  map.addLayer(marker31)
+  map.addLayer(marker32)
+  map.addLayer(marker33)
   
   ######## Updating news feeds content on click of country ##############
 
-  usa.on "click", (e) ->
-    usa.unbindPopup()
+  marker2.on "click", (e) ->
+    marker2.unbindPopup()
     $.ajax
       url: "/map/update_news_feeds_content?country_name=USA"
       dataType: "json"
       success: (data) ->
-        usa.bindPopup(data.market_data).openPopup()
+        marker2.bindPopup(data.market_data).openPopup()
         $('#container').html(data.content_to_replace)
 
   marker3.on "click", (e) ->
@@ -249,13 +290,13 @@ $ ->
         marker4.bindPopup(data.market_data).openPopup()
         $('#container').html(data.content_to_replace)
 
-  mexico.on "click", (e) ->
-    mexico.unbindPopup()
+  marker5.on "click", (e) ->
+    marker5.unbindPopup()
     $.ajax
       url: "/map/update_news_feeds_content?country_name=Mexico"
       dataType: "json"
       success: (data) ->
-        mexico.bindPopup(data.market_data).openPopup()
+        marker5.bindPopup(data.market_data).openPopup()
         $('#container').html(data.content_to_replace)
 
   marker6.on "click", (e) ->
@@ -295,14 +336,14 @@ $ ->
         marker9.bindPopup(data.market_data).openPopup()
         $('#container').html(data.content_to_replace)
 
-  marker10.on "click", (e) ->
-    marker10.unbindPopup()
-    $.ajax
-      url: "/map/update_news_feeds_content?country_name=Austria"
-      dataType: "json"
-      success: (data) ->
-        marker10.bindPopup(data.market_data).openPopup()
-        $('#container').html(data.content_to_replace)
+  # marker10.on "click", (e) ->
+  #   marker10.unbindPopup()
+  #   $.ajax
+  #     url: "/map/update_news_feeds_content?country_name=Austria"
+  #     dataType: "json"
+  #     success: (data) ->
+  #       marker10.bindPopup(data.market_data).openPopup()
+  #       $('#container').html(data.content_to_replace)
 
   marker11.on "click", (e) ->
     marker11.unbindPopup()
@@ -331,14 +372,14 @@ $ ->
         marker13.bindPopup(data.market_data).openPopup()
         $('#container').html(data.content_to_replace)
 
-  marker14.on "click", (e) ->
-    marker14.unbindPopup()
-    $.ajax
-      url: "/map/update_news_feeds_content?country_name=Netherlands"
-      dataType: "json"
-      success: (data) ->
-        marker14.bindPopup(data.market_data).openPopup()
-        $('#container').html(data.content_to_replace)
+  # marker14.on "click", (e) ->
+  #   marker14.unbindPopup()
+  #   $.ajax
+  #     url: "/map/update_news_feeds_content?country_name=Netherlands"
+  #     dataType: "json"
+  #     success: (data) ->
+  #       marker14.bindPopup(data.market_data).openPopup()
+  #       $('#container').html(data.content_to_replace)
 
   marker15.on "click", (e) ->
     marker15.unbindPopup()
@@ -367,14 +408,23 @@ $ ->
         marker17.bindPopup(data.market_data).openPopup()
         $('#container').html(data.content_to_replace)
 
-  marker19.on "click", (e) ->
-    marker19.unbindPopup()
+  marker18.on "click", (e) ->
+    marker18.unbindPopup()
     $.ajax
-      url: "/map/update_news_feeds_content?country_name=Czeck Repubic"
+      url: "/map/update_news_feeds_content?country_name=England"
       dataType: "json"
       success: (data) ->
-        marker19.bindPopup(data.market_data).openPopup()
+        marker18.bindPopup(data.market_data).openPopup()
         $('#container').html(data.content_to_replace)
+
+  # marker19.on "click", (e) ->
+  #   marker19.unbindPopup()
+  #   $.ajax
+  #     url: "/map/update_news_feeds_content?country_name=Czeck Repubic"
+  #     dataType: "json"
+  #     success: (data) ->
+  #       marker19.bindPopup(data.market_data).openPopup()
+  #       $('#container').html(data.content_to_replace)
 
   marker20.on "click", (e) ->
     marker20.unbindPopup()
@@ -469,14 +519,14 @@ $ ->
         marker29.bindPopup(data.market_data).openPopup()
         $('#container').html(data.content_to_replace)
 
-  marker30.on "click", (e) ->
-    marker30.unbindPopup()
-    $.ajax
-      url: "/map/update_news_feeds_content?country_name=Taiwan"
-      dataType: "json"
-      success: (data) ->
-        marker30.bindPopup(data.market_data).openPopup()
-        $('#container').html(data.content_to_replace)
+  # marker30.on "click", (e) ->
+  #   marker30.unbindPopup()
+  #   $.ajax
+  #     url: "/map/update_news_feeds_content?country_name=Taiwan"
+  #     dataType: "json"
+  #     success: (data) ->
+  #       marker30.bindPopup(data.market_data).openPopup()
+  #       $('#container').html(data.content_to_replace)
 
   marker31.on "click", (e) ->
     marker31.unbindPopup()
@@ -496,18 +546,12 @@ $ ->
         marker32.bindPopup(data.market_data).openPopup()
         $('#container').html(data.content_to_replace)
 
-  india.on "click", (e) ->
-    india.unbindPopup()
+  marker33.on "click", (e) ->
+    marker33.unbindPopup()
     $.ajax
       url: "/map/update_news_feeds_content?country_name=India"
       dataType: "json"
       success: (data) ->
-        india.bindPopup(data.market_data).openPopup()
+        marker33.bindPopup(data.market_data).openPopup()
         $('#container').html(data.content_to_replace)
                                             
-################################################################       
-
-  # circleLocation = new L.LatLng(51.508, -0.11)
-  # circle = new L.Circle(circleLocation, 500, circleOptions)
-  # circle.bindPopup("I am a circle.")
-  # map.addLayer(circle)
