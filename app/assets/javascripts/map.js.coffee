@@ -207,6 +207,7 @@ $ ->
   marker32 = new L.Marker(new L.LatLng(-18,115.8), {icon:australiaIcon})
   marker_India = new L.Marker(new L.LatLng(29.3, 70.4), {icon: indiaIcon})
   marker34 = new L.Marker(new L.LatLng(53.7, 10), {icon: denmarkIcon})
+  marker35 = new L.Marker(new L.LatLng(42.3, 9), {icon: italyIcon})
 
   # marker1 = new L.Marker(new L.LatLng(countries['london']['lat'], countries['london']['lon']))
   # marker2 = new L.Marker(new L.LatLng(countries['usa']['lat'], countries['usa']['lon']))
@@ -275,6 +276,7 @@ $ ->
   map.addLayer(marker32)
   map.addLayer(marker_India)
   map.addLayer(marker34)
+  map.addLayer(marker35)
   
   ######## Updating news feeds content on click of country ##############
 
