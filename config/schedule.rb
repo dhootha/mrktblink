@@ -20,7 +20,7 @@ set :output, "/home/testmachine/Desktop/map_app/map_app_3july/map_app/log/cron_l
    rake "store_data_to_redis", :environment => :development
  end
 
- every 12.hours do
+ every 1.hours do
    rake "store_news_feeds", :environment => :development
  end
 
