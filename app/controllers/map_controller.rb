@@ -47,31 +47,33 @@ class MapController < ApplicationController
 
   def update_icon    
     countries_details = []
-    countries = ['USA','India','China']
-    #APP_CONFIG_MARKETS.each do |market|
-    #  countries << market[1]["country"]
-    #end
+    countries = []
+    # countries = ['USA','India','China']
+    APP_CONFIG_MARKETS.each do |market|
+      countries << market[1]["country"]
+    end
     countries.uniq.each do |country|
       markets = MarketData.where(country: country)
       begin
-      if markets.present?
-        markets.each do |market|
-          market_data = market.market_data
-          json_market_data = JSON.parse(market_data[30..-3].gsub('"previous_close" : ','"previous_close" : "'))          
-          close = json_market_data['series'].last['close'].to_f
-          previous_close = json_market_data['meta']['previous_close'].to_f
-          if close < previous_close
-            color = "Red"
-          else
-            color = "Green"
+        if markets.present?
+          markets.each do |market|
+            market_data = market.market_data
+            json_market_data = JSON.parse(market_data[30..-3].gsub('"previous_close" : ','"previous_close" : "'))          
+            close = json_market_data['series'].last['close'].to_f
+            previous_close = json_market_data['meta']['previous_close'].to_f
+            if close < previous_close
+              color = "Red"
+            else
+              color = "Green"
+            end
+            countries_details << {:country_name => country, :color => color}          
           end
-          countries_details << {:country_name => country, :color => color}          
         end
-      end
       rescue        
       end  
     end    
     json = {:success => true, :countries_details => countries_details}
+    # json = {:success => true, :countries_details => countries}
     render :json => json
   end
 

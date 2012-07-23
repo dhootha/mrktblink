@@ -24,149 +24,76 @@ $ ->
     eq_map = 'http://{s}.tile.cloudmade.com/8ee2a50541944fb9bcedded5165f09d9/31643/256/{z}/{x}/{y}.png'
     map.addLayer( new L.TileLayer(eq_map, {maxZoom: 16, attribute: attribution}))
 
-  countries =
-    london:
-      lat: 51.5
-      lon: -0.09
-    usa:
-      lat: 39.0
-      lon: -98.5
-    argentina:
-      lat: -38.4
-      lon: -63.6
-    brazil:
-      lat: -14.2
-      lon: -51.9
-    mexico:
-      lat: 23.6
-      lon: -102.6
-    chile:
-      lat: -35.6
-      lon: -71.5
-    peru:
-      lat: -9.19
-      lon: -75
-    columbia:
-      lat: 4.6
-      lon: -74.3
-    canada:
-      lat: 56.1
-      lon: -106.3
-    austria:
-      lat: 47.5
-      lon: 14.6
-    belgium:
-      lat: 50.5
-      lon: 4.5
-    france:
-      lat: 46.2
-      lon: 2.2
-    germany:
-      lat: 51.2
-      lon: 10.5
-    netherlands:
-      lat: 52.1
-      lon: 5.3
-    norway:
-      lat: 60.5
-      lon: 8.4
-    sweden:
-      lat: 60.1
-      lon: 18.6
-    switzerland:
-      lat: 46.8
-      lon: 8.2
-    england:
-      lat: 52.3
-      lon: -1.2
-    czeck_republic:
-      lat: 50.1
-      lon: 14.4
-    russia:
-      lat: 61.5
-      lon: 105.3
-    greece:
-      lat: 39.1
-      lon: 21.8
-    ireland:
-      lat: 53.4
-      lon: -8.2
-    spain:
-      lat: 40.5
-      lon: -3.7
-    portugal:
-      lat:  39.4
-      lon: -8.2
-    isreal:
-      lat: 31
-      lon: 34.9
-    south_africa:
-      lat: -30.6
-      lon: 22.9
-    china:
-      lat: 35.9
-      lon: 104.2
-    malaysia:
-      lat: 4.2
-      lon: 101.9
-    japan:
-      lat: 36.2
-      lon: 138.3
-    taiwan:
-      lat: 23.7
-      lon: 121
-    korea:
-      lat: 35.9
-      lon: 127.8
-    australia:
-      lat: -25.3
-      lon: 133.8
-    india:
-      lat: 20.0
-      lon: 77.0
-
   CountryIcon = L.Icon.extend({
     iconUrl: '',
     iconSize: '',
     shadowUrl: ''
   })
 
-  usaIcon = new CountryIcon('/images/country_images/united_states_green.png', {iconSize: new L.Point(583, 449)})
-  mexicoIcon = new CountryIcon('/images/country_images/mexico_red.png', {iconSize: new L.Point(169,110)})
-  indiaIcon = new CountryIcon('/images/country_images/india_green.png', {iconSize: new L.Point(123,172)})
-  indiaRedIcon = new CountryIcon('/images/country_images/india_red.png', {iconSize: new L.Point(123,172)})
-  argentinaIcon = new CountryIcon('/images/country_images/argentina_green.png', {iconSize: new L.Point(114, 253)})
-  brazilIcon = new CountryIcon('/images/country_images/brazil_green.png', {iconSize: new L.Point(226, 232)})
-  chileIcon = new CountryIcon('/images/country_images/chile_red.png', {iconSize: new L.Point(52, 280)})
-  australiaIcon = new CountryIcon('/images/country_images/australia_green.png', {iconSize: new L.Point(233, 182)})
-  belgiumIcon = new CountryIcon('/images/country_images/belgium_green.png', {iconSize: new L.Point(24, 20)})
-  canadaIcon = new CountryIcon('/images/country_images/canada_green.png', {iconSize: new L.Point(508, 377)})
-  czeckRepublicIcon = new CountryIcon('/images/country_images/czeck_republic_green.png', {iconSize: new L.Point(38,25)})
-  chinaIcon = new CountryIcon('/images/country_images/china_red.png', {iconSize: new L.Point(355, 247)})
-  columbiaIcon = new CountryIcon('/images/country_images/columbia_red.png', {iconSize: new L.Point(66,89)})
-  englandIcon = new CountryIcon('/images/country_images/england_green.png', {iconSize: new L.Point(47,86)})
-  franceIcon = new CountryIcon('/images/country_images/france_green.png', {iconSize: new L.Point(73,75)})
-  germanyIcon = new CountryIcon('/images/country_images/germany_green.png', {iconSize: new L.Point(52,70)})
-  netherlandsIcon = new CountryIcon('/images/country_images/netherlands_green.png', {iconSize: new L.Point(21,26)})
-  denmarkIcon = new CountryIcon('/images/country_images/denmark_green.png', {iconSize: new L.Point(17,29)})
-  greeceIcon = new CountryIcon('/images/country_images/greece_green.png', {iconSize: new L.Point(40,44)})
-  austriaIcon = new CountryIcon('/images/country_images/austria_green.png', {iconSize: new L.Point(44,26)})
-  irelandIcon = new CountryIcon('/images/country_images/ireland_green.png', {iconSize: new L.Point(25,39)})
-  isrealIcon = new CountryIcon('/images/country_images/isreal_green.png', {iconSize: new L.Point(18,22)})
-  italyIcon = new CountryIcon('/images/country_images/italy_green.png', {iconSize: new L.Point(70,71)})
-  japanIcon = new CountryIcon('/images/country_images/japan_green.png', {iconSize: new L.Point(97,181)})
-  malaysiaIcon = new CountryIcon('/images/country_images/malaysia_green.png', {iconSize: new L.Point(120,88)})
-  norwayIcon = new CountryIcon('/images/country_images/norway_green.png', {iconSize: new L.Point(152,183)})
-  peruIcon = new CountryIcon('/images/country_images/peru_green.png', {iconSize: new L.Point(74,107)})
-  portugalIcon = new CountryIcon('/images/country_images/portugal_green.png', {iconSize: new L.Point(18,37)})
-  russiaIcon = new CountryIcon('/images/country_images/russia_green.png', {iconSize: new L.Point(930,469)})
-  southAfricaIcon = new CountryIcon('/images/country_images/south_africa_green.png', {iconSize: new L.Point(96,87)})
-  koreaIcon = new CountryIcon('/images/country_images/south_korea_green.png', {iconSize: new L.Point(11,16)})
-  spainIcon = new CountryIcon('/images/country_images/spain_green.png', {iconSize: new L.Point(71,60)})
-  swedenIcon = new CountryIcon('/images/country_images/sweden_green.png', {iconSize: new L.Point(74,174)})
-  switzerlandIcon = new CountryIcon('/images/country_images/switzerland_green.png', {iconSize: new L.Point(27,18)})
-  taiwanIcon = new CountryIcon('/images/country_images/taiwan_green.png', {iconSize: new L.Point(15,24)})
-
+  MexicoRedIcon = new CountryIcon('/images/country_images/mexico_red.png', {iconSize: new L.Point(169,110)})
+  MexicoGreenIcon = new CountryIcon('/images/country_images/mexico_red.png', {iconSize: new L.Point(169,110)})
+  ArgentinaRedIcon = new CountryIcon('/images/country_images/argentina_green.png', {iconSize: new L.Point(114, 253)})
+  ArgentinaGreenIcon = new CountryIcon('/images/country_images/argentina_green.png', {iconSize: new L.Point(114, 253)})
+  BrazilRedIcon = new CountryIcon('/images/country_images/brazil_green.png', {iconSize: new L.Point(226, 232)})
+  BrazilGreenIcon = new CountryIcon('/images/country_images/brazil_green.png', {iconSize: new L.Point(226, 232)})
+  ChileRedIcon = new CountryIcon('/images/country_images/chile_red.png', {iconSize: new L.Point(52, 280)})
+  ChileGreenIcon = new CountryIcon('/images/country_images/chile_red.png', {iconSize: new L.Point(52, 280)})
+  AustraliaRedIcon = new CountryIcon('/images/country_images/australia_green.png', {iconSize: new L.Point(233, 182)})
+  AustraliaGreenIcon = new CountryIcon('/images/country_images/australia_green.png', {iconSize: new L.Point(233, 182)})
+  BelgiumRedIcon = new CountryIcon('/images/country_images/belgium_green.png', {iconSize: new L.Point(24, 20)})
+  BelgiumGreenIcon = new CountryIcon('/images/country_images/belgium_green.png', {iconSize: new L.Point(24, 20)})
+  CanadaRedIcon = new CountryIcon('/images/country_images/canada_green.png', {iconSize: new L.Point(508, 377)})
+  CanadaGreenIcon = new CountryIcon('/images/country_images/canada_green.png', {iconSize: new L.Point(508, 377)})
+  CzeckRepublicRedIcon = new CountryIcon('/images/country_images/czeck_republic_green.png', {iconSize: new L.Point(38,25)})
+  CzeckRepublicGreenIcon = new CountryIcon('/images/country_images/czeck_republic_green.png', {iconSize: new L.Point(38,25)})
+  ChinaRedIcon = new CountryIcon('/images/country_images/china_red.png', {iconSize: new L.Point(355, 247)})
+  ChinaGreenIcon = new CountryIcon('/images/country_images/china_red.png', {iconSize: new L.Point(355, 247)})
+  ColumbiaRedIcon = new CountryIcon('/images/country_images/columbia_red.png', {iconSize: new L.Point(66,89)})
+  ColumbiaGreenIcon = new CountryIcon('/images/country_images/columbia_red.png', {iconSize: new L.Point(66,89)})
+  EnglandRedIcon = new CountryIcon('/images/country_images/england_green.png', {iconSize: new L.Point(47,86)})
+  EnglandGreenIcon = new CountryIcon('/images/country_images/england_green.png', {iconSize: new L.Point(47,86)})
+  FranceRedIcon = new CountryIcon('/images/country_images/france_green.png', {iconSize: new L.Point(73,75)})
+  FranceGreenIcon = new CountryIcon('/images/country_images/france_green.png', {iconSize: new L.Point(73,75)})
+  GermanyRedIcon = new CountryIcon('/images/country_images/germany_green.png', {iconSize: new L.Point(52,70)})
+  GermanyGreenIcon = new CountryIcon('/images/country_images/germany_green.png', {iconSize: new L.Point(52,70)})
+  NetherlandsRedIcon = new CountryIcon('/images/country_images/netherlands_green.png', {iconSize: new L.Point(21,26)})
+  NetherlandsGreenIcon = new CountryIcon('/images/country_images/netherlands_green.png', {iconSize: new L.Point(21,26)})
+  DenmarkRedIcon = new CountryIcon('/images/country_images/denmark_green.png', {iconSize: new L.Point(17,29)})
+  DenmarkGreenIcon = new CountryIcon('/images/country_images/denmark_green.png', {iconSize: new L.Point(17,29)})
+  GreeceRedIcon = new CountryIcon('/images/country_images/greece_green.png', {iconSize: new L.Point(40,44)})
+  GreeceGreenIcon = new CountryIcon('/images/country_images/greece_green.png', {iconSize: new L.Point(40,44)})
+  AustriaRedIcon = new CountryIcon('/images/country_images/austria_green.png', {iconSize: new L.Point(44,26)})
+  AustriaGreenIcon = new CountryIcon('/images/country_images/austria_green.png', {iconSize: new L.Point(44,26)})
+  IrelandRedIcon = new CountryIcon('/images/country_images/ireland_green.png', {iconSize: new L.Point(25,39)})
+  IrelandGreenIcon = new CountryIcon('/images/country_images/ireland_green.png', {iconSize: new L.Point(25,39)})
+  IsrealRedIcon = new CountryIcon('/images/country_images/isreal_green.png', {iconSize: new L.Point(18,22)})
+  IsrealGreenIcon = new CountryIcon('/images/country_images/isreal_green.png', {iconSize: new L.Point(18,22)})
+  ItalyRedIcon = new CountryIcon('/images/country_images/italy_green.png', {iconSize: new L.Point(70,71)})
+  ItalyGreenIcon = new CountryIcon('/images/country_images/italy_green.png', {iconSize: new L.Point(70,71)})
+  JapanRedIcon = new CountryIcon('/images/country_images/japan_green.png', {iconSize: new L.Point(97,181)})
+  JapanGreenIcon = new CountryIcon('/images/country_images/japan_green.png', {iconSize: new L.Point(97,181)})
+  MalaysiaRedIcon = new CountryIcon('/images/country_images/malaysia_green.png', {iconSize: new L.Point(120,88)})
+  MalaysiaGreenIcon = new CountryIcon('/images/country_images/malaysia_green.png', {iconSize: new L.Point(120,88)})
+  NorwayRedIcon = new CountryIcon('/images/country_images/norway_green.png', {iconSize: new L.Point(152,183)})
+  NorwayGreenIcon = new CountryIcon('/images/country_images/norway_green.png', {iconSize: new L.Point(152,183)})
+  PeruRedIcon = new CountryIcon('/images/country_images/peru_green.png', {iconSize: new L.Point(74,107)})
+  PeruGreenIcon = new CountryIcon('/images/country_images/peru_green.png', {iconSize: new L.Point(74,107)})
+  PortugalRedIcon = new CountryIcon('/images/country_images/portugal_green.png', {iconSize: new L.Point(18,37)})
+  PortugalGreenIcon = new CountryIcon('/images/country_images/portugal_green.png', {iconSize: new L.Point(18,37)})
+  RussiaRedIcon = new CountryIcon('/images/country_images/russia_green.png', {iconSize: new L.Point(930,469)})
+  RussiaGreenIcon = new CountryIcon('/images/country_images/russia_green.png', {iconSize: new L.Point(930,469)})
+  SouthAfricaRedIcon = new CountryIcon('/images/country_images/south_africa_green.png', {iconSize: new L.Point(96,87)})
+  SouthAfricaGreenIcon = new CountryIcon('/images/country_images/south_africa_green.png', {iconSize: new L.Point(96,87)})
+  KoreaRedIcon = new CountryIcon('/images/country_images/south_korea_green.png', {iconSize: new L.Point(11,16)})
+  KoreaGreenIcon = new CountryIcon('/images/country_images/south_korea_green.png', {iconSize: new L.Point(11,16)})
+  SpainRedIcon = new CountryIcon('/images/country_images/spain_green.png', {iconSize: new L.Point(71,60)})
+  SpainGreenIcon = new CountryIcon('/images/country_images/spain_green.png', {iconSize: new L.Point(71,60)})
+  SwedenRedIcon = new CountryIcon('/images/country_images/sweden_green.png', {iconSize: new L.Point(74,174)})
+  SwedenGreenIcon = new CountryIcon('/images/country_images/sweden_green.png', {iconSize: new L.Point(74,174)})
+  SwitzerlandRedIcon = new CountryIcon('/images/country_images/switzerland_green.png', {iconSize: new L.Point(27,18)})
+  SwitzerlandGreenIcon = new CountryIcon('/images/country_images/switzerland_green.png', {iconSize: new L.Point(27,18)})
+  TaiwanRedIcon = new CountryIcon('/images/country_images/taiwan_green.png', {iconSize: new L.Point(15,24)})
+  TaiwanGreenIcon = new CountryIcon('/images/country_images/taiwan_green.png', {iconSize: new L.Point(15,24)})
   IndiaGreenIcon = new CountryIcon('/images/country_images/india_green.png', {iconSize: new L.Point(123,172)})
   IndiaRedIcon = new CountryIcon('/images/country_images/india_red.png', {iconSize: new L.Point(123,172)})
   ChinaGreenIcon = new CountryIcon('/images/country_images/china_green.png', {iconSize: new L.Point(355, 247)})
@@ -174,75 +101,75 @@ $ ->
   USAGreenIcon = new CountryIcon('/images/country_images/united_states_green.png', {iconSize: new L.Point(583, 449)})
   USARedIcon = new CountryIcon('/images/country_images/united_states_red.png', {iconSize: new L.Point(583, 449)})
 
-  marker_USA = new L.Marker(new L.LatLng(69.2, -167), {icon: usaIcon})
-  marker3 = new L.Marker(new L.LatLng(-28,-71), {icon:argentinaIcon})
-  marker4 = new L.Marker(new L.LatLng(-1.5,-72), {icon:brazilIcon})
-  marker5 = new L.Marker(new L.LatLng(26.8,-115.4), {icon: mexicoIcon})
-  marker6 = new L.Marker(new L.LatLng(-24.3,-73.6), {icon:chileIcon})
-  marker7 = new L.Marker(new L.LatLng(-6.6,-79.2), {icon:peruIcon})
-  marker8 = new L.Marker(new L.LatLng(6,-76.8), {icon:columbiaIcon})
-  marker9 = new L.Marker(new L.LatLng(72.5,-139), {icon:canadaIcon})
-  marker10 = new L.Marker(new L.LatLng(45,12), {icon:austriaIcon})
-  marker11 = new L.Marker(new L.LatLng(47,4.7), {icon:belgiumIcon})
-  marker12 = new L.Marker(new L.LatLng(46.4,-2.2), {icon:franceIcon})
-  marker13 = new L.Marker(new L.LatLng(50.8,8), {icon:germanyIcon})
-  marker14 = new L.Marker(new L.LatLng(49,5.8), {icon:netherlandsIcon})
-  marker15 = new L.Marker(new L.LatLng(69,7), {icon:norwayIcon})
-  marker16 = new L.Marker(new L.LatLng(66.9,13.3), {icon:swedenIcon})
-  marker17 = new L.Marker(new L.LatLng(43,8.3), {icon:switzerlandIcon})
-  marker18 = new L.Marker(new L.LatLng(55,-4), {icon:englandIcon})
-  marker19 = new L.Marker(new L.LatLng(46.7,14), {icon:czeckRepublicIcon})
-  marker20 = new L.Marker(new L.LatLng(75.8,29.2), {icon:russiaIcon})
-  marker21 = new L.Marker(new L.LatLng(37,21.3), {icon:greeceIcon})
-  marker22 = new L.Marker(new L.LatLng(51,-8), {icon:irelandIcon})
-  marker23 = new L.Marker(new L.LatLng(38.7,-6.7), {icon:spainIcon})
-  marker24 = new L.Marker(new L.LatLng(36.6,-7.2), {icon:portugalIcon})
-  marker25 = new L.Marker(new L.LatLng(26,37), {icon:isrealIcon})
-  marker26 = new L.Marker(new L.LatLng(-28.3,19), {icon:southAfricaIcon})
-  marker_China = new L.Marker(new L.LatLng(49,75), {icon:chinaIcon})
-  marker28 = new L.Marker(new L.LatLng(-1,97.5), {icon:malaysiaIcon})
-  marker29 = new L.Marker(new L.LatLng(49.5,131), {icon:japanIcon})
-  marker30 = new L.Marker(new L.LatLng(20,122), {icon:taiwanIcon})
-  marker31 = new L.Marker(new L.LatLng(30.1,129), {icon:koreaIcon})
-  marker32 = new L.Marker(new L.LatLng(-18,115.8), {icon:australiaIcon})
-  marker_India = new L.Marker(new L.LatLng(29.3, 70.4), {icon: indiaIcon})
-  marker34 = new L.Marker(new L.LatLng(53.7, 10), {icon: denmarkIcon})
-  marker35 = new L.Marker(new L.LatLng(42.3, 9), {icon: italyIcon})
+  marker_USA = new L.Marker(new L.LatLng(69.2, -167), {icon: USARedIcon})
+  marker_Argentina = new L.Marker(new L.LatLng(-28,-71), {icon:ArgentinaGreenIcon})
+  marker_Brazil = new L.Marker(new L.LatLng(-1.5,-72), {icon:BrazilRedIcon})
+  marker_Mexico = new L.Marker(new L.LatLng(26.8,-115.4), {icon: MexicoRedIcon})
+  marker_Chile = new L.Marker(new L.LatLng(-24.3,-73.6), {icon:ChileRedIcon})
+  marker_Peru = new L.Marker(new L.LatLng(-6.6,-79.2), {icon:PeruRedIcon})
+  marker_Columbia = new L.Marker(new L.LatLng(6,-76.8), {icon:ColumbiaRedIcon})
+  marker_Canada = new L.Marker(new L.LatLng(72.5,-139), {icon:CanadaRedIcon})
+  marker_Austria = new L.Marker(new L.LatLng(45,12), {icon:AustriaGreenIcon})
+  marker_Belgium = new L.Marker(new L.LatLng(47,4.7), {icon:BelgiumGreenIcon})
+  marker_France = new L.Marker(new L.LatLng(46.4,-2.2), {icon:FranceGreenIcon})
+  marker_Germany = new L.Marker(new L.LatLng(50.8,8), {icon:GermanyGreenIcon})
+  marker_Netherlands = new L.Marker(new L.LatLng(49,5.8), {icon:NetherlandsGreenIcon})
+  marker_Norway = new L.Marker(new L.LatLng(69,7), {icon:NorwayGreenIcon})
+  marker_Sweden = new L.Marker(new L.LatLng(66.9,13.3), {icon:SwedenGreenIcon})
+  marker_Switzerland = new L.Marker(new L.LatLng(43,8.3), {icon:SwitzerlandGreenIcon})
+  marker_England = new L.Marker(new L.LatLng(55,-4), {icon:EnglandGreenIcon})
+  marker_CzeckRepublic = new L.Marker(new L.LatLng(46.7,14), {icon:CzeckRepublicRedIcon})
+  marker_Russia = new L.Marker(new L.LatLng(75.8,29.2), {icon:RussiaRedIcon})
+  marker_Greece = new L.Marker(new L.LatLng(37,21.3), {icon:GreeceRedIcon})
+  marker_Ireland = new L.Marker(new L.LatLng(51,-8), {icon:IrelandRedIcon})
+  marker_Spain = new L.Marker(new L.LatLng(38.7,-6.7), {icon:SpainGreenIcon})
+  marker_Portugal = new L.Marker(new L.LatLng(36.6,-7.2), {icon:PortugalRedIcon})
+  marker_Isreal = new L.Marker(new L.LatLng(26,37), {icon:IsrealRedIcon})
+  marker_SouthAfrica = new L.Marker(new L.LatLng(-28.3,19), {icon:SouthAfricaRedIcon})
+  marker_China = new L.Marker(new L.LatLng(49,75), {icon:ChinaRedIcon})
+  marker_Malaysia = new L.Marker(new L.LatLng(-1,97.5), {icon:MalaysiaRedIcon})
+  marker_Japan = new L.Marker(new L.LatLng(49.5,131), {icon:JapanGreenIcon})
+  marker_Taiwan = new L.Marker(new L.LatLng(20,122), {icon:TaiwanGreenIcon})
+  marker_Korea = new L.Marker(new L.LatLng(30.1,129), {icon:KoreaGreenIcon})
+  marker_Australia = new L.Marker(new L.LatLng(-18,115.8), {icon:AustraliaRedIcon})
+  marker_India = new L.Marker(new L.LatLng(29.3, 70.4), {icon: IndiaGreenIcon})
+  marker_Denmark = new L.Marker(new L.LatLng(53.7, 10), {icon: DenmarkGreenIcon})
+  marker_Italy = new L.Marker(new L.LatLng(42.3, 9), {icon: ItalyRedIcon})
 
   map.addLayer(marker_USA)
-  map.addLayer(marker3)
-  map.addLayer(marker4)
-  map.addLayer(marker5)
-  map.addLayer(marker6)
-  map.addLayer(marker7)
-  map.addLayer(marker8)
-  map.addLayer(marker9)
-  map.addLayer(marker10)
-  map.addLayer(marker11)
-  map.addLayer(marker12)
-  map.addLayer(marker13)
-  map.addLayer(marker14)
-  map.addLayer(marker15)
-  map.addLayer(marker16)
-  map.addLayer(marker17)
-  map.addLayer(marker18)
-  map.addLayer(marker19)
-  map.addLayer(marker20)
-  map.addLayer(marker21)
-  map.addLayer(marker22)
-  map.addLayer(marker23)
-  map.addLayer(marker24)
-  map.addLayer(marker25)
-  map.addLayer(marker26)
+  map.addLayer(marker_Argentina)
+  map.addLayer(marker_Brazil)
+  map.addLayer(marker_Mexico)
+  map.addLayer(marker_Chile)
+  map.addLayer(marker_Peru)
+  map.addLayer(marker_Columbia)
+  map.addLayer(marker_Canada)
+  map.addLayer(marker_Austria)
+  map.addLayer(marker_Belgium)
+  map.addLayer(marker_France)
+  map.addLayer(marker_Germany)
+  map.addLayer(marker_Netherlands)
+  map.addLayer(marker_Norway)
+  map.addLayer(marker_Sweden)
+  map.addLayer(marker_Switzerland)
+  map.addLayer(marker_England)
+  map.addLayer(marker_CzeckRepublic)
+  map.addLayer(marker_Russia)
+  map.addLayer(marker_Greece)
+  map.addLayer(marker_Ireland)
+  map.addLayer(marker_Spain)
+  map.addLayer(marker_Portugal)
+  map.addLayer(marker_Isreal)
+  map.addLayer(marker_SouthAfrica)
   map.addLayer(marker_China)
-  map.addLayer(marker28)
-  map.addLayer(marker29)
-  map.addLayer(marker30)
-  map.addLayer(marker31)
-  map.addLayer(marker32)
+  map.addLayer(marker_Malaysia)
+  map.addLayer(marker_Japan)
+  map.addLayer(marker_Taiwan)
+  map.addLayer(marker_Korea)
+  map.addLayer(marker_Australia)
   map.addLayer(marker_India)
-  map.addLayer(marker34)
-  map.addLayer(marker35)
+  map.addLayer(marker_Denmark)
+  map.addLayer(marker_Italy)
   
   ######## Updating news feeds content on click of country ##############
 
@@ -256,8 +183,8 @@ $ ->
         market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
 
-  marker3.on "click", (e) ->
-    marker3.unbindPopup()
+  marker_Argentina.on "click", (e) ->
+    marker_Argentina.unbindPopup()
     $.ajax
       url: "/map/update_news_feeds_content?country_name=Argentina"
       dataType: "json"
@@ -266,19 +193,18 @@ $ ->
         market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
 
-  marker4.on "click", (e) ->
-    marker4.unbindPopup()
+  marker_Brazil.on "click", (e) ->
+    marker_Brazil.unbindPopup()
     $.ajax
       url: "/map/update_news_feeds_content?country_name=Brazil"
       dataType: "json"
       success: (data) ->
         # marker4.bindPopup(data.market_data).openPopup()
         market_info_overlay(data.market_data)
-        market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
 
-  marker5.on "click", (e) ->
-    marker5.unbindPopup()
+  marker_Mexico.on "click", (e) ->
+    marker_Mexico.unbindPopup()
     $.ajax
       url: "/map/update_news_feeds_content?country_name=Mexico"
       dataType: "json"
@@ -287,8 +213,8 @@ $ ->
         market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
 
-  marker6.on "click", (e) ->
-    marker6.unbindPopup()
+  marker_Chile.on "click", (e) ->
+    marker_Chile.unbindPopup()
     $.ajax
       url: "/map/update_news_feeds_content?country_name=Chile"
       dataType: "json"
@@ -297,8 +223,8 @@ $ ->
         market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
 
-  marker7.on "click", (e) ->
-    marker7.unbindPopup()
+  marker_Peru.on "click", (e) ->
+    marker_Peru.unbindPopup()
     $.ajax
       url: "/map/update_news_feeds_content?country_name=Peru"
       dataType: "json"
@@ -307,8 +233,8 @@ $ ->
         market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
 
-  marker8.on "click", (e) ->
-    marker8.unbindPopup()
+  marker_Columbia.on "click", (e) ->
+    marker_Columbia.unbindPopup()
     $.ajax
       url: "/map/update_news_feeds_content?country_name=Colombia"
       dataType: "json"
@@ -318,8 +244,8 @@ $ ->
         $('#container').html(data.content_to_replace)
 
   
-  marker9.on "click", (e) ->
-    marker9.unbindPopup()
+  marker_Canada.on "click", (e) ->
+    marker_Canada.unbindPopup()
     $.ajax
       url: "/map/update_news_feeds_content?country_name=Canada"
       dataType: "json"
@@ -328,8 +254,8 @@ $ ->
         market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
 
-  marker10.on "click", (e) ->
-    marker10.unbindPopup()
+  marker_Austria.on "click", (e) ->
+    marker_Austria.unbindPopup()
     $.ajax
       url: "/map/update_news_feeds_content?country_name=Austria"
       dataType: "json"
@@ -338,8 +264,8 @@ $ ->
         market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
 
-  marker11.on "click", (e) ->
-    marker11.unbindPopup()
+  marker_Belgium.on "click", (e) ->
+    marker_Belgium.unbindPopup()
     $.ajax
       url: "/map/update_news_feeds_content?country_name=Belgium"
       dataType: "json"
@@ -348,8 +274,8 @@ $ ->
         market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
 
-  marker12.on "click", (e) ->
-    marker12.unbindPopup()
+  marker_France.on "click", (e) ->
+    marker_France.unbindPopup()
     $.ajax
       url: "/map/update_news_feeds_content?country_name=France"
       dataType: "json"
@@ -358,8 +284,8 @@ $ ->
         market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
 
-  marker13.on "click", (e) ->
-    marker13.unbindPopup()
+  marker_Germany.on "click", (e) ->
+    marker_Germany.unbindPopup()
     $.ajax
       url: "/map/update_news_feeds_content?country_name=Germany"
       dataType: "json"
@@ -368,8 +294,8 @@ $ ->
         market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
 
-  marker14.on "click", (e) ->
-    marker14.unbindPopup()
+  marker_Netherlands.on "click", (e) ->
+    marker_Netherlands.unbindPopup()
     $.ajax
       url: "/map/update_news_feeds_content?country_name=Netherlands"
       dataType: "json"
@@ -378,8 +304,8 @@ $ ->
         market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
 
-  marker15.on "click", (e) ->
-    marker15.unbindPopup()
+  marker_Norway.on "click", (e) ->
+    marker_Norway.unbindPopup()
     $.ajax
       url: "/map/update_news_feeds_content?country_name=Norway"
       dataType: "json"
@@ -388,8 +314,8 @@ $ ->
         market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
 
-  marker16.on "click", (e) ->
-    marker16.unbindPopup()
+  marker_Sweden.on "click", (e) ->
+    marker_Sweden.unbindPopup()
     $.ajax
       url: "/map/update_news_feeds_content?country_name=Sweden"
       dataType: "json"
@@ -398,8 +324,8 @@ $ ->
         market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
 
-  marker17.on "click", (e) ->
-    marker17.unbindPopup()
+  marker_Switzerland.on "click", (e) ->
+    marker_Switzerland.unbindPopup()
     $.ajax
       url: "/map/update_news_feeds_content?country_name=Switzerland"
       dataType: "json"
@@ -408,8 +334,8 @@ $ ->
         market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
 
-  marker18.on "click", (e) ->
-    marker18.unbindPopup()
+  marker_England.on "click", (e) ->
+    marker_England.unbindPopup()
     $.ajax
       url: "/map/update_news_feeds_content?country_name=England"
       dataType: "json"
@@ -418,18 +344,18 @@ $ ->
         market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
 
-  marker19.on "click", (e) ->
-    marker19.unbindPopup()
+  marker_CzeckRepublic.on "click", (e) ->
+    marker_CzeckRepublic.unbindPopup()
     $.ajax
-      url: "/map/update_news_feeds_content?country_name=Czeck Repubic"
+      url: "/map/update_news_feeds_content?country_name=CzeckRepubic"
       dataType: "json"
       success: (data) ->
         # marker19.bindPopup(data.market_data).openPopup()
         market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
 
-  marker20.on "click", (e) ->
-    marker20.unbindPopup()
+  marker_Russia.on "click", (e) ->
+    marker_Russia.unbindPopup()
     $.ajax
       url: "/map/update_news_feeds_content?country_name=Russia"
       dataType: "json"
@@ -438,8 +364,8 @@ $ ->
         market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
 
-  marker21.on "click", (e) ->
-    marker21.unbindPopup()
+  marker_Greece.on "click", (e) ->
+    marker_Greece.unbindPopup()
     $.ajax
       url: "/map/update_news_feeds_content?country_name=Greece"
       dataType: "json"
@@ -448,8 +374,8 @@ $ ->
         market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
 
-  marker22.on "click", (e) ->
-    marker22.unbindPopup()
+  marker_Ireland.on "click", (e) ->
+    marker_Ireland.unbindPopup()
     $.ajax
       url: "/map/update_news_feeds_content?country_name=Ireland"
       dataType: "json"
@@ -458,8 +384,8 @@ $ ->
         market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
 
-  marker23.on "click", (e) ->
-    marker23.unbindPopup()
+  marker_Spain.on "click", (e) ->
+    marker_Spain.unbindPopup()
     $.ajax
       url: "/map/update_news_feeds_content?country_name=Spain"
       dataType: "json"
@@ -468,8 +394,8 @@ $ ->
         market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
 
-  marker24.on "click", (e) ->
-    marker24.unbindPopup()
+  marker_Portugal.on "click", (e) ->
+    marker_Portugal.unbindPopup()
     $.ajax
       url: "/map/update_news_feeds_content?country_name=Portugal"
       dataType: "json"
@@ -478,9 +404,8 @@ $ ->
         market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
 
-
-  marker25.on "click", (e) ->
-    marker25.unbindPopup()
+  marker_Isreal.on "click", (e) ->
+    marker_Isreal.unbindPopup()
     $.ajax
       url: "/map/update_news_feeds_content?country_name=Israel"
       dataType: "json"
@@ -489,17 +414,15 @@ $ ->
         market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
 
-        
-  marker26.on "click", (e) ->
-    marker26.unbindPopup()
+  marker_SouthAfrica.on "click", (e) ->
+    marker_SouthAfrica.unbindPopup()
     $.ajax
-      url: "/map/update_news_feeds_content?country_name=South Africa"
+      url: "/map/update_news_feeds_content?country_name=SouthAfrica"
       dataType: "json"
       success: (data) ->
         # marker26.bindPopup(data.market_data).openPopup()
         market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
-
 
   marker_China.on "click", (e) ->
     marker_China.unbindPopup()
@@ -511,8 +434,8 @@ $ ->
         market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
 
-  marker28.on "click", (e) ->
-    marker28.unbindPopup()
+  marker_Malaysia.on "click", (e) ->
+    marker_Malaysia.unbindPopup()
     $.ajax
       url: "/map/update_news_feeds_content?country_name=Malaysia"
       dataType: "json"
@@ -521,8 +444,8 @@ $ ->
         market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
 
-  marker29.on "click", (e) ->
-    marker29.unbindPopup()
+  marker_Japan.on "click", (e) ->
+    marker_Japan.unbindPopup()
     $.ajax
       url: "/map/update_news_feeds_content?country_name=Japan"
       dataType: "json"
@@ -531,8 +454,8 @@ $ ->
         market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
 
-  marker30.on "click", (e) ->
-    marker30.unbindPopup()
+  marker_Taiwan.on "click", (e) ->
+    marker_Taiwan.unbindPopup()
     $.ajax
       url: "/map/update_news_feeds_content?country_name=Taiwan"
       dataType: "json"
@@ -541,8 +464,8 @@ $ ->
         market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
 
-  marker31.on "click", (e) ->
-    marker31.unbindPopup()
+  marker_Korea.on "click", (e) ->
+    marker_Korea.unbindPopup()
     $.ajax
       url: "/map/update_news_feeds_content?country_name=Korea"
       dataType: "json"
@@ -551,8 +474,8 @@ $ ->
         market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
 
-  marker32.on "click", (e) ->
-    marker32.unbindPopup()
+  marker_Australia.on "click", (e) ->
+    marker_Australia.unbindPopup()
     $.ajax
       url: "/map/update_news_feeds_content?country_name=Australia"
       dataType: "json"

@@ -30,7 +30,9 @@
 
 body, html {
   height:100%;
-  font-family: 'Pontano Sans', sans-serif; 
+  // font-family: 'Questrial', sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  // font-family: 'Pontano Sans', sans-serif; 
 }
 .market_data { 
 	border: 1px solid;
@@ -111,10 +113,23 @@ body, html {
   height:100%;
   background-color:#011019;
 }
+#main-logo {
+  color:white;
+}
 #map-header {
-  height:40px;
 }
 #map-header .navbar {
+  background:none;
+}
+#map-header .navbar .btn {
+  background:#222;
+  border-radius:2px;
+}
+#map-header .navbar-inner {
+  background:url('/images/opaque_bg.png') repeat;
+  border-bottom:3px solid #222;
+}
+#map-footer .navbar-inner {
   background:none;
 }
 #map-filters {
@@ -162,6 +177,10 @@ body, html {
   margin:100px;
   color:white;
   text-shadow:-1px -1px 1px #000;
+}
+#info_overlay .info h1,
+#info_overlay .info h2 {
+  font-weight:normal;
 }
 #info_overlay .info h1 {
   font-size:30pt; 

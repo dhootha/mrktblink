@@ -75,7 +75,7 @@ FTSE 100:
   url: "http://chartapi.finance.yahoo.com/instrument/1.0/%5EFTSE/chartdata;type=quote;range=1d/json/"
 
 PX IND:
-  country: "Czeck Repubic"
+  country: "CzeckRepubic"
   url: "http://chartapi.finance.yahoo.com/instrument/1.0/FPXAA.PR/chartdata;type=quote;range=1d/json/"
 
 MICEX IND:
@@ -103,7 +103,7 @@ TEL AVIV TA-100:
   url: "http://chartapi.finance.yahoo.com/instrument/1.0/%5ETA100/chartdata;type=quote;range=1d/json/"
 
 Dow Jones South Africa:
-  country: "South Africa"
+  country: "SouthAfrica"
   url: "http://chartapi.finance.yahoo.com/instrument/1.0/%5EDWZAT/chartdata;type=quote;range=1d/json/"
 
 SSE:
@@ -136,4 +136,8 @@ ALL ORDINARIES:
 
 BSE:
   country: "India"
+  url: "http://chartapi.finance.yahoo.com/instrument/1.0/%5EBSESN/chartdata;type=quote;range=1d/json/"
+
+FTSE MIB:
+  country: "Italy"
   url: "http://chartapi.finance.yahoo.com/instrument/1.0/%5EBSESN/chartdata;type=quote;range=1d/json/"
