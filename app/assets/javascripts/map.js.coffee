@@ -187,6 +187,16 @@ $ ->
         market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
 
+  marker_Alaska.on "click", (e) ->
+    marker_Alaska.unbindPopup()
+    $.ajax
+      url: "/map/update_news_feeds_content?country_name=USA"
+      dataType: "json"
+      success: (data) ->
+        # marker_USA.bindPopup(data.market_data).openPopup()
+        market_info_overlay(data.market_data)
+        $('#container').html(data.content_to_replace)
+
   marker_Argentina.on "click", (e) ->
     marker_Argentina.unbindPopup()
     $.ajax
@@ -484,7 +494,6 @@ $ ->
       url: "/map/update_news_feeds_content?country_name=Australia"
       dataType: "json"
       success: (data) ->
-        marker32.bindPopup(data.market_data).openPopup()
         market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
 

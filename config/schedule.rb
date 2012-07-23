@@ -4,7 +4,6 @@
 # http://en.wikipedia.org/wiki/Cron
 
 # Example:
-#
 
 
 env :PATH, "/home/testmachine/.rvm/gems/ruby-1.9.3-p0/bin:/home/testmachine/.rvm/gems/ruby-1.9.3-p0@global/bin:/home/testmachine/.rvm/rubies/ruby-1.9.3-p0/bin:/home/testmachine/.rvm/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/home/testmachine/.rvm/gems/ruby-1.9.3-p0/bin/bundle"

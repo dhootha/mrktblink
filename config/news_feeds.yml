@@ -16,7 +16,7 @@ Chile:
 Peru:
   feed_url: "https://news.google.com/news/feeds?pz=1&cf=all&ned=us&hl=en&csid=a768d86714e3dc2f&output=rss"
 
-Colombia:
+Columbia:
   feed_url: "https://news.google.com/news/feeds?pz=1&cf=all&ned=us&hl=en&csid=a768d86714e3dc2f&output=rss"
 
 Canada:
@@ -49,7 +49,7 @@ Switzerland:
 England:
   feed_url: "https://news.google.com/news/feeds?pz=1&cf=all&ned=us&hl=en&csid=e84f825417de0f71&output=rss"
 
-Czech Repubic:
+CzechRepubic:
   feed_url: "https://news.google.com/news/feeds?pz=1&cf=all&ned=us&hl=en&csid=c22abb49dbbe6f98&output=rss"
 
 Russia:
@@ -70,7 +70,7 @@ Portugal:
 Isreal:
   feed_url: "https://news.google.com/news/feeds?pz=1&cf=all&ned=us&hl=en&csid=e88cf7e2e015f426&output=rss"
 
-South Africa:
+SouthAfrica:
   feed_url: "https://news.google.com/news/feeds?pz=1&cf=all&ned=us&hl=en&csid=31fa04f57a4aa5b8&output=rss"
 
 China:
