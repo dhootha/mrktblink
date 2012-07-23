@@ -209,40 +209,6 @@ $ ->
   marker34 = new L.Marker(new L.LatLng(53.7, 10), {icon: denmarkIcon})
   marker35 = new L.Marker(new L.LatLng(42.3, 9), {icon: italyIcon})
 
-  # marker1 = new L.Marker(new L.LatLng(countries['london']['lat'], countries['london']['lon']))
-  # marker2 = new L.Marker(new L.LatLng(countries['usa']['lat'], countries['usa']['lon']))
-  # marker3 = new L.Marker(new L.LatLng(countries['argentina']['lat'], countries['argentina']['lon']))
-  # marker4 = new L.Marker(new L.LatLng(countries['brazil']['lat'], countries['brazil']['lon']))
-  # marker5 = new L.Marker(new L.LatLng(countries['mexico']['lat'], countries['mexico']['lon']))
-  # marker6 = new L.Marker(new L.LatLng(countries['chile']['lat'], countries['chile']['lon']))
-  # marker7 = new L.Marker(new L.LatLng(countries['peru']['lat'], countries['peru']['lon']))
-  # marker8 = new L.Marker(new L.LatLng(countries['columbia']['lat'], countries['columbia']['lon']))
-  # marker9 = new L.Marker(new L.LatLng(countries['canada']['lat'], countries['canada']['lon']))
-  # marker10 = new L.Marker(new L.LatLng(countries['austria']['lat'], countries['austria']['lon']))
-  # marker11 = new L.Marker(new L.LatLng(countries['belgium']['lat'], countries['belgium']['lon']))
-  # marker12 = new L.Marker(new L.LatLng(countries['france']['lat'], countries['france']['lon']))
-  # marker13 = new L.Marker(new L.LatLng(countries['germany']['lat'], countries['germany']['lon']))
-  # marker14 = new L.Marker(new L.LatLng(countries['netherlands']['lat'], countries['netherlands']['lon']))
-  # marker15 = new L.Marker(new L.LatLng(countries['norway']['lat'], countries['norway']['lon']))
-  # marker16 = new L.Marker(new L.LatLng(countries['sweden']['lat'], countries['sweden']['lon']))
-  # marker17 = new L.Marker(new L.LatLng(countries['switzerland']['lat'], countries['switzerland']['lon']))
-  # marker18 = new L.Marker(new L.LatLng(countries['england']['lat'], countries['england']['lon']))
-  # marker19 = new L.Marker(new L.LatLng(countries['czeck_republic']['lat'], countries['czeck_republic']['lon']))
-  # marker20 = new L.Marker(new L.LatLng(countries['russia']['lat'], countries['russia']['lon']))
-  # marker21 = new L.Marker(new L.LatLng(countries['greece']['lat'], countries['greece']['lon']))
-  # marker22 = new L.Marker(new L.LatLng(countries['ireland']['lat'], countries['ireland']['lon']))
-  # marker23 = new L.Marker(new L.LatLng(countries['spain']['lat'], countries['spain']['lon']))
-  # marker24 = new L.Marker(new L.LatLng(countries['portugal']['lat'], countries['portugal']['lon']))
-  # marker25 = new L.Marker(new L.LatLng(countries['isreal']['lat'], countries['isreal']['lon']))
-  # marker26 = new L.Marker(new L.LatLng(countries['south_africa']['lat'], countries['south_africa']['lon']))
-  # marker27 = new L.Marker(new L.LatLng(countries['china']['lat'], countries['china']['lon']))
-  # marker28 = new L.Marker(new L.LatLng(countries['malaysia']['lat'], countries['malaysia']['lon']))
-  # marker29 = new L.Marker(new L.LatLng(countries['japan']['lat'], countries['japan']['lon']))
-  # marker30 = new L.Marker(new L.LatLng(countries['taiwan']['lat'], countries['taiwan']['lon']))
-  # marker31 = new L.Marker(new L.LatLng(countries['korea']['lat'], countries['korea']['lon']))
-  # marker32 = new L.Marker(new L.LatLng(countries['australia']['lat'], countries['australia']['lon']))
-  # marker33 = new L.Marker(new L.LatLng(countries['india']['lat'], countries['india']['lon']))
-
   map.addLayer(marker_USA)
   map.addLayer(marker3)
   map.addLayer(marker4)
@@ -286,7 +252,8 @@ $ ->
       url: "/map/update_news_feeds_content?country_name=USA"
       dataType: "json"
       success: (data) ->
-        marker_USA.bindPopup(data.market_data).openPopup()
+        # marker_USA.bindPopup(data.market_data).openPopup()
+        market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
 
   marker3.on "click", (e) ->
@@ -295,7 +262,8 @@ $ ->
       url: "/map/update_news_feeds_content?country_name=Argentina"
       dataType: "json"
       success: (data) ->
-        marker3.bindPopup(data.market_data).openPopup()
+        # marker3.bindPopup(data.market_data).openPopup()
+        market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
 
   marker4.on "click", (e) ->
@@ -304,7 +272,9 @@ $ ->
       url: "/map/update_news_feeds_content?country_name=Brazil"
       dataType: "json"
       success: (data) ->
-        marker4.bindPopup(data.market_data).openPopup()
+        # marker4.bindPopup(data.market_data).openPopup()
+        market_info_overlay(data.market_data)
+        market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
 
   marker5.on "click", (e) ->
@@ -313,7 +283,8 @@ $ ->
       url: "/map/update_news_feeds_content?country_name=Mexico"
       dataType: "json"
       success: (data) ->
-        marker5.bindPopup(data.market_data).openPopup()
+        # marker5.bindPopup(data.market_data).openPopup()
+        market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
 
   marker6.on "click", (e) ->
@@ -322,7 +293,8 @@ $ ->
       url: "/map/update_news_feeds_content?country_name=Chile"
       dataType: "json"
       success: (data) ->
-        marker6.bindPopup(data.market_data).openPopup()
+        # marker6.bindPopup(data.market_data).openPopup()
+        market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
 
   marker7.on "click", (e) ->
@@ -331,7 +303,8 @@ $ ->
       url: "/map/update_news_feeds_content?country_name=Peru"
       dataType: "json"
       success: (data) ->
-        marker7.bindPopup(data.market_data).openPopup()
+        # marker7.bindPopup(data.market_data).openPopup()
+        market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
 
   marker8.on "click", (e) ->
@@ -340,7 +313,8 @@ $ ->
       url: "/map/update_news_feeds_content?country_name=Colombia"
       dataType: "json"
       success: (data) ->
-        marker8.bindPopup(data.market_data).openPopup()
+        # marker8.bindPopup(data.market_data).openPopup()
+        market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
 
   
@@ -350,7 +324,8 @@ $ ->
       url: "/map/update_news_feeds_content?country_name=Canada"
       dataType: "json"
       success: (data) ->
-        marker9.bindPopup(data.market_data).openPopup()
+        # marker9.bindPopup(data.market_data).openPopup()
+        market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
 
   marker10.on "click", (e) ->
@@ -359,7 +334,8 @@ $ ->
       url: "/map/update_news_feeds_content?country_name=Austria"
       dataType: "json"
       success: (data) ->
-        marker10.bindPopup(data.market_data).openPopup()
+        # marker10.bindPopup(data.market_data).openPopup()
+        market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
 
   marker11.on "click", (e) ->
@@ -368,7 +344,8 @@ $ ->
       url: "/map/update_news_feeds_content?country_name=Belgium"
       dataType: "json"
       success: (data) ->
-        marker11.bindPopup(data.market_data).openPopup()
+        # marker11.bindPopup(data.market_data).openPopup()
+        market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
 
   marker12.on "click", (e) ->
@@ -377,7 +354,8 @@ $ ->
       url: "/map/update_news_feeds_content?country_name=France"
       dataType: "json"
       success: (data) ->
-        marker12.bindPopup(data.market_data).openPopup()
+        # marker12.bindPopup(data.market_data).openPopup()
+        market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
 
   marker13.on "click", (e) ->
@@ -386,7 +364,8 @@ $ ->
       url: "/map/update_news_feeds_content?country_name=Germany"
       dataType: "json"
       success: (data) ->
-        marker13.bindPopup(data.market_data).openPopup()
+        # marker13.bindPopup(data.market_data).openPopup()
+        market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
 
   marker14.on "click", (e) ->
@@ -395,7 +374,8 @@ $ ->
       url: "/map/update_news_feeds_content?country_name=Netherlands"
       dataType: "json"
       success: (data) ->
-        marker14.bindPopup(data.market_data).openPopup()
+        # marker14.bindPopup(data.market_data).openPopup()
+        market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
 
   marker15.on "click", (e) ->
@@ -404,7 +384,8 @@ $ ->
       url: "/map/update_news_feeds_content?country_name=Norway"
       dataType: "json"
       success: (data) ->
-        marker15.bindPopup(data.market_data).openPopup()
+        # marker15.bindPopup(data.market_data).openPopup()
+        market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
 
   marker16.on "click", (e) ->
@@ -413,7 +394,8 @@ $ ->
       url: "/map/update_news_feeds_content?country_name=Sweden"
       dataType: "json"
       success: (data) ->
-        marker16.bindPopup(data.market_data).openPopup()
+        # marker16.bindPopup(data.market_data).openPopup()
+        market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
 
   marker17.on "click", (e) ->
@@ -422,7 +404,8 @@ $ ->
       url: "/map/update_news_feeds_content?country_name=Switzerland"
       dataType: "json"
       success: (data) ->
-        marker17.bindPopup(data.market_data).openPopup()
+        # marker17.bindPopup(data.market_data).openPopup()
+        market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
 
   marker18.on "click", (e) ->
@@ -431,7 +414,8 @@ $ ->
       url: "/map/update_news_feeds_content?country_name=England"
       dataType: "json"
       success: (data) ->
-        marker18.bindPopup(data.market_data).openPopup()
+        # marker18.bindPopup(data.market_data).openPopup()
+        market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
 
   marker19.on "click", (e) ->
@@ -440,7 +424,8 @@ $ ->
       url: "/map/update_news_feeds_content?country_name=Czeck Repubic"
       dataType: "json"
       success: (data) ->
-        marker19.bindPopup(data.market_data).openPopup()
+        # marker19.bindPopup(data.market_data).openPopup()
+        market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
 
   marker20.on "click", (e) ->
@@ -449,7 +434,8 @@ $ ->
       url: "/map/update_news_feeds_content?country_name=Russia"
       dataType: "json"
       success: (data) ->
-        marker20.bindPopup(data.market_data).openPopup()
+        # marker20.bindPopup(data.market_data).openPopup()
+        market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
 
   marker21.on "click", (e) ->
@@ -458,7 +444,8 @@ $ ->
       url: "/map/update_news_feeds_content?country_name=Greece"
       dataType: "json"
       success: (data) ->
-        marker21.bindPopup(data.market_data).openPopup()
+        # marker21.bindPopup(data.market_data).openPopup()
+        market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
 
   marker22.on "click", (e) ->
@@ -467,7 +454,8 @@ $ ->
       url: "/map/update_news_feeds_content?country_name=Ireland"
       dataType: "json"
       success: (data) ->
-        marker22.bindPopup(data.market_data).openPopup()
+        # marker22.bindPopup(data.market_data).openPopup()
+        market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
 
   marker23.on "click", (e) ->
@@ -476,7 +464,8 @@ $ ->
       url: "/map/update_news_feeds_content?country_name=Spain"
       dataType: "json"
       success: (data) ->
-        marker23.bindPopup(data.market_data).openPopup()
+        # marker23.bindPopup(data.market_data).openPopup()
+        market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
 
   marker24.on "click", (e) ->
@@ -485,7 +474,8 @@ $ ->
       url: "/map/update_news_feeds_content?country_name=Portugal"
       dataType: "json"
       success: (data) ->
-        marker24.bindPopup(data.market_data).openPopup()
+        # marker24.bindPopup(data.market_data).openPopup()
+        market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
 
 
@@ -495,7 +485,8 @@ $ ->
       url: "/map/update_news_feeds_content?country_name=Israel"
       dataType: "json"
       success: (data) ->
-        marker25.bindPopup(data.market_data).openPopup()
+        # marker25.bindPopup(data.market_data).openPopup()
+        market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
 
         
@@ -505,7 +496,8 @@ $ ->
       url: "/map/update_news_feeds_content?country_name=South Africa"
       dataType: "json"
       success: (data) ->
-        marker26.bindPopup(data.market_data).openPopup()
+        # marker26.bindPopup(data.market_data).openPopup()
+        market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
 
 
@@ -515,7 +507,8 @@ $ ->
       url: "/map/update_news_feeds_content?country_name=China"
       dataType: "json"
       success: (data) ->
-        marker_China.bindPopup(data.market_data).openPopup()
+        # marker_China.bindPopup(data.market_data).openPopup()
+        market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
 
   marker28.on "click", (e) ->
@@ -524,7 +517,8 @@ $ ->
       url: "/map/update_news_feeds_content?country_name=Malaysia"
       dataType: "json"
       success: (data) ->
-        marker28.bindPopup(data.market_data).openPopup()
+        # marker28.bindPopup(data.market_data).openPopup()
+        market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
 
   marker29.on "click", (e) ->
@@ -533,7 +527,8 @@ $ ->
       url: "/map/update_news_feeds_content?country_name=Japan"
       dataType: "json"
       success: (data) ->
-        marker29.bindPopup(data.market_data).openPopup()
+        # marker29.bindPopup(data.market_data).openPopup()
+        market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
 
   marker30.on "click", (e) ->
@@ -543,6 +538,7 @@ $ ->
       dataType: "json"
       success: (data) ->
         marker30.bindPopup(data.market_data).openPopup()
+        market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
 
   marker31.on "click", (e) ->
@@ -552,6 +548,7 @@ $ ->
       dataType: "json"
       success: (data) ->
         marker31.bindPopup(data.market_data).openPopup()
+        market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
 
   marker32.on "click", (e) ->
@@ -561,6 +558,7 @@ $ ->
       dataType: "json"
       success: (data) ->
         marker32.bindPopup(data.market_data).openPopup()
+        market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
 
   marker_India.on "click", (e) ->
@@ -569,7 +567,8 @@ $ ->
       url: "/map/update_news_feeds_content?country_name=India"
       dataType: "json"
       success: (data) ->
-        marker_India.bindPopup(data.market_data).openPopup()
+        # marker_India.bindPopup(data.market_data).openPopup()
+        market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
 
   color = "green"
@@ -583,3 +582,15 @@ $ ->
           jQuery.each data.countries_details, (i, j) ->
             eval('marker_'+j.country_name).setIcon(eval(j.country_name+j.color+'Icon'))
   ), 10000
+
+  $('#info_overlay').click =>
+    $('#info_overlay').fadeOut('fast')
+
+  market_info_overlay = (data) =>
+    # market = ''
+    # market + data.market_name for market_name in data
+    info_string = '<h1>Market Info for ' + data[0].market_name + '</h1>' + 
+      '<h2>Previous Close: ' + data[0].previous_close + '</h2>' +
+      '<h2>Current: ' + data[0].close + '</h2>'
+    $('#info_overlay').find('.info').html(info_string)
+    $('#info_overlay').fadeIn('fast')

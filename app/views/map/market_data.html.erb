@@ -5,7 +5,7 @@
     <% unless $redis.get("data_#{market[0]}").blank? %>
       <div class="market_data" id="market_data_<%= market[0] %>">
         <h1><%= market[0] %></h1>        
-        <%= text_area_tag "market_data_value_#{market[0]}",$redis.get("data_#{market[0]}"), :class => "market_data_value", :id => "data_#{market[0].gsub('*','_').gsub(' ','_').gsub('&','_')}"%>        
+        <%= text_area_tag "market_data_value_#{market[0]}", $redis.get("data_#{market[0]}"), :class => "market_data_value", :id => "data_#{market[0].gsub('*','_').gsub(' ','_').gsub('&','_')}"%>        
       </div>
     <% end %>
   <% end %>
