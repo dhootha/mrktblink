@@ -35,7 +35,7 @@ class MapController < ApplicationController
       markets.each do |market| 
         market_data = market.market_data 
         json_market_data = JSON.parse(market_data[30..-3].gsub('"previous_close" : ','"previous_close" : "')) 
-        market_data_value << {:market => market.market_name.upcase, :previous_close => json_market_data['meta']['previous_close'], :close => json_market_data['series'].last['close']}
+        market_data_value << {:market_name => market.market_name.upcase, :previous_close => json_market_data['meta']['previous_close'], :close => json_market_data['series'].last['close']}
       end
     else
       market_data_value = 'does not exist'
