@@ -236,7 +236,7 @@ $ ->
   marker_Columbia.on "click", (e) ->
     marker_Columbia.unbindPopup()
     $.ajax
-      url: "/map/update_news_feeds_content?country_name=Colombia"
+      url: "/map/update_news_feeds_content?country_name=Columbia"
       dataType: "json"
       success: (data) ->
         # marker8.bindPopup(data.market_data).openPopup()

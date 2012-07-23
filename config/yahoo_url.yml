@@ -31,7 +31,7 @@ IGBVL*:
   url: "http://chartapi.finance.yahoo.com/instrument/1.0/%5EDWPED/chartdata;type=quote;range=1d/json/"
 
 DJLLGUF*:
-  country: "Colombia"
+  country: "Columbia"
   url: "http://chartapi.finance.yahoo.com/instrument/1.0/%5EDJLLGUF/chartdata;type=quote;range=1d/json/"  
 
 TSX:
