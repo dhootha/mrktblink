@@ -35,12 +35,14 @@ class MapController < ApplicationController
       markets.each do |market| 
         market_data = market.market_data 
         json_market_data = JSON.parse(market_data[30..-3].gsub('"previous_close" : ','"previous_close" : "')) 
-        market_data_value << {:market_name => market.market_name.upcase, :previous_close => json_market_data['meta']['previous_close'], :close => json_market_data['series'].last['close']}
+        change = 'up'
+        market_data_value << {:market_name => market.market_name.upcase, :previous_close => json_market_data['meta']['previous_close'], :close => json_market_data['series'].last['close'], :change => change}
       end
     else
       market_data_value = 'does not exist'
     end  
-
+    # market_data_value = '{"market_name":"test", "previous_close":"10020", "close":"123123", "change":"up"}'
+    # market_data_value = '[{:market_name => "test", :previous_close => "10020", :close => "123123", :change => "up"}]'.to_json
     json = {:success => true, :market_data => market_data_value, :content_to_replace => render_to_string(:partial => 'news_feeds_content', :locals => {:country => params[:country_name]})}
     render :json => json
   end
@@ -48,7 +50,6 @@ class MapController < ApplicationController
   def update_icon    
     countries_details = []
     countries = []
-    # countries = ['USA','India','China']
     APP_CONFIG_MARKETS.each do |market|
       countries << market[1]["country"]
     end

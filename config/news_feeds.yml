@@ -93,3 +93,6 @@ Australia:
 
 India:
   feed_url: "https://news.google.com/news/feeds?pz=1&cf=all&ned=us&hl=en&csid=7eca3033d5a12286&output=rss"
+
+Italy:
+  feed_url: "https://news.google.com/news/feeds?pz=1&cf=all&ned=us&hl=en&csid=c22abb49dbbe6f98&output=rss"

@@ -140,4 +140,4 @@ BSE:
 
 FTSE MIB:
   country: "Italy"
-  url: "http://chartapi.finance.yahoo.com/instrument/1.0/%5EBSESN/chartdata;type=quote;range=1d/json/"
+  url: "http://chartapi.finance.yahoo.com/instrument/1.0/%5EDWITD/chartdata;type=quote;range=1d/json/"
