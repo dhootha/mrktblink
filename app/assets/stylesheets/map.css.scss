@@ -181,6 +181,13 @@
   margin:100px;
   color:white;
   text-shadow:-1px -1px 1px #000;
+  z-index:99;
+  position:absolute;
+  display:block;
+  width:800px;
+}
+#info_overlay .info .info_block {
+  margin-bottom:40px;
 }
 #info_overlay .info h1,
 #info_overlay .info h2 {
@@ -191,4 +198,12 @@
   border-bottom:1px solid white;
   padding-bottom:10px;
   margin-bottom:20px;
+}
+#info_overlay .country_name {
+  color:#555;
+  font-size:200px;
+  position:absolute;
+  top:150px;
+  right:100px;
+  z-index:10;
 }

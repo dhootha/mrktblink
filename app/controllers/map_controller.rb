@@ -35,14 +35,17 @@ class MapController < ApplicationController
       markets.each do |market| 
         market_data = market.market_data 
         json_market_data = JSON.parse(market_data[30..-3].gsub('"previous_close" : ','"previous_close" : "')) 
-        change = 'up'
-        market_data_value << {:market_name => market.market_name.upcase, :previous_close => json_market_data['meta']['previous_close'], :close => json_market_data['series'].last['close'], :change => change}
+        prev = json_market_data['meta']['previous_close'].to_f
+        close = json_market_data['series'].last['close'].to_f
+        percent = (((close - prev) / (prev)) * 100).round(4)
+        change = percent > 0 ? 'up' : 'down'
+        sign = percent > 0 ? '+' : ''
+        market_data_value << {:market_name => market.market_name.upcase, :previous_close => prev, :close => close, :change => change, :percent => percent, :sign => sign, :country => country}
       end
     else
       market_data_value = 'does not exist'
     end  
-    # market_data_value = '{"market_name":"test", "previous_close":"10020", "close":"123123", "change":"up"}'
-    # market_data_value = '[{:market_name => "test", :previous_close => "10020", :close => "123123", :change => "up"}]'.to_json
+    # market_data_value = [{:market_name=>"DOW", :previous_close=>prev, :close=>close, :change=>change, :percent=>percent, :country=>"USA", :sign=>sign}, {:market_name=>"NASDAQ", :previous_close=>prev, :close=>close, :change=>change, :percent=>percent, :country=>"USA", :sign=>sign}, {:market_name=>"S&P", :previous_close=>prev, :close=>close, :change=>change, :percent=>percent, :country=>"USA", :sign=>sign}]
     json = {:success => true, :market_data => market_data_value, :content_to_replace => render_to_string(:partial => 'news_feeds_content', :locals => {:country => params[:country_name]})}
     render :json => json
   end

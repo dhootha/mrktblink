@@ -523,11 +523,17 @@ $ ->
     $('#info_overlay').fadeOut('fast')
 
   market_info_overlay = (data) =>
-    # market = ''
     # market + data.market_name for market_name in data
-    info_string = '<h1>Market Info for ' + data[0].market_name + '</h1>' + 
-      '<h2>Previous Close: ' + data[0].previous_close + '</h2>' +
-      '<h2>Current: ' + data[0].close + '</h2>' +
-      '<h2><img src="/images/up_arrow.png" /> + </h1>'
+    count = data.length
+    info_string = ''
+    for i in [0...count]
+      info_string += '<div class="info_block">' +
+        '<h1>Market Info for ' + data[i].market_name + '</h1>' + 
+        '<h2>Previous Close: ' + data[i].previous_close + '</h2>' +
+        '<h2>Current: ' + data[i].close + '</h2>' +
+        '<h2><img src="/images/' + data[i].change + '_arrow.png" /> ' + data[i].sign + ' ' + data[0].percent + '%</h1>' +
+        '</div>'
+
     $('#info_overlay').find('.info').html(info_string)
+    $('#info_overlay').find('.country_name').html(data[0].country)
     $('#info_overlay').fadeIn('fast')
