@@ -37,22 +37,22 @@ class MapController < ApplicationController
         json_market_data = JSON.parse(market_data[30..-3].gsub('"previous_close" : ','"previous_close" : "')) 
         prev = json_market_data['meta']['previous_close'].to_f
         close = json_market_data['series'].last['close'].to_f
-        percent = (((close - prev) / (prev)) * 100).round(4)
+        percent = (((close - prev) / (prev)) * 100).round(3)
         change = percent > 0 ? 'up' : 'down'
         sign = percent > 0 ? '+' : ''
-        points = prev - close
+        points = (close - prev).round(3)
         market_data_value << {:market_name => market.market_name.upcase, :previous_close => prev, :close => close, :change => change, :percent => percent, :sign => sign, :country => params[:country_name], :points =>points}
       end
     else
       market_data_value = 'does not exist'
     end  
-    # prev = "12341234.1234".to_f 
-    # close = "12454354.5334".to_f
-    # percent = (((close - prev) / (prev)) * 100).round(4)
-    # change = percent > 0 ? 'up' : 'down'
-    # sign = percent > 0 ? '+' : ''
-    # points = prev - close
-    # market_data_value = [{:market_name=>"DOW", :previous_close=>prev, :close=>close, :change=>change, :percent=>percent, :country=>"USA", :sign=>sign, :points=>points}, {:market_name=>"NASDAQ", :previous_close=>prev, :close=>close, :change=>change, :percent=>percent, :country=>"USA", :sign=>sign, :points=>points}, {:market_name=>"S&P", :previous_close=>prev, :close=>close, :change=>change, :percent=>percent, :country=>"USA", :sign=>sign, :points=>points}]
+    close = "12341234.1234".to_f 
+    prev = "12454354.5334".to_f
+    percent = (((close - prev) / (prev)) * 100).round(3)
+    change = percent > 0 ? 'up' : 'down'
+    sign = percent > 0 ? '+' : ''
+    points = (close - prev).round(3)
+    market_data_value = [{:market_name=>"DOW", :previous_close=>prev, :close=>close, :change=>change, :percent=>percent, :country=>"USA", :sign=>sign, :points=>points}, {:market_name=>"NASDAQ", :previous_close=>prev, :close=>close, :change=>change, :percent=>percent, :country=>"USA", :sign=>sign, :points=>points}, {:market_name=>"S&P", :previous_close=>prev, :close=>close, :change=>change, :percent=>percent, :country=>"USA", :sign=>sign, :points=>points}]
     json = {:success => true, :market_data => market_data_value, :content_to_replace => render_to_string(:partial => 'news_feeds_content', :locals => {:country => params[:country_name]})}
     render :json => json
   end

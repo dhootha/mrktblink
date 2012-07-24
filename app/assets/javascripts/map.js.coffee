@@ -238,7 +238,6 @@ $ ->
         $('#container').html(data.content_to_replace)
 
   marker_Peru.on "click", (e) ->
-    marker_Peru.unbindPopup()
     $.ajax
       url: "/map/update_news_feeds_content?country_name=Peru"
       dataType: "json"
@@ -248,18 +247,14 @@ $ ->
         $('#container').html(data.content_to_replace)
 
   marker_Columbia.on "click", (e) ->
-    marker_Columbia.unbindPopup()
     $.ajax
       url: "/map/update_news_feeds_content?country_name=Columbia"
       dataType: "json"
       success: (data) ->
-        # marker8.bindPopup(data.market_data).openPopup()
         market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
-
   
   marker_Canada.on "click", (e) ->
-    marker_Canada.unbindPopup()
     $.ajax
       url: "/map/update_news_feeds_content?country_name=Canada"
       dataType: "json"
