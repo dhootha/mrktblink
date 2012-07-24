@@ -113,8 +113,8 @@ $ ->
   marker_Columbia = new L.Marker(new L.LatLng(6,-76.8), {icon:ColumbiaRedIcon})
   marker_Canada = new L.Marker(new L.LatLng(72.5,-139), {icon:CanadaRedIcon})
   marker_Austria = new L.Marker(new L.LatLng(45,12), {icon:AustriaGreenIcon})
-  marker_Belgium = new L.Marker(new L.LatLng(47,4.7), {icon:BelgiumGreenIcon})
   marker_France = new L.Marker(new L.LatLng(46.4,-2.2), {icon:FranceGreenIcon})
+  marker_Belgium = new L.Marker(new L.LatLng(47,4.7), {icon:BelgiumGreenIcon})
   marker_Germany = new L.Marker(new L.LatLng(50.8,8), {icon:GermanyGreenIcon})
   marker_Netherlands = new L.Marker(new L.LatLng(49,5.8), {icon:NetherlandsGreenIcon})
   marker_Norway = new L.Marker(new L.LatLng(69,7), {icon:NorwayGreenIcon})
@@ -299,7 +299,6 @@ $ ->
         $('#container').html(data.content_to_replace)
 
   marker_Germany.on "click", (e) ->
-    marker_Germany.unbindPopup()
     $.ajax
       url: "/map/update_news_feeds_content?country_name=Germany"
       dataType: "json"
@@ -309,17 +308,14 @@ $ ->
         $('#container').html(data.content_to_replace)
 
   marker_Netherlands.on "click", (e) ->
-    marker_Netherlands.unbindPopup()
     $.ajax
       url: "/map/update_news_feeds_content?country_name=Netherlands"
       dataType: "json"
       success: (data) ->
-        # marker14.bindPopup(data.market_data).openPopup()
         market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
 
   marker_Norway.on "click", (e) ->
-    marker_Norway.unbindPopup()
     $.ajax
       url: "/map/update_news_feeds_content?country_name=Norway"
       dataType: "json"
@@ -359,12 +355,10 @@ $ ->
         $('#container').html(data.content_to_replace)
 
   marker_CzeckRepublic.on "click", (e) ->
-    marker_CzeckRepublic.unbindPopup()
     $.ajax
       url: "/map/update_news_feeds_content?country_name=CzeckRepubic"
       dataType: "json"
       success: (data) ->
-        # marker19.bindPopup(data.market_data).openPopup()
         market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
 
@@ -429,12 +423,10 @@ $ ->
         $('#container').html(data.content_to_replace)
 
   marker_SouthAfrica.on "click", (e) ->
-    marker_SouthAfrica.unbindPopup()
     $.ajax
       url: "/map/update_news_feeds_content?country_name=SouthAfrica"
       dataType: "json"
       success: (data) ->
-        # marker26.bindPopup(data.market_data).openPopup()
         market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
 
@@ -469,12 +461,10 @@ $ ->
         $('#container').html(data.content_to_replace)
 
   marker_Taiwan.on "click", (e) ->
-    marker_Taiwan.unbindPopup()
     $.ajax
       url: "/map/update_news_feeds_content?country_name=Taiwan"
       dataType: "json"
       success: (data) ->
-        marker30.bindPopup(data.market_data).openPopup()
         market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
 
@@ -498,12 +488,18 @@ $ ->
         $('#container').html(data.content_to_replace)
 
   marker_India.on "click", (e) ->
-    marker_India.unbindPopup()
     $.ajax
       url: "/map/update_news_feeds_content?country_name=India"
       dataType: "json"
       success: (data) ->
-        # marker_India.bindPopup(data.market_data).openPopup()
+        market_info_overlay(data.market_data)
+        $('#container').html(data.content_to_replace)
+
+  marker_Italy.on "click", (e) ->
+    $.ajax
+      url: "/map/update_news_feeds_content?country_name=Italy"
+      dataType: "json"
+      success: (data) ->
         market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
 
@@ -531,8 +527,9 @@ $ ->
         '<h1>Market Info for ' + data[i].market_name + '</h1>' + 
         '<h2>Previous Close: ' + data[i].previous_close + '</h2>' +
         '<h2>Current: ' + data[i].close + '</h2>' +
-        '<h2><img src="/images/' + data[i].change + '_arrow.png" /> ' + data[i].sign + ' ' + data[0].percent + '%</h1>' +
-        '</div>'
+        '<h2><img src="/images/' + data[i].change + '_arrow.png" /> ' + data[i].sign + ' ' +
+        data[i].points + '</h2>' +
+        '<h2><img src="/images/' + data[i].change + '_arrow.png" /> ' + data[i].sign + ' ' + data[i].percent + '%</h2></div>'
 
     $('#info_overlay').find('.info').html(info_string)
     $('#info_overlay').find('.country_name').html(data[0].country)
