@@ -43,7 +43,7 @@ class MapController < ApplicationController
     end  
     # market_data_value = '{"market_name":"test", "previous_close":"10020", "close":"123123", "change":"up"}'
     # market_data_value = '[{:market_name => "test", :previous_close => "10020", :close => "123123", :change => "up"}]'.to_json
-    json = {:success => true, :market_data => market_data_value.to_s, :content_to_replace => render_to_string(:partial => 'news_feeds_content', :locals => {:country => params[:country_name]})}
+    json = {:success => true, :market_data => market_data_value, :content_to_replace => render_to_string(:partial => 'news_feeds_content', :locals => {:country => params[:country_name]})}
     render :json => json
   end
 

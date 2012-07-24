@@ -525,7 +525,6 @@ $ ->
   market_info_overlay = (data) =>
     # market = ''
     # market + data.market_name for market_name in data
-    alert(data)
     info_string = '<h1>Market Info for ' + data[0].market_name + '</h1>' + 
       '<h2>Previous Close: ' + data[0].previous_close + '</h2>' +
       '<h2>Current: ' + data[0].close + '</h2>' +
