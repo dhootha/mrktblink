@@ -40,7 +40,7 @@ class MapController < ApplicationController
         percent = (((close - prev) / (prev)) * 100).round(4)
         change = percent > 0 ? 'up' : 'down'
         sign = percent > 0 ? '+' : ''
-        market_data_value << {:market_name => market.market_name.upcase, :previous_close => prev, :close => close, :change => change, :percent => percent, :sign => sign, :country => country}
+        market_data_value << {:market_name => market.market_name.upcase, :previous_close => prev, :close => close, :change => change, :percent => percent, :sign => sign, :country => params[:country_name]}
       end
     else
       market_data_value = 'does not exist'
