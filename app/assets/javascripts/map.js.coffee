@@ -251,7 +251,7 @@ $ ->
       url: "/map/update_news_feeds_content?country_name=Columbia"
       dataType: "json"
       success: (data) ->
-        market_info_overlay(data.market_data)
+        # market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
   
   marker_Canada.on "click", (e) ->

@@ -26,11 +26,11 @@ IPSA:
   country: "Chile"
   url: "http://chartapi.finance.yahoo.com/instrument/1.0/%5EIPSA/chartdata;type=quote;range=1d/json/"
 
-IGBVL*:
+IGBVL:
   country: "Peru"
   url: "http://chartapi.finance.yahoo.com/instrument/1.0/%5EDWPED/chartdata;type=quote;range=1d/json/"
 
-DJLLGUF*:
+DJLLGUF:
   country: "Columbia"
   url: "http://chartapi.finance.yahoo.com/instrument/1.0/%5EDJLLGUF/chartdata;type=quote;range=1d/json/"  
 
