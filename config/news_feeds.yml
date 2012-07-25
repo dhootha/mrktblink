@@ -16,7 +16,7 @@ Chile:
 Peru:
   feed_url: "https://news.google.com/news/feeds?pz=1&cf=all&ned=us&hl=en&csid=a768d86714e3dc2f&output=rss"
 
-Columbia:
+Colombia:
   feed_url: "https://news.google.com/news/feeds?pz=1&cf=all&ned=us&hl=en&csid=a768d86714e3dc2f&output=rss"
 
 Canada:

@@ -48,8 +48,8 @@ $ ->
   CzeckRepublicGreenIcon = new CountryIcon('/images/country_images/czeck_republic_green.png', {iconSize: new L.Point(38,25)})
   ChinaRedIcon = new CountryIcon('/images/country_images/china_red.png', {iconSize: new L.Point(355, 247)})
   ChinaGreenIcon = new CountryIcon('/images/country_images/china_green.png', {iconSize: new L.Point(355, 247)})
-  ColumbiaRedIcon = new CountryIcon('/images/country_images/columbia_red.png', {iconSize: new L.Point(66,89)})
-  ColumbiaGreenIcon = new CountryIcon('/images/country_images/columbia_green.png', {iconSize: new L.Point(66,89)})
+  ColombiaRedIcon = new CountryIcon('/images/country_images/colombia_red.png', {iconSize: new L.Point(66,89)})
+  ColombiaGreenIcon = new CountryIcon('/images/country_images/colombia_green.png', {iconSize: new L.Point(66,89)})
   EnglandRedIcon = new CountryIcon('/images/country_images/england_red.png', {iconSize: new L.Point(47,86)})
   EnglandGreenIcon = new CountryIcon('/images/country_images/england_green.png', {iconSize: new L.Point(47,86)})
   FranceRedIcon = new CountryIcon('/images/country_images/france_red.png', {iconSize: new L.Point(73,75)})
@@ -110,7 +110,7 @@ $ ->
   marker_Mexico = new L.Marker(new L.LatLng(26.8,-115.4), {icon: MexicoRedIcon})
   marker_Chile = new L.Marker(new L.LatLng(-24.3,-73.6), {icon:ChileRedIcon})
   marker_Peru = new L.Marker(new L.LatLng(-6.6,-79.2), {icon:PeruRedIcon})
-  marker_Columbia = new L.Marker(new L.LatLng(6,-76.8), {icon:ColumbiaRedIcon})
+  marker_Colombia = new L.Marker(new L.LatLng(6,-76.8), {icon:ColombiaRedIcon})
   marker_Canada = new L.Marker(new L.LatLng(72.5,-139), {icon:CanadaRedIcon})
   marker_Austria = new L.Marker(new L.LatLng(45,12), {icon:AustriaGreenIcon})
   marker_France = new L.Marker(new L.LatLng(46.4,-2.2), {icon:FranceGreenIcon})
@@ -146,7 +146,7 @@ $ ->
   map.addLayer(marker_Mexico)
   map.addLayer(marker_Chile)
   map.addLayer(marker_Peru)
-  map.addLayer(marker_Columbia)
+  map.addLayer(marker_Colombia)
   map.addLayer(marker_Canada)
   map.addLayer(marker_Austria)
   map.addLayer(marker_Belgium)
@@ -246,12 +246,12 @@ $ ->
         market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
 
-  marker_Columbia.on "click", (e) ->
+  marker_Colombia.on "click", (e) ->
     $.ajax
-      url: "/map/update_news_feeds_content?country_name=Columbia"
+      url: "/map/update_news_feeds_content?country_name=Colombia"
       dataType: "json"
       success: (data) ->
-        # market_info_overlay(data.market_data)
+        market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
   
   marker_Canada.on "click", (e) ->
@@ -351,7 +351,7 @@ $ ->
 
   marker_CzeckRepublic.on "click", (e) ->
     $.ajax
-      url: "/map/update_news_feeds_content?country_name=CzeckRepubic"
+      url: "/map/update_news_feeds_content?country_name=Czeck Repubic"
       dataType: "json"
       success: (data) ->
         market_info_overlay(data.market_data)
@@ -419,7 +419,7 @@ $ ->
 
   marker_SouthAfrica.on "click", (e) ->
     $.ajax
-      url: "/map/update_news_feeds_content?country_name=SouthAfrica"
+      url: "/map/update_news_feeds_content?country_name=South Africa"
       dataType: "json"
       success: (data) ->
         market_info_overlay(data.market_data)
@@ -524,8 +524,30 @@ $ ->
         '<h2>Current: ' + data[i].close + '</h2>' +
         '<h2><img src="/images/' + data[i].change + '_arrow.png" /> ' + data[i].sign + ' ' +
         data[i].points + '</h2>' +
-        '<h2><img src="/images/' + data[i].change + '_arrow.png" /> ' + data[i].sign + ' ' + data[i].percent + '%</h2></div>'
+        '<h2><img src="/images/' + data[i].change + '_arrow.png" /> ' + data[i].sign + ' ' + data[i].percent + '%</h2>' + 
+        '<h2>Volume: ' + data[i].volume + '</h2>' + '</div>'
 
+    $('#info_overlay').height($('html').height())
     $('#info_overlay').find('.info').html(info_string)
     $('#info_overlay').find('.country_name').html(data[0].country)
     $('#info_overlay').fadeIn('fast')
+
+  ###################################
+  
+  # date = new Date()
+  # setInterval ->
+  #       day = date.getDate()
+  #       month = date.getMonth()
+  #       hour = date.getHours()
+  #       # hour = (hour > 12) ? hour - 12 : hour
+  #       # hour = (hour == 0) ? 12 : hour
+  #       min = date.getMinutes()
+  #       min = (min < 10 ? "0" : "") + min
+  #       seconds = date.getSeconds()
+  #       seconds = (seconds < 10 ? "0" : "") + seconds
+  #       # sign = (hour > 12) ? "PM" : "AM"
+  #       clock = month + '/' + day + ' ' + hour + ':' + min + ':' + seconds + ' '
+
+  #       $('#clock').text(new Date - clock)
+  # , 1000
+
