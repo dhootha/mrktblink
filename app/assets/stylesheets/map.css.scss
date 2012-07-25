@@ -74,9 +74,10 @@
 }
 #news_container {
   width:100%;
-  background:none;
   position:absolute;
   margin-top:-260px;
+  border-top:3px solid #222;
+  background:url('/images/opaque_bg.png') repeat;
 }
 #container {
   background:none;
