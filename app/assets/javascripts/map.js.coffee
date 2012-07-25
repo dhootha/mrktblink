@@ -134,7 +134,7 @@ $ ->
   marker_Japan = new L.Marker(new L.LatLng(40.5,131), {icon:JapanGreenIcon})
   marker_Taiwan = new L.Marker(new L.LatLng(20,122), {icon:TaiwanGreenIcon})
   marker_Korea = new L.Marker(new L.LatLng(30.1,129), {icon:KoreaGreenIcon})
-  marker_Australia = new L.Marker(new L.LatLng(-18,115.8), {icon:AustraliaRedIcon})
+  marker_Australia = new L.Marker(new L.LatLng(-18,115.8), {icon:AustraliaGreenIcon})
   marker_India = new L.Marker(new L.LatLng(29.3, 70.4), {icon: IndiaGreenIcon})
   marker_Denmark = new L.Marker(new L.LatLng(53.7, 10), {icon: DenmarkGreenIcon})
   marker_Italy = new L.Marker(new L.LatLng(42.3, 9), {icon: ItalyRedIcon})
@@ -445,12 +445,10 @@ $ ->
         $('#container').html(data.content_to_replace)
 
   marker_Japan.on "click", (e) ->
-    marker_Japan.unbindPopup()
     $.ajax
       url: "/map/update_news_feeds_content?country_name=Japan"
       dataType: "json"
       success: (data) ->
-        # marker29.bindPopup(data.market_data).openPopup()
         market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
 
@@ -463,7 +461,6 @@ $ ->
         $('#container').html(data.content_to_replace)
 
   marker_Korea.on "click", (e) ->
-    marker_Korea.unbindPopup()
     $.ajax
       url: "/map/update_news_feeds_content?country_name=Korea"
       dataType: "json"
@@ -473,7 +470,6 @@ $ ->
         $('#container').html(data.content_to_replace)
 
   marker_Australia.on "click", (e) ->
-    marker_Australia.unbindPopup()
     $.ajax
       url: "/map/update_news_feeds_content?country_name=Australia"
       dataType: "json"

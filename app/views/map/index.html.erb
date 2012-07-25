@@ -17,8 +17,10 @@
 </script>
 <%= render :partial => 'info_overlay' %>
 <%= render :partial => 'about' %>
-<div id='container'>
-  <%= render :partial => 'news_feeds_content', :locals => {:country => 'USA'} %>
+<div id="news_container">
+  <div id='container'>
+    <%= render :partial => 'news_feeds_content', :locals => {:country => 'USA'} %>
+  </div>
 </div>
 <script type="text/javascript">
   $('#container').masonry({
