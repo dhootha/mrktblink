@@ -1,4 +1,3 @@
-require "../lib/fetch_data"
 
 class GetMarketData
   @queue = :market
