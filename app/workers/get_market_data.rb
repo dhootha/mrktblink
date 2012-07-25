@@ -1,3 +1,4 @@
+require_relative '../../lib/fetch_data'
 class GetMarketData
   @queue = :market
   def self.perform(market)
