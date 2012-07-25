@@ -122,15 +122,6 @@
 }
 #map-header {
 }
-#clock {
-  position:absolute;
-  width:200px;
-  color:white;
-  left:50%;
-  margin-left:-100px;
-  margin-top:-35px;
-  font-size:20px;
-}
 #map-header .navbar {
   background:none;
 }
@@ -156,7 +147,7 @@
   position:relative;
   display:block;
   left:0;
-  margin:0 10px 0 0;
+  margin:3px 10px 0 0;
   list-style:none;
 }
 #map-filters li {
@@ -181,7 +172,7 @@
 #map-background .leaflet-popup-tip {
   margin:-12px 0 0 6px;
 }
-#info_overlay {
+.info_overlay {
   top:0;
   left:0;
   position:absolute;
@@ -193,7 +184,7 @@
 
   background:url('/images/opaque_overlay_90.png') repeat;
 }
-#info_overlay .info_container {
+.info_overlay .info_container {
   margin:100px;
   color:white;
   text-shadow:-1px -1px 1px #000;
@@ -202,20 +193,20 @@
   display:block;
   width:800px;
 }
-#info_overlay .info .info_block {
+.info_overlay .info .info_block {
   margin-bottom:40px;
 }
-#info_overlay .info h1,
-#info_overlay .info h2 {
+.info_overlay .info h1,
+.info_overlay .info h2 {
   font-weight:normal;
 }
-#info_overlay .info h1 {
+.info_overlay .info h1 {
   font-size:30pt; 
   border-bottom:1px solid white;
   padding-bottom:10px;
   margin-bottom:20px;
 }
-#info_overlay .country_name {
+.info_overlay .country_name {
   color:#555;
   font-size:200px;
   position:absolute;
@@ -223,7 +214,7 @@
   right:100px;
   z-index:10;
 }
-#info_overlay p {
+.info_overlay p {
   color:#888;
   font-size:16px;
 }

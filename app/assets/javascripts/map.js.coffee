@@ -163,7 +163,7 @@ $ ->
   map.addLayer(marker_Ireland)
   map.addLayer(marker_Spain)
   map.addLayer(marker_Portugal)
-  map.addLayer(marker_Isreal)
+  # map.addLayer(marker_Isreal)
   map.addLayer(marker_SouthAfrica)
   map.addLayer(marker_China)
   map.addLayer(marker_Malaysia)
@@ -408,7 +408,6 @@ $ ->
         $('#container').html(data.content_to_replace)
 
   marker_Isreal.on "click", (e) ->
-    marker_Isreal.unbindPopup()
     $.ajax
       url: "/map/update_news_feeds_content?country_name=Israel"
       dataType: "json"
@@ -505,13 +504,12 @@ $ ->
       dataType: "json"
       success: (data) ->
         if data.success == true
-          #eval('marker_USA').bindPopup("dfdsfds").openPopup()
           jQuery.each data.countries_details, (i, j) ->
             eval('marker_'+j.country_name).setIcon(eval(j.country_name+j.color+'Icon'))
   ), 10000
 
-  $('#info_overlay').click =>
-    $('#info_overlay').fadeOut('fast')
+  $('.info_overlay').click =>
+    $('.info_overlay').fadeOut('fast')
 
   market_info_overlay = (data) =>
     # market + data.market_name for market_name in data
@@ -537,21 +535,6 @@ $ ->
     $('#info_overlay').fadeIn('fast')
 
   ###################################
-  
-  # date = new Date()
-  # setInterval ->
-  #       day = date.getDate()
-  #       month = date.getMonth()
-  #       hour = date.getHours()
-  #       # hour = (hour > 12) ? hour - 12 : hour
-  #       # hour = (hour == 0) ? 12 : hour
-  #       min = date.getMinutes()
-  #       min = (min < 10 ? "0" : "") + min
-  #       seconds = date.getSeconds()
-  #       seconds = (seconds < 10 ? "0" : "") + seconds
-  #       # sign = (hour > 12) ? "PM" : "AM"
-  #       clock = month + '/' + day + ' ' + hour + ':' + min + ':' + seconds + ' '
-
-  #       $('#clock').text(new Date - clock)
-  # , 1000
-
+    
+    $('#about-us').click ->
+      $('#about_us_overlay').fadeIn('fast')

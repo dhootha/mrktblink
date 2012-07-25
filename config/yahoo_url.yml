@@ -10,6 +10,10 @@ S&P 500:
   country: "USA"
   url: "http://chartapi.finance.yahoo.com/instrument/1.0/%5EGSPC/chartdata;type=quote;range=1d/json/"
 
+S&P 500:
+  country: "Alaska"
+  url: "http://chartapi.finance.yahoo.com/instrument/1.0/%5EGSPC/chartdata;type=quote;range=1d/json/"
+
 MerVal:
   country: "Argentina"
   url: "http://chartapi.finance.yahoo.com/instrument/1.0/%5EMERV/chartdata;type=quote;range=1d/json/"
