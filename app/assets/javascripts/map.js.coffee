@@ -518,6 +518,10 @@ $ ->
     count = data.length
     info_string = ''
     for i in [0...count]
+      if data[i].volume != ''
+        volume = 'Volume: ' + data[i].volume
+      else
+        volume = ''
       info_string += '<div class="info_block">' +
         '<h1>Market Info for ' + data[i].market_name + '</h1>' + 
         '<h2>Previous Close: ' + data[i].previous_close + '</h2>' +
@@ -525,7 +529,7 @@ $ ->
         '<h2><img src="/images/' + data[i].change + '_arrow.png" /> ' + data[i].sign + ' ' +
         data[i].points + '</h2>' +
         '<h2><img src="/images/' + data[i].change + '_arrow.png" /> ' + data[i].sign + ' ' + data[i].percent + '%</h2>' + 
-        '<h2>Volume: ' + data[i].volume + '</h2>' + '</div>'
+        '<h2>' + volume + '</h2>' + '</div>'
 
     $('#info_overlay').height($('html').height())
     $('#info_overlay').find('.info').html(info_string)
