@@ -46,8 +46,8 @@ $ ->
   CanadaGreenIcon = new CountryIcon('/images/country_images/canada_green.png', {iconSize: new L.Point(508, 377)})
   CzeckRepublicRedIcon = new CountryIcon('/images/country_images/czeck_republic_red.png', {iconSize: new L.Point(38,25)})
   CzeckRepublicGreenIcon = new CountryIcon('/images/country_images/czeck_republic_green.png', {iconSize: new L.Point(38,25)})
-  ChinaRedIcon = new CountryIcon('/images/country_images/china_red.png', {iconSize: new L.Point(355, 247)})
-  ChinaGreenIcon = new CountryIcon('/images/country_images/china_green.png', {iconSize: new L.Point(355, 247)})
+  # ChinaRedIcon = new CountryIcon('/images/country_images/china_red.png', {iconSize: new L.Point(355, 247)})
+  # ChinaGreenIcon = new CountryIcon('/images/country_images/china_green.png', {iconSize: new L.Point(355, 247)})
   ColombiaRedIcon = new CountryIcon('/images/country_images/colombia_red.png', {iconSize: new L.Point(66,89)})
   ColombiaGreenIcon = new CountryIcon('/images/country_images/colombia_green.png', {iconSize: new L.Point(66,89)})
   EnglandRedIcon = new CountryIcon('/images/country_images/england_red.png', {iconSize: new L.Point(47,86)})
@@ -129,7 +129,7 @@ $ ->
   marker_Portugal = new L.Marker(new L.LatLng(36.6,-7.2), {icon:PortugalRedIcon})
   marker_Isreal = new L.Marker(new L.LatLng(26,37), {icon:IsrealRedIcon})
   marker_SouthAfrica = new L.Marker(new L.LatLng(-28.3,19), {icon:SouthAfricaRedIcon})
-  marker_China = new L.Marker(new L.LatLng(49,75), {icon:ChinaRedIcon})
+  marker_China = new L.Marker(new L.LatLng(49,75), {icon:ChinaGreenIcon})
   marker_Malaysia = new L.Marker(new L.LatLng(-1,97.5), {icon:MalaysiaRedIcon})
   marker_Japan = new L.Marker(new L.LatLng(40.5,131), {icon:JapanGreenIcon})
   marker_Taiwan = new L.Marker(new L.LatLng(20,122), {icon:TaiwanGreenIcon})
@@ -425,12 +425,10 @@ $ ->
         $('#container').html(data.content_to_replace)
 
   marker_China.on "click", (e) ->
-    marker_China.unbindPopup()
     $.ajax
       url: "/map/update_news_feeds_content?country_name=China"
       dataType: "json"
       success: (data) ->
-        # marker_China.bindPopup(data.market_data).openPopup()
         market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
 
@@ -493,7 +491,7 @@ $ ->
         market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
 
-  color = "green"
+  color = "red"
   setInterval (->
     $.ajax
       url: "/map/update_icon"
@@ -506,6 +504,10 @@ $ ->
 
   $('.info_overlay').click =>
     $('.info_overlay').fadeOut('fast')
+
+  $('#about-us').click ->
+    $('.info_overlay').fadeOut('fast')
+    $('#about_us_overlay').fadeIn('fast')
 
   market_info_overlay = (data) =>
     # market + data.market_name for market_name in data
@@ -532,5 +534,3 @@ $ ->
 
   ###################################
     
-    $('#about-us').click ->
-      $('#about_us_overlay').fadeIn('fast')
