@@ -61,10 +61,11 @@ class MapController < ApplicationController
 
   def update_icon    
     countries_details = []
-    countries = []
-    APP_CONFIG_MARKETS.each do |market|
-      countries << market[1]["country"]
-    end
+    # countries = []
+    # APP_CONFIG_MARKETS.each do |market|
+    #   countries << market[1]["country"]
+    # end
+    countries = ["USA", "India", "China"]
     countries.uniq.each do |country|
       markets = MarketData.where(country: country)
       begin
