@@ -66,6 +66,10 @@ OSLO EXCH ALL SHARE:
   country: "Norway"
   url: "http://chartapi.finance.yahoo.com/instrument/1.0/%5EOSEAX/chartdata;type=quote;range=1d/json/"
 
+OMX Coppenhagen Exchange:
+  country: "Denmark"
+  url: "http://chartapi.finance.yahoo.com/instrument/1.0/%5EOMXC20/chartdata;type=quote;range=1d/json/"
+
 OMX Stockholm_PI:
   country: "Sweden"
   url: "http://chartapi.finance.yahoo.com/instrument/1.0/%5EOMXSPI/chartdata;type=quote;range=1d/json/"
