@@ -74,7 +74,7 @@ class MapController < ApplicationController
             json_market_data = JSON.parse(market_data[30..-3].gsub('"previous_close" : ','"previous_close" : "'))          
             close = json_market_data['series'].last['close'].to_f
             previous_close = json_market_data['meta']['previous_close'].to_f
-            if close <= previous_close
+            if close < previous_close or close == previous_close
               color = "Red"
             else
               color = "Green"
@@ -86,7 +86,6 @@ class MapController < ApplicationController
       end  
     end    
     json = {:success => true, :countries_details => countries_details}
-    # json = {:success => true, :countries_details => countries}
     render :json => json
   end
 

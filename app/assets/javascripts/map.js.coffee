@@ -126,7 +126,7 @@ $ ->
   marker_Greece = new L.Marker(new L.LatLng(37,21.3), {icon:GreeceRedIcon})
   marker_Ireland = new L.Marker(new L.LatLng(51,-8), {icon:IrelandRedIcon})
   marker_Spain = new L.Marker(new L.LatLng(38.7,-6.7), {icon:SpainGreenIcon})
-  marker_Portugal = new L.Marker(new L.LatLng(36.6,-7.2), {icon:PortugalRedIcon})
+  marker_Portugal = new L.Marker(new L.LatLng(36.6,-7.2), {icon:PortugalGreenIcon})
   marker_Isreal = new L.Marker(new L.LatLng(26,37), {icon:IsrealRedIcon})
   marker_SouthAfrica = new L.Marker(new L.LatLng(-28.3,19), {icon:SouthAfricaRedIcon})
   marker_China = new L.Marker(new L.LatLng(49,75), {icon:ChinaGreenIcon})
@@ -463,7 +463,6 @@ $ ->
       url: "/map/update_news_feeds_content?country_name=Korea"
       dataType: "json"
       success: (data) ->
-        marker31.bindPopup(data.market_data).openPopup()
         market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
 
