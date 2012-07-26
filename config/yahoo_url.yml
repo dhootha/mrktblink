@@ -60,7 +60,7 @@ DAX:
 
 AEX:
   country: "Netherlands"
-  url: "http://chartapi.finance.yahoo.com/instrument/1.0/%5EAEX/chartdata;type=quote;range=1d/json/"
+  url: "http://chartapi.finance.yahoo.com/instrument/1.0/%5ESSMI/chartdata;type=quote;range=1d/json/"
 
 OSLO EXCH ALL SHARE:
   country: "Norway"

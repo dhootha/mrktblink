@@ -137,7 +137,7 @@ $ ->
   marker_Australia = new L.Marker(new L.LatLng(-18,115.8), {icon:AustraliaGreenIcon})
   marker_India = new L.Marker(new L.LatLng(29.3, 70.4), {icon: IndiaRedIcon})
   marker_Denmark = new L.Marker(new L.LatLng(53.7, 10), {icon: DenmarkGreenIcon})
-  marker_Italy = new L.Marker(new L.LatLng(42.3, 9), {icon: ItalyRedIcon})
+  marker_Italy = new L.Marker(new L.LatLng(42.3, 9), {icon: ItalyGreenIcon})
 
   map.addLayer(marker_USA)
   map.addLayer(marker_Alaska)
