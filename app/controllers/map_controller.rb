@@ -65,7 +65,7 @@ class MapController < ApplicationController
     # APP_CONFIG_MARKETS.each do |market|
     #   countries << market[1]["country"]
     # end
-    countries = ["USA", "India", "China", "Alaska", "Argentina", "Brazil", "Mexico", "Chile", "Peru", "Colombia", "Canada", "Austria", "Belgium", "France", "Germany", "Netherlands", "Norway", "Sweden", "Denmark", "Switzerland", "England", "Czeck Republic", "Russia", "Greece", "Ireland", "Spain", "Portugal", "South Africa", "Malaysia", "Japan", "Taiwan", "Korea", "Australia"]
+    countries = ["USA", "India", "China", "Alaska", "Argentina", "Brazil", "Mexico", "Chile", "Peru", "Colombia", "Canada", "Austria", "Belgium", "France", "Germany", "Netherlands", "Norway", "Sweden", "Denmark", "Switzerland", "England", "Czeck Republic", "Russia", "Greece", "Ireland", "Spain", "Portugal", "Taiwan", "Korea", "Australia"]
     countries.uniq.each do |country|
       markets = MarketData.where(country: country)
       begin
