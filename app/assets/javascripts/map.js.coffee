@@ -188,7 +188,6 @@ $ ->
         $('#container').html(data.content_to_replace)
 
   marker_Alaska.on "click", (e) ->
-    marker_Alaska.unbindPopup()
     $.ajax
       url: "/map/update_news_feeds_content?country_name=USA"
       dataType: "json"
