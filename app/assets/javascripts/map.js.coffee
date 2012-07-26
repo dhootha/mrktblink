@@ -490,6 +490,14 @@ $ ->
         market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
 
+  marker_Denmark.on "click", (e) ->
+    $.ajax
+      url: "/map/update_news_feeds_content?country_name=Denmark"
+      dataType: "json"
+      success: (data) ->
+        market_info_overlay(data.market_data)
+        $('#container').html(data.content_to_replace)
+
   color = "red"
   setInterval (->
     $.ajax
