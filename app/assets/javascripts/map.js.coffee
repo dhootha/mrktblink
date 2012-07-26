@@ -135,7 +135,7 @@ $ ->
   marker_Taiwan = new L.Marker(new L.LatLng(20,122), {icon:TaiwanGreenIcon})
   marker_Korea = new L.Marker(new L.LatLng(30.1,129), {icon:KoreaGreenIcon})
   marker_Australia = new L.Marker(new L.LatLng(-18,115.8), {icon:AustraliaGreenIcon})
-  marker_India = new L.Marker(new L.LatLng(29.3, 70.4), {icon: IndiaGreenIcon})
+  marker_India = new L.Marker(new L.LatLng(29.3, 70.4), {icon: IndiaRedIcon})
   marker_Denmark = new L.Marker(new L.LatLng(53.7, 10), {icon: DenmarkGreenIcon})
   marker_Italy = new L.Marker(new L.LatLng(42.3, 9), {icon: ItalyRedIcon})
 
