@@ -539,4 +539,10 @@ $ ->
     $('#info_overlay').fadeIn('fast')
 
   ###################################
+
+  # tweets_dev = (data) =>
+
+  #   count = data.length
+  #   $('.overlay').fadeIn
+
     
