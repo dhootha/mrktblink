@@ -90,4 +90,13 @@ class MapController < ApplicationController
     render :json => json
   end
 
+  def twitter_data
+    @twitter = Twitter.find(:all)
+    respond_to do |format|
+      format.html
+      format.xml { render :xml => @twitter }
+      format.json { render :json => @twitter }
+    end
+  end
+
 end

@@ -5,7 +5,8 @@ require 'json'
 module FetchNews
   
   def self.fetch_news_from_api(country)
-    query = APP_CONFIG_NEWSFEEDS[country]['feed_url'] + '&num=40'   
+    query = APP_CONFIG_NEWSFEEDS[country]['feed_url'] + '&num=60'   
+
   	begin
 	    uri = URI.parse(query)
       connection = Net::HTTP.new(uri.host, 443)
