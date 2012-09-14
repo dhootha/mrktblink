@@ -103,8 +103,8 @@ $ ->
   AlaskaGreenIcon = new CountryIcon('/images/country_images/alaska_green.png', {iconSize: new L.Point(227,226)})
   AlaskaRedIcon = new CountryIcon('/images/country_images/alaska_red.png', {iconSize: new L.Point(227,226)})
 
-  marker_USA = new L.Marker(new L.LatLng(44.4, -122.6), {icon: USARedIcon})
-  marker_Alaska = new L.Marker(new L.LatLng(69.2, -167), {icon: AlaskaRedIcon})
+  marker_USA = new L.Marker(new L.LatLng(44.4, -122.6), {icon: USAGreenIcon})
+  marker_Alaska = new L.Marker(new L.LatLng(69.2, -167), {icon: AlaskaGreenIcon})
   marker_Argentina = new L.Marker(new L.LatLng(-28,-71), {icon:ArgentinaGreenIcon})
   marker_Brazil = new L.Marker(new L.LatLng(-1.5,-72), {icon:BrazilRedIcon})
   marker_Mexico = new L.Marker(new L.LatLng(26.8,-115.4), {icon: MexicoRedIcon})
@@ -506,7 +506,7 @@ $ ->
         if data.success == true
           jQuery.each data.countries_details, (i, j) ->
             eval('marker_'+j.country_name).setIcon(eval(j.country_name+j.color+'Icon'))
-  ), 10000
+  ), 5000
 
   $('.info_overlay').click =>
     $('.info_overlay').fadeOut('fast')
