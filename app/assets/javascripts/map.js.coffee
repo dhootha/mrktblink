@@ -44,8 +44,8 @@ $ ->
   BelgiumGreenIcon = new CountryIcon('/images/country_images/belgium_green.png', {iconSize: new L.Point(24, 20)})
   CanadaRedIcon = new CountryIcon('/images/country_images/canada_red.png', {iconSize: new L.Point(508, 377)})
   CanadaGreenIcon = new CountryIcon('/images/country_images/canada_green.png', {iconSize: new L.Point(508, 377)})
-  CzeckRepublicRedIcon = new CountryIcon('/images/country_images/czeck_republic_red.png', {iconSize: new L.Point(38,25)})
-  CzeckRepublicGreenIcon = new CountryIcon('/images/country_images/czeck_republic_green.png', {iconSize: new L.Point(38,25)})
+  CzechRepublicRedIcon = new CountryIcon('/images/country_images/czeck_republic_red.png', {iconSize: new L.Point(38,25)})
+  CzechRepublicGreenIcon = new CountryIcon('/images/country_images/czeck_republic_green.png', {iconSize: new L.Point(38,25)})
   # ChinaRedIcon = new CountryIcon('/images/country_images/china_red.png', {iconSize: new L.Point(355, 247)})
   # ChinaGreenIcon = new CountryIcon('/images/country_images/china_green.png', {iconSize: new L.Point(355, 247)})
   ColombiaRedIcon = new CountryIcon('/images/country_images/colombia_red.png', {iconSize: new L.Point(66,89)})
@@ -121,7 +121,7 @@ $ ->
   marker_Sweden = new L.Marker(new L.LatLng(66.9,13.3), {icon:SwedenGreenIcon})
   marker_Switzerland = new L.Marker(new L.LatLng(43,8.3), {icon:SwitzerlandGreenIcon})
   marker_England = new L.Marker(new L.LatLng(55,-4), {icon:EnglandGreenIcon})
-  marker_CzeckRepublic = new L.Marker(new L.LatLng(46.7,14), {icon:CzeckRepublicRedIcon})
+  marker_CzechRepublic = new L.Marker(new L.LatLng(46.7,14), {icon:CzechRepublicRedIcon})
   marker_Russia = new L.Marker(new L.LatLng(75.8,29.2), {icon:RussiaRedIcon})
   marker_Greece = new L.Marker(new L.LatLng(37,21.3), {icon:GreeceRedIcon})
   marker_Ireland = new L.Marker(new L.LatLng(51,-8), {icon:IrelandRedIcon})
@@ -157,7 +157,7 @@ $ ->
   map.addLayer(marker_Sweden)
   map.addLayer(marker_Switzerland)
   map.addLayer(marker_England)
-  map.addLayer(marker_CzeckRepublic)
+  map.addLayer(marker_CzechRepublic)
   map.addLayer(marker_Russia)
   map.addLayer(marker_Greece)
   map.addLayer(marker_Ireland)
@@ -348,9 +348,9 @@ $ ->
         market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
 
-  marker_CzeckRepublic.on "click", (e) ->
+  marker_CzechRepublic.on "click", (e) ->
     $.ajax
-      url: "/map/update_news_feeds_content?country_name=Czeck Repubic"
+      url: "/map/update_news_feeds_content?country_name=Czech Repubic"
       dataType: "json"
       success: (data) ->
         market_info_overlay(data.market_data)

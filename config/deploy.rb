@@ -1,7 +1,7 @@
 set :application, "map_app"
 set :scm, :git
 set :repository,  "git@github.com:AgencyProtocol/map_app.git"
-set :branch, fetch(:branch, "development")
+set :branch, fetch(:branch, "master")
 set :env, fetch(:env, "production")
 set :scm_passphrase, "changeit"
 set :runner, 'root'
