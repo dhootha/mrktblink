@@ -164,7 +164,7 @@ $ ->
   map.addLayer(marker_Spain)
   map.addLayer(marker_Portugal)
   # map.addLayer(marker_Isreal)
-  # map.addLayer(marker_SouthAfrica)
+  map.addLayer(marker_SouthAfrica)
   map.addLayer(marker_China)
   map.addLayer(marker_Malaysia)
   map.addLayer(marker_Japan)
