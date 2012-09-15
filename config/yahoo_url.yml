@@ -83,7 +83,7 @@ FTSE 100:
   url: "http://chartapi.finance.yahoo.com/instrument/1.0/%5EFTSE/chartdata;type=quote;range=1d/json/"
 
 PX IND:
-  country: "Czech Repubic"
+  country: "CzechRepublic"
   url: "http://chartapi.finance.yahoo.com/instrument/1.0/FPXAA.PR/chartdata;type=quote;range=1d/json/"
 
 MICEX IND:

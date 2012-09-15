@@ -350,7 +350,7 @@ $ ->
 
   marker_CzechRepublic.on "click", (e) ->
     $.ajax
-      url: "/map/update_news_feeds_content?country_name=Czech Repubic"
+      url: "/map/update_news_feeds_content?country_name=CzechRepublic"
       dataType: "json"
       success: (data) ->
         market_info_overlay(data.market_data)
