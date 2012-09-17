@@ -61,13 +61,17 @@ class MapController < ApplicationController
 
   def update_icon    
     countries_details = []
-    # countries = []
-    # APP_CONFIG_MARKETS.each do |market|
-    #   countries << market[1]["country"]
-    # end
-    countries = ["USA", "India", "China", "Alaska", "Argentina", "Brazil", "Mexico", "Chile", "Peru", "Colombia", "Canada", "Austria", "Belgium", "France", "Germany", "Netherlands", "Norway", "Sweden", "Denmark", "Switzerland", "England", "Czeck Republic", "Russia", "Greece", "Ireland", "Spain", "Portugal", "Malaysia", "Japan", "Taiwan", "Korea", "Australia", "Italy"]
+    countries = []
+    APP_CONFIG_MARKETS.each do |market|
+      countries << market[1]["country"]
+    end
+    # countries = ["USA", "India", "China", "Alaska", "Argentina", "Brazil", "Mexico", "Chile", "Peru", "Colombia", "Canada", "Austria", "Belgium", "France", "Germany", "Netherlands", "Norway", "Sweden", "Denmark", "Switzerland", "England", "Czech Republic", "Russia", "Greece", "Ireland", "Spain", "Portugal", "Malaysia", "Japan", "Taiwan", "Korea", "Australia", "Italy"]
     countries.uniq.each do |country|
-      markets = MarketData.where(country: country)
+      country_name = country
+      if country == 'Alaska'
+        country_name = 'USA'
+      end
+      markets = MarketData.where(country: country_name)
       begin
         if markets.present?
           markets.each do |market|
