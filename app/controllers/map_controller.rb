@@ -31,6 +31,8 @@ class MapController < ApplicationController
   def update_news_feeds_content    
     markets = MarketData.where(country: params[:country_name])
     market_data_value =[]
+    country_name = params[:country_name] == 'Czeck Repubic' ? 'Czech Republic' : params[:country_name]
+    country_news_name = params[:country_name] == 'Czeck Repubic' ? 'Czech Repubic' : params[:country_name]
     if markets.present?
       markets.each do |market| 
         market_data = market.market_data 
@@ -42,30 +44,22 @@ class MapController < ApplicationController
         sign = percent > 0 ? '+' : ''
         points = (close - prev).round(3)
         volume = params[:country_name] == 'USA' ? json_market_data['series'].last['volume'].to_i : ''
-        market_data_value << {:market_name => market.market_name.upcase, :previous_close => prev, :close => close, :change => change, :percent => percent, :sign => sign, :country => params[:country_name], :points =>points, :volume=>volume}
+        market_data_value << {:market_name => market.market_name.upcase, :previous_close => prev, :close => close, :change => change, :percent => percent, :sign => sign, :country => country_name, :points =>points, :volume=>volume}
       end
     else
       market_data_value = 'does not exist'
     end  
-    # close = "12341234.1234".to_f 
-    # prev = "12454354.5334".to_f
-    # percent = (((close - prev) / (prev)) * 100).round(2)
-    # change = percent > 0 ? 'up' : 'down'
-    # sign = percent > 0 ? '+' : ''
-    # points = (close - prev).round(3)
-    # volume = 123123
-    # market_data_value = [{:market_name=>"DOW", :previous_close=>prev, :close=>close, :change=>change, :percent=>percent, :country=>"USA", :sign=>sign, :points=>points}, {:market_name=>"NASDAQ", :previous_close=>prev, :close=>close, :change=>change, :percent=>percent, :country=>"USA", :sign=>sign, :points=>points}, {:market_name=>"S&P", :previous_close=>prev, :close=>close, :change=>change, :percent=>percent, :country=>"USA", :sign=>sign, :points=>points, :volume => volume}]
-    json = {:success => true, :market_data => market_data_value, :content_to_replace => render_to_string(:partial => 'news_feeds_content', :locals => {:country => params[:country_name]})}
+    json = {:success => true, :market_data => market_data_value, :content_to_replace => render_to_string(:partial => 'news_feeds_content', :locals => {:country => country_news_name})}
     render :json => json
   end
 
   def update_icon    
     countries_details = []
-    countries = []
-    APP_CONFIG_MARKETS.each do |market|
-      countries << market[1]["country"]
-    end
-    # countries = ["USA", "India", "China", "Alaska", "Argentina", "Brazil", "Mexico", "Chile", "Peru", "Colombia", "Canada", "Austria", "Belgium", "France", "Germany", "Netherlands", "Norway", "Sweden", "Denmark", "Switzerland", "England", "Czech Republic", "Russia", "Greece", "Ireland", "Spain", "Portugal", "Malaysia", "Japan", "Taiwan", "Korea", "Australia", "Italy"]
+    # countries = []
+    # APP_CONFIG_MARKETS.each do |market|
+    #   countries << market[1]["country"]
+    # end
+    countries = ["USA", "India", "China", "Alaska", "Argentina", "Brazil", "Mexico", "Chile", "Peru", "Colombia", "Canada", "Austria", "Belgium", "France", "Germany", "Netherlands", "Norway", "Sweden", "Denmark", "Switzerland", "England", "Czech Republic", "Russia", "Greece", "Ireland", "Spain", "Portugal", "Malaysia", "Japan", "Taiwan", "Korea", "Australia", "Italy"]
     countries.uniq.each do |country|
       country_name = country
       if country == 'Alaska'
@@ -95,12 +89,12 @@ class MapController < ApplicationController
   end
 
   def twitter_data
-    @twitter = Twitter.find(:all)
-    respond_to do |format|
-      format.html
-      format.xml { render :xml => @twitter }
-      format.json { render :json => @twitter }
-    end
+    # @twitter = Twitter.find(:all)
+    # respond_to do |format|
+    #   format.html
+    #   format.xml { render :xml => @twitter }
+    #   format.json { render :json => @twitter }
+    # end
   end
 
 end

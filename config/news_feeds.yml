@@ -49,7 +49,7 @@ Switzerland:
 England:
   feed_url: "https://news.google.com/news/feeds?pz=1&cf=all&ned=us&hl=en&csid=e84f825417de0f71&output=rss"
 
-CzechRepublic:
+Czech Repubic:
   feed_url: "https://news.google.com/news/feeds?pz=1&cf=all&ned=us&hl=en&csid=c22abb49dbbe6f98&output=rss"
 
 Russia:

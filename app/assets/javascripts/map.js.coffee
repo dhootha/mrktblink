@@ -12,15 +12,15 @@ $ ->
   cloudmade = new L.TileLayer(cloudmadeUrl, {maxZoom: 16, attribution: attribution})
   map.setView(new L.LatLng(39.0, -20.5), 3).addLayer(cloudmade)
 
-  $('#equities-btn').click => 
+  $('#equities-btn').click =>
     eq_map = 'http://{s}.tile.cloudmade.com/8ee2a50541944fb9bcedded5165f09d9/2/256/{z}/{x}/{y}.png'
     map.addLayer( new L.TileLayer(eq_map, {maxZoom: 16, attribute: attribution}))
 
-  $('#bonds-btn').click => 
+  $('#bonds-btn').click =>
     eq_map = 'http://{s}.tile.cloudmade.com/8ee2a50541944fb9bcedded5165f09d9/8/256/{z}/{x}/{y}.png'
     map.addLayer( new L.TileLayer(eq_map, {maxZoom: 16, attribute: attribution}))
 
-  $('#volatility-btn').click => 
+  $('#volatility-btn').click =>
     eq_map = 'http://{s}.tile.cloudmade.com/8ee2a50541944fb9bcedded5165f09d9/31643/256/{z}/{x}/{y}.png'
     map.addLayer( new L.TileLayer(eq_map, {maxZoom: 16, attribute: attribution}))
 
@@ -183,7 +183,6 @@ $ ->
       url: "/map/update_news_feeds_content?country_name=USA"
       dataType: "json"
       success: (data) ->
-        # marker_USA.bindPopup(data.market_data).openPopup()
         market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
 
@@ -344,13 +343,12 @@ $ ->
       url: "/map/update_news_feeds_content?country_name=England"
       dataType: "json"
       success: (data) ->
-        # marker18.bindPopup(data.market_data).openPopup()
         market_info_overlay(data.market_data)
         $('#container').html(data.content_to_replace)
 
   marker_CzechRepublic.on "click", (e) ->
     $.ajax
-      url: "/map/update_news_feeds_content?country_name=CzechRepublic"
+      url: "/map/update_news_feeds_content?country_name=Czeck Repubic"
       dataType: "json"
       success: (data) ->
         market_info_overlay(data.market_data)
@@ -516,7 +514,6 @@ $ ->
     $('#about_us_overlay').fadeIn('fast')
 
   market_info_overlay = (data) =>
-    # market + data.market_name for market_name in data
     count = data.length
     info_string = ''
     for i in [0...count]
@@ -536,13 +533,6 @@ $ ->
     $('#info_overlay').height($('html').height())
     $('#info_overlay').find('.info').html(info_string)
     $('#info_overlay').find('.country_name').html(data[0].country)
+    $('#info_overlay').find('.country_name').addClass((data[0].country).replace(/\s/g,""))
     $('#info_overlay').fadeIn('fast')
 
-  ###################################
-
-  # tweets_dev = (data) =>
-
-  #   count = data.length
-  #   $('.overlay').fadeIn
-
-    
